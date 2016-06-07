@@ -1,10 +1,4 @@
-%160602RR-- HR modification to new (u',v') coordinates completed; results on sporadic rational solutions and closure property added
-%160516RR--JCL
-%160515RR -- JCL [Revert to old section 8 from 160401.\
-%160514 JCL [SUBSECTION TREATING RATIONAL PT ON HYPERBOLA CASE 3 DROPPED AFTE VERSION 160401; SECTIONS RESTRED HERE
-% WITH REDUNDANCY[
-%160513  JCL [Rearrange sections]
-%160511 HR [section 4 divided into 4 and 7, definition of third quadrant residual sets adjusted (same outcome),] 
+%160511 section 4 divided into 4 and 7, definition of third quadrant residual sets adjusted (same outcome), 
 %160420 new definition of (u',v') coordinates, more changes / additions to section 5, subsection 2.3 added 
 %160409 section 5 reworked
 %160404 figures 3 and 11 fixed
@@ -80,8 +74,7 @@
 %\usepackage[dvips]{graphics}
 %\usepackage{epsfig, tikz}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing}
-\usepackage{amsmath,amsfonts,amsthm,amssymb,amscd,mathtools}
+\usepackage{amsmath,amsfonts,amsthm,amssymb,amscd}
 
 %%%%%%%%%%%%%%%
 %for correct figure numbering
@@ -209,7 +202,7 @@ Ann Arbor, MI 48109--1043}
 
 
 \subjclass[2010]{ 26D07 (primary), 39B72 (secondary)}
-\date{May 16, 2016RR. Preliminary draft, not debugged, not for circulation.}
+\date{May 10, 2016. Preliminary draft, not debugged, not for circulation.}
 \begin{document}
 
 \maketitle
@@ -241,21 +234,17 @@ gave necessary and sufficient conditions on $(\alpha, \beta)$
 for these functions to commute 
 under composition, i.e. determining when
  $\floor{\alpha \floor{\beta x}} =  \floor{\beta \floor{\alpha  x}}$ 
- holds for all $x \in \RR.$  Examples of commuting compositions of dilated floor functions
- were noted  in 2010 by  Cardinal \cite[Lemma 6]{Car10} in  a number-theoretic context.
+ holds for all $x \in \RR.$ Certain commuting compositions of dilated floor functions
+ were noted earlier  in a number-theoretic context, 
+ see Cardinal \cite[Lemma 6]{Car10}.
 
 % This paper  considers a more general question
-The commutator 
-$$
- [ f_{\alpha}, f_{\beta}](x) := f_{\alpha, \beta} (x) - f_{\beta, \alpha}(x)= \floor{\alpha \floor{\beta x}} -  \floor{\beta \floor{\alpha  x}}
-$$ 
-is a bounded generalized polynomial in
+The commutator $f_{\alpha, \beta} (x) - f_{\beta, \alpha}(x)= \floor{\alpha \floor{\beta x}} -  \floor{\beta \floor{\alpha  x}}$ is a bounded generalized polynomial in
 the sense of Bergelson and Leibman \cite{BerL07}. 
 We address the problem of determining the parameters $(\alpha, \beta)$ for which  the one-sided inequality \begin{equation}\label{ineq}
 \floor{\alpha \floor{\beta x}} -  \floor{\beta \floor{\alpha  x}} \ge 0 \quad \text{for all} \quad  x \in \RR
 \end{equation}
-holds.
-% for such commutators. 
+holds for such commutators. 
 
 
 
@@ -304,9 +293,8 @@ additional sporadic rational solutions.
 of slope $\frac{1}{m_1}$ through the origin,
 i.e. $\{ (\alpha,  \frac{1}{m_1} \alpha): \, \alpha <0\}$.
 \item[(iii-b)] For each positive rational $\frac{m_1}{m_2}$ given in lowest terms,
-all points  $(-\frac{m_1}{m_2} , -\beta)$ that lie on the 
-vertical  line segment  $0 <\beta \le \frac{1}{m_2}$.
-%$\alpha= -\frac{m_1}{m_2}$, for the range   $-\frac{1}{m_2} \le \beta < 0$.
+all points  that lie on a 
+vertical  line segment $\alpha= -\frac{m_1}{m_2}$, for the range   $-\frac{1}{m_2} \le \beta < 0$.
 \item[(iii-b')] Sporadic rational solutions $(\alpha, \beta) \in \QQ^2$. These include  an infinite set
  $(\alpha, \beta) = (-m_1, -\frac{m_1 r}{m_1r -j}),$ parametrized by integers $(m_1, j, r )$ with  $m_1 \ge 2$,  $1 \le j \le m_1 -1$, and $r \ge 1$.
  which comprise all sporadic solutions having $ \beta < -1.$
@@ -332,7 +320,7 @@ sporadic rational solutions in the first quadrant case. This question is related
 Diophantine Frobenius problem in two dimensions.
 There exist infinitely many sporadic rational solutions in the third quadrant, having $|\beta|> 1$.
 We have not (yet) classified the sporadic rational solutions in the third quadrant having $-1 \le \beta <0$
-but there are many in this region. In Proposition \ref{prop:sporadic-rational} we give a testable criterion for such solutions,
+but there are many in this region. In Proposition \ref{prop:514aa} we give a testable criterion for such solutions,
 showing they have a restricted form. 
 %An analysis ruling out any sporadic rational  solutions having $|\beta| \le 1$ in the third quadrant case again involves a similar analysis to the first quadrant case. 
 
@@ -519,7 +507,7 @@ quadrant, which is  complicated in the proof given here.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  Section 1.3 COORDINATE CHANGES AND SYMMETRIES
+%  Section 1.3 COORDINATE CHANGES
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Coordinate Changes and Symmetries}
@@ -833,15 +821,14 @@ with $X'= -\beta$ and $Y'= \frac{\beta}{\alpha}$. }
 \end{figure} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Section 1.4 ROADMAP
+% Section 1.4 Roadmap
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Roadmap}
 
-Theorem \ref{thm:main} will be proved by following a path of conditions all equivalent to the one given at the beginning. 
-%Each step should not be so difficult by itself, but all together they are a mess.
+Theorem \ref{thm:main} will be proved by following a path of conditions all equivalent to the one given at the beginning. Each step should not be so difficult by itself, but all together they are a mess.
 
-The main steps in the proof: the following conditions on $(\alpha,\beta)$ are all equivalent
+main steps in the proof: the following conditions on $(\alpha,\beta)$ are all equivalent
 \begin{enumerate}
 \item original inequality $\floor{\alpha\floor{\beta x}} \geq \floor{\beta\floor{\alpha x}}$ {for all } $x\in \RR$ 
 \item upper level sets $S_{\alpha,\beta}\supseteq S_{\beta,\alpha}(n)$ for all $n \in \ZZ$
@@ -862,7 +849,7 @@ The main steps in the proof: the following conditions on $(\alpha,\beta)$ are al
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Sec 2PRELIMINARIES
+% Sec 2Preliminaries 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preliminaries}\label{sec:2} 
@@ -871,7 +858,7 @@ The main steps in the proof: the following conditions on $(\alpha,\beta)$ are al
 In this section we give some basic results used in the proof of the main result. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Sec 21 ROUNDING Functions
+% Sec 22 Rounding Functions
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -906,7 +893,7 @@ r_{\infty}(x) := \begin{cases}
 Rounding functions satisfy the following inequalities.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 2.1  (Rounding 1)
+% Lemma 2.5 (Rounding 1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lem} \label{rounding} {\em (Rounding Function Inequalities)}
 
@@ -956,9 +943,10 @@ Otherwise if $\alpha<0$ and $\beta > 0$, $r_\beta(x)\geq x\geq r_\alpha(x)$ and 
 \end{proof}
 %$r_{-n}(x)\leq r_{-1}(x) = \floor{x}\leq \ceil{x} = r_{1}(x) \leq r_{n}(x)$
 
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sec 23 Rounding Functions-2
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Rounding functions-2} 
 We shall also encounter a second one-parameter family of {\em strict} rounding functions
 \begin{equation}
 \tround_\alpha(x) :=  \alpha\floor{\frac1\alpha x}+\alpha.
@@ -978,9 +966,7 @@ From the definition it is clear that for all $x\in\RR$,
 \[ x+\alpha\leq \vec{r}_\alpha(x) < x \quad\text{if }\alpha<0.\]
 This one-parameter family of rounding  functions has similar properties to the one above. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 2.2  (Rounding-2)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{lem} \label{strict-rounding} {\em (Strict Rounding Function Inequalities)}
 
 \begin{enumerate}[(i)]
@@ -997,7 +983,7 @@ if and only if $\frac{\beta}{\alpha}$ is a (positive) integer.
 We omit proofs, since they are similar to those in Lemma \ref{rounding}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  Section 2.2 BABY CASE
+%  Section 2.3a BABY CASE
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{``Baby'' case}\label{sec:baby}
@@ -1005,19 +991,9 @@ We observe in this section that a sufficient condition for \eqref{ineq} to hold 
 \begin{equation}\label{eq:baby}
 {\alpha \floor{\beta x}} -  {\beta \floor{\alpha  x}} \ge 0 \quad \text{for all }  x \in \RR .
 \end{equation}
-Namely,  we can apply the floor function to both sides of ${\alpha \floor{\beta x}} \ge  {\beta \floor{\alpha  x}}$,
-and since  $x\mapsto\floor x$ is (weakly) order-preserving we deduce \eqref{ineq}.
-%so we may drop the outermost floor function on each term. 
-The classification of solutions $(\alpha,\beta)$ to this simplified condition is answered completely 
-using results  the previous sections on rounding functions. 
-The solutions found  are those in  cases (i-a), (ii), (iii-a), and (iv) of Theorem \ref{thm:main}.
+Namely,  the function $x\mapsto\floor x$ is (weakly) order-preserving so we may drop the outermost floor function on each term. The classification of solutions $(\alpha,\beta)$ to this simplified condition is answered completely by the previous sections on rounding functions. This accounts for cases (i-a), (ii), (iii-a), and (iv) of Theorem \ref{thm:main}.
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Propositon 2.3  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{prop}\label{prop:24}
+\begin{prop}
 The parameters  $(\alpha, \beta) \in \RR^2$  that satisfy the inequality
 $$ \alpha \floor{ \beta x}  \geq  \beta \floor{ \alpha x} 
 \quad \mbox{for all } x \in \RR
@@ -1088,7 +1064,7 @@ The solutions to \eqref{eq:baby} are pictured in Figure \ref{fig:baby}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Sec 23 SELF-SIMILAR  structure of solution set
+% Sec 23 Self-similar structure of solution set
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Self-similar structure of the solution set}\label{sec:23}
@@ -1096,7 +1072,7 @@ Here we make some general remarks about the set of all $(\alpha,\beta)$ that sat
 Rather than being an ``arbitrary'' set of points, the solution locus has  a self-similar structure in the following sense.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Propositon 2.4 
+% Propositon 26  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{prop}\label{prop:26} 
  Let $S$ denote the set of solutions.
@@ -1215,7 +1191,7 @@ To show the other direction, i.e. that this exhibits all solutions to \eqref{ine
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Sec 3. Upper Level Sets
+% Sec 21 Upper Level Sets
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Upper level sets}\label{sec:upper-level}
@@ -1234,7 +1210,7 @@ If  $\alpha=0$ or $\beta=0$, the composed floor functions $f_{\alpha,\beta}$, $f
 %As in \cite{LMR16}, the classification here relies on characterizing the jump points of the graphs of $f_{\alpha,\beta}$ as a preliminary step. 
 
 %%%%%%%%%%
-% Lemma 3.1
+% Lemma 2.1
 %%%%%%%%%%
 \begin{lem}\label{lem:21}
 The inequality (\ref{ineq}) is equivalent to
@@ -1262,7 +1238,7 @@ given in the next three lemmas.
 
 
 %%%%%%%%%%
-% Lemma 3.2
+% Lemma 2.2
 %%%%%%%%%%
 \begin{lem}\label{lem:22}
 For $\alpha>0$ and $ \beta >0$ we have for  $n \in \ZZ$ that
@@ -1294,7 +1270,7 @@ x \in S_{\alpha, \beta} (n) & \Leftrightarrow&   \lfloor \alpha \lfloor \beta (x
 \end{proof}
 
 %%%%%%%%%%%%%%%%%
-% Lemma 3.3 
+% Lemma 2.3 [renumbered
 %%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:24}
 For $\alpha<0$ and $ \beta <0$ we have 
@@ -1326,7 +1302,7 @@ For $n \in \ZZ$ we have for $\alpha, \beta <0$,
    as asserted.
 \end{proof}
 %%%%%%%%%%
-% Lemma 3.4
+% Lemma 2.4
 %%%%%%%%%%
 \begin{lem}\label{lem:23}
 For $\alpha<0$ and $ \beta >0$ we have for $n \in \ZZ$  that
@@ -1353,20 +1329,17 @@ These results are obtained in \cite[Lemma 7]{LMR16}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% section 4: Proofs
+% section 3: Proofs
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Proof  of Main Result}\label{sec:rounding}
+\section{Proof  of Main Result: Rounding criterion}\label{sec:rounding}
 \setcounter{equation}{0}
 
-%In this section the boundary points of the upper level sets calculated in Section \ref{sec:upper-level} are  reinterpreted in terms of rounding functions.
+In this section the boundary points of the upper level sets calculated in Section \ref{sec:upper-level} are  reinterpreted in terms of rounding functions.
 %This proves Theorem \ref{thm:main}, modulo two propositions whose proofs are deferred to later sections, concerning the first and third quadrants. 
 %These two propositions  form the heart of the proof and  in particular they locate the set of solutions forming hyperbolas, which occur in subcases (i-c) and (iii-c). 
+This proves certain cases of Theorem \ref{thm:main} and motivates a change of coordinates to be used in finishing the proof.
 
-In this section we prove  Theorem \ref{thm:main}, modulo two propositions whose proofs are deferred to later sections.
-These two propositions are the heart of the proof and  in particular they locate the set of solutions forming hyperbolas, which occur in subcases (i-c) and (iii-c). 
-Here we will reinterpret the boundary points of the upper level sets calculated in Section \ref{sec:upper-level}  in terms of rounding functions.
-This reinterpretation proves certain cases of Theorem \ref{thm:main} and motivates a change of coordinates to be used in finishing the proof.
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -1476,7 +1449,6 @@ In the new coordinates $(u,v)$ cases {\it (i-a)} and {\it (i-b)} amount to sayin
 %the cases corresponding to 
 %cases {\it (i-a)} and {\it (i-b)} correspond to the first quadrant parts of 
 %horizontal or vertical  lines where  $u$  or  $v$ is a positive integer.
-
  It remains to characterize those positive values $(\alpha, \beta)$
 satisfying \eqref{ineq} for which  both  variables $u$, $v$ are not integers.
 This case will be treated in the following proposition, which identifies the solutions arising  in  
@@ -1484,7 +1456,7 @@ case {\it (i-c)}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% PROPOSITION 4.1
+% PROPOSITION 3.1
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{prop}\label{prop:31}
@@ -1508,7 +1480,7 @@ The  argument is done in the $(u, v)$ coordinate system.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Section 4.3 Third Quadrant 
+% Section 3.3 Third Quadrant 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Third quadrant: Both $\alpha, \beta$  negative}\label{sec:rounding-3quad}
@@ -1558,7 +1530,7 @@ Thus \eqref{ineq} holds, completing case {\it (iii-a)}.
 % Case (iii-b)
 %%%%%
 
- {\em Case {\it (iii-b)}.} {\em ${\alpha} = -\frac{m_2}{m_3}$ is rational, and $-\frac1{m_3}\leq\beta <0$}
+[ {\em Case {\it (iii-b)}.} {\em ${\alpha} = -\frac{m_2}{m_3}$ is rational, and $-\frac1{m_3}\leq\beta <0$}
 % {For each positive rational $\frac{m_1}{m_2}$ given in lowest terms,
 % all points  that lie on a 
 % vertical  line segment $\alpha= -\frac{m_1}{m_2}$, for the range   $-\frac{1}{m_2} \le \beta < 0$.}
@@ -1574,8 +1546,7 @@ where the last inequality follows from the definition of the strict rounding fun
 Thus condition \eqref{neg-rounding-ineq} holds, which is equivalent to \eqref{ineq}.
 
 Now the general case $\alpha = -\frac{m_2}{m_3}$ rational follows from the symmetries of $S$ discussed in section \ref{sec:23}, i.e. Propositions \ref{prop:26}(2) and (3).
-This completes case {\it (iii-b)}. 
-%DELAY UNTIL LATER SECTION?]
+This completes case {\it (iii-b)}. DELAY UNTIL LATER SECTION?]
 
 \medskip
 
@@ -1614,7 +1585,7 @@ state some facts about (iii-d) solutions, and its main content will be the exclu
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% PROPOSITION 4.2
+% PROPOSITION 3.2
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{prop}\label{prop:32} {} 
@@ -1669,7 +1640,7 @@ The condition ${\uu} \ge 1$ in  converts to $-1 \le \beta <0.$
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Section 4.4 PROOF OF MAIN THM 
+% Section 3.4 PROOF OF MAIN THM 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof of Theorem \ref{thm:main}} \label{sec:34}
@@ -1686,7 +1657,7 @@ modulo giving proofs of  Propositions \ref{prop:31} and \ref{prop:32}.
 % Section 5  SECTION 5
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Residual set and Beatty sequence criteria: First Quadrant} \label{sec:4}
+\section{Residual set criterion: First Quadrant} \label{sec:4}
 \setcounter{equation}{0}
 
 %In this section we prove Proposition \ref{prop:31}.
@@ -1801,10 +1772,10 @@ where $u = \frac{1}{\alpha}, \, v= \frac{\beta}{\alpha}$.}\label{fig4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% 5.1 RESIDUAL SETS
+% 4.1 RESIDUAL SETS
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{First Quadrant Residual Sets}\label{sec:41}
+\subsection{Residual Sets}\label{sec:41}
 
 In terms of the new  parameters $u$ and $v $, 
 %condition \eqref{pos-level-set}, which is equivalent to \eqref{ineq}, becomes
@@ -1835,14 +1806,13 @@ u\ZZ \cap \R_v = \emptyset,
 \end{equation}
 where $u = 1/\alpha$ and $v = \beta/\alpha$.
 
-The residual set $R_v$ has a nice characterization as the  union of countably many half-open intervals.
+The residual set $R_v$ has a nice characterization as the union of countably many half-closed intervals.
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 5.1 Characterizing the residual set
+% Lemma 4.1 Characterizing the residual set
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:41}
 
-(1) For any $v>0$, 
-%$R_v$ is a union of half-open intervals
+(1) For any $v>0$,
 \[ \R_v = \bigcup_{n\in\ZZ} \big( \floor{vn}, vn \big] . \]
 
 (2)  For any $v >0$ the intersection $\R_v \cap \ZZ = \emptyset$. 
@@ -1901,7 +1871,7 @@ This formula shows that   $\R^{\pm}_v$ is a union of open unit intervals whose e
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 5.2 Characterizing the Residual set
+% Lemma 4.2 Characterizing the Residual set
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:42}
 For $u, v >0$ the following conditions are equivalent.
@@ -1954,7 +1924,7 @@ a positive integer (cases (i-a) and (i-b) of Theorem \ref{thm:main}).
   
   
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 5.3 Necessary conditions $u>1, v>1$
+% Lemma 4.3 Necessary conditions $u>1, v>1$
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:43a}
 Suppose that neither $u$ or $v$ is a positive integer. 
@@ -1982,14 +1952,7 @@ The requirement that  $v$ is not an integer implies that $R_v^{\pm}$ contains $v
 %The problem of when $\R^\pm_u\cap \R^\pm_v = \emptyset $ is deferred to a later section. 
 %[BRING IN BEATTY SEQUENCES HERE?]
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% SEction 5.2 Beatty sequences
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Beatty sequences}\label{sec:52a}
+\subsection{Beatty sequences}
 To study the problem when $\R^\pm_u\cap \R^\pm_v = \emptyset $, we convert it
 to a problem concerning Beatty sequences.
 %Our object is to prove Proposition \ref{prop:31}, which is competed in Section \ref{sec:44}.
@@ -1998,7 +1961,7 @@ to a problem concerning Beatty sequences.
 %and makes a connection with the two-dimensional Diophantine Frobenius Problem.
 
 %%%%%%%%%%%%
-% Defn 5.4 Beatty sequence
+% Defn 4.4 Beatty sequence
 %%%%%%%%%%%%
 \begin{defi}\label{def:44}
  Given a non-zero real number $u$, the {\em Beatty sequence} $\sB^{+}(u)$
@@ -2015,7 +1978,7 @@ in 1926, with solutions given in  1927 by L. Ostrowski and J. Hyslop,
 and by A. C. Aitken,  see \cite{Bea26}.
 
 %%%%%%%%%%%%
-% Theorem 5.5 Beatty's theorem.
+% Theorem 4.5 Beatty's theorem.
 %%%%%%%%%%%%
 \begin{thm}\label{thm:44} {\em (``Beatty's Theorem") }
 Let $u, v$ be positive irrational numbers with 
@@ -2039,7 +2002,7 @@ solving Wythoff's game, see also Graham \cite{Gr63}.
 We  will connect the residual sets $\R_u^{\pm}$ to Beatty sequences extended to  $\ZZ$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Defn 5.6 full and reduced Beatty sequence
+% Defn 4.6 full and reduced Beatty sequence
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{defi}\label{def:45}
  (1) Given a non-zero real number $u$, the {\it  full Beatty sequence} $\sB(u)$
@@ -2063,7 +2026,7 @@ $\sB_0(u) = \sB(u) \smallsetminus r\ZZ.$
 If   $u$ is an integer then $\sB_0(u) = \emptyset$, while if $u$ is not an integer, then $\sB_0(u)$ is an infinite set.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 5.7 Symmetrized R-set
+% Lemma 4.7 Symmetrized R-set
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:46}
 (1) For any $u >0$,
@@ -2088,769 +2051,16 @@ The upper endpoint $\ceil{x}$ is always one greater than the lower endpoint $\fl
 (2) This equivalence follows directly from (1).
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% SEction 5.3 Intersections of  Beatty sequences
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Intersections of Beatty sequences:  Torus subgroup criterion}\label{sec:53a}
-
-The  criterion of Lemma \ref{lem:46} (2)  reduces the analysis of \eqref{ineq} in the
-first quadrant  to a disjointness property of reduced Beatty sequences. 
- The next lemma gives  formula describing  the intersection of two given reduced Beatty sequences.
- It also gives a parallel formula for the intersection of  a full Beatty sequence with a reduced Beatty sequence, the latter case being
- needed for  the third quadrant case, to be treated in Section \ref{sec:5}.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 5.8
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:48}
- Let  $u, v >1$ be given. 
- 
- (1) There holds
-\begin{equation*}
-\sB_0(u) \bigcap \sB_0(v) =  \big\{-n \in \ZZ: \, 0< \{ \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v} \, \big\}.
-\end{equation*}
-
-(2)  In addition there holds
- \begin{equation*}
-\sB(u) \bigcap \sB_0(v) =  \big\{ -n \in \ZZ: \,   0 \le \{  \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v} \big\}.
-\end{equation*}
- \end{lem}
- 
- 
-\begin{proof} 
-Suppose that the integer $-n \in \sB_0(u) \bigcap \sB_0(v)$. That is, there
-exist integers $m_1,m_2$ with
-$m_1u = -n + x_1$ with $0< x_1 <1$ and $m_2 v= -n+ x_2$ with $0< x_2 <1$.
-Dividing the first equality by $u$ yields 
-$$-\frac{n}{u} + \frac{x_1}{u} \equiv 0 \, (\bmod \, 1).$$
-Since $0 < \frac{x_1}{u} < \frac{1}{u}<1$, the above equation implies  $ \{ \frac{n}{u} \}= \frac{x_1}{u}$ 
-so we obtain $ 0 < \{ \frac{n}{u} \}< \frac{1}{u}$. In the same fashion we obtain $0 <\{ \frac{n}{v} \}< \frac{1}{v}$
-from the second equality. This gives the equivalence in one direction.
-All the steps are reversible, so the converse implication  follows.
-
-The argument for $\sB(u) \bigcap \sB_0(v)$ is similar, except we start with 
-a non-strict inequality $0 \le x_1<1$ in $m_1u= -n+ x_1$.
-\end{proof}
-
-
-
-
-
-
-
-
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Section 6  First quadrant ANALYSIS ; residual set criterion
+% Section 5  Third quadrant; residual set criterion
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{First  Quadrant Analysis: Proof of Proposition \ref{prop:31}} \label{sec:5}
+\section{Residual set criterion: Third Quadrant} \label{sec:5}
 \setcounter{equation}{0}
 
- We now complete the analysis of the first quadrant case, and prove Proposition \ref{prop:31}
- in Section \ref{sec:44}.
- 
- 
- 
- Our first object in this section is to a disjointness criterion for reduced Beatty sequences. 
-The final section \ref{sec:45} presents a criterion for sporadic rational solutions. 
-It uses $(X,Y)$-coordinates, with $(X, Y) := (\frac{1}{u}, \frac{1}{v}) = (\alpha, \frac{\alpha}{\beta})$,
-and makes a connection with the two-dimensional Diophantine Frobenius Problem.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Sect. 6.1 Intersecting REDUCED BEATTY SEQUENCES
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Intersections of Beatty Sequences}\label{sec:43}
-
-%There is a large literature studying  disjointness  properties of Beatty sequences
-%on the positive integers,  generalized  to allow  shifted Beatty sequences. 
-A disjointness  criterion for  Beatty
-sequences was found in 1957 by Th. Skolem \cite[Theorem 8]{Sko57},
-which is stated below.  
-Skolem's work was discussed
-further in  section 3  of a
-supplementary note by T. Bang \cite{Ban57}. Later work,
-starting with Skolem \cite{Sko57b},  studied disjointness of shifted Beatty 
-sequences $\lfloor \alpha n + \gamma\rfloor$.
-We mention\footnote{Fraenkel \cite{Fra69} noted that 
-a subsequent work of Skolem \cite{Sko57b} on intersective properties of shifted Beatty sequences
-has incorrectly stated theorems with defective proofs.} Fraenkel \cite{Fra69}, \cite{Fra73} , Graham \cite{Gr70}, Morikawa \cite{Mor85}, 
-with further work surveyed in \cite{OB03}.  
-%Another proof was given by Sungyu Kim \cite{Kim15}.
-
-
-%%%%%%%%%%%%%%%%%%%%
-% Theorem 6.1
-%%%%%%%%%%%%%%%%%%%
-\begin{thm} \label{thm:47} {\em (Skolem)}
-The Beatty sequences 
-\[ \sB^{+}(u) \bigcap \sB^{+}(v)= \emptyset \]
-are disjoint
- if and only if $u,v$ are irrational and satisfy 
-\[
- \frac{m_1}{u} + \frac{m_2}{v} =1
- \]
-for some integers $m_1, m_2 \ge 1$.
-\end{thm}
- 
- Skolem's basic arguments, supplemented by Bang \cite[Sect. 5]{Ban57}, apply to
-our case, where we replace $\sB^{+}(u)$ with the reduced Beatty sequence $\sB_0(u)$. 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Sect. 6.2 Intersecting REDUCED BEATTY SEQUENCES
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Intersections of Reduced Beatty sequences: Torus subgroup criterion}\label{sec:torus-subgp}
-The following result classifies when the intersection of two reduced Beatty sequences
-is empty.
-
- 
- %%%%%%%%%%%%%%%%%%%%
-% Theorem 6.2
-%%%%%%%%%%%%%%%%%%%
-\begin{thm} \label{thm:49a} 
- (1) For rational or irrational numbers $u, v>1$, 
- if there are integers $m_1, m_2 \ge 0$ such that
- $$
- \frac{m_1}{u} + \frac{m_2}{v} =1,
- $$
-then the intersection of reduced Beatty sequences 
-$$\sB_0(u) \bigcap \sB_0(v)= \emptyset.$$
-
-(2) Conversely, if $\sB_0(u) \bigcap \sB_0(v)= \emptyset$ with $u, v>1$ 
-  then $(u, v)$ must
-satisfy an equation of the  form 
-$ \frac{m_1}{u} + \frac{m_2}{v} =1,$
-for some integers $m_1,m_2 \ge 0$ (not both zero).  
- \end{thm}
-
-Our proof uses ideas from Skolem's arguments which apply
-in the case where at least one of   $u$ or $v$ is irrational.  However
-when both $u$ and $v$ are rational then the conclusion of
-Theorem \ref{thm:49a}  differs from that of Theorem \ref{thm:47}. 
-This case requires a completely new argument; in Section \ref{sec:64} we relate this
-case to the $2$-dimensional Diophantine problem of Frobenius.
-%We leave open the problem of existence
-%of exceptional solutions not on any of these curves.  
-%and requires additional ideas. [CURRENTLY INCOMPLETE] 
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Sect. 6.3 PROOF OF THEOREM 6.2
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Orbits on a torus }\label{sec:44}
-
-The proof of Theorem \ref{thm:49a} is based on a 
-%Lemma \ref{lem:48} applies whether $\frac{1}{u}$ and $\frac{1}{v}$ are irrational or rational.
-a study  the $\ZZ$-orbit $\sO(\bv)$
-of the vector $\bv := (\frac{1}{u}, \frac{1}{v})$ 
-%under multiplcation by integers
- on the 
-torus $\RR^2/\ZZ^2$. This torus is defined using  the $(X, Y)$-coordinate system, since
-$X = \alpha = \frac{1}{u}$ and $Y= \frac{\alpha}{\beta} = \frac{1}{v}$.
-This two-sided orbit  is
-$$
-\sO(\bv) := \{ n \bv: \, n \in \ZZ\} \subset \TT^2= \RR^2 / \ZZ^2.
-$$
-Its 
-structure depends the dimension of
-the $\QQ$-vector space spanned by $[1, \frac{1}{u}, \frac{1}{v}]$,
-which can be $1, 2$ or $3$.
-We treat these cases separately. The first two cases follow approach  of Skolem,
- while the third case (dimension $1$) requires new arguments which make
- a  connection with
- the $2$-dimensional Frobenius problem.
-%The problem of Beatty concerns a case
-%where both $u$ and $v$ are irrational. 
-
-%%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 6.3.1
-%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Case 1. Dimension 3 vector space}\label{sec:431}
-
-In the dimension $3$ case both coordinates $u$, $v$ are irrational.
- %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.3
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:49}
- For $u, v >1$ suppose that $[1, \frac{1}{u}, \frac{1}{v}]$ in $\RR$ are linearly 
- independent over $\QQ$, so span a vector space of dimension $3$ over $\QQ$. 
- In this case the orbit $\sO(\bv)$ is dense on $\TT^2$, and  
- $$ 
- \sB_0(u) \bigcap \sB_0(v) \ne \emptyset.
-  $$
-\end{lem}
-
-\begin{proof}
-It is well known that in this case the $\ZZ$-orbit of $(\frac{1}{u}, \frac{1}{v})$
-on the torus $\RR/\ZZ$ is dense. In consequence there are infinitely many
-orbit points in the open rectangular region $(0, \frac{1}{u}) \times (0, \frac{1}{v})$. Now
-Lemma \ref{lem:48} applies to show nonempty intersection.  
-\end{proof}
-
-
-%%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 6.3.2
-%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Case 2. Dimension 2 vector space}\label{sec:432}
-
-In the dimension 2 case at least one coordinate $u$ or $v$ must be irrational.
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.4
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:410}
- For $u, v >1$ suppose that the numbers $[1, \frac{1}{u}, \frac{1}{v}]$  in $\RR$ have dimension $2$
- as a vector space over $\QQ$. In this case the orbit is dense on a finite set of lines all having the 
- same rational slope on $\RR^2/\ZZ^2$.  The condition
- $ \sB_0(u) \bigcap \sB_0(v) =  \emptyset$
- holds if and only if there are nonnegative integers $m_1,  m_2$, with at least one positive,  such that
- $$
- \frac{m_1}{u} + \frac{m_2}{v} =1.
- $$
-\end{lem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REmark 4.13 REMOVED REMARK-PUT IT BEFORE THE LEMMA.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{rmk}\label{rmk:412}
-%In the dimension 2 case at least one of $u$ or $v$ must be irrational.
-%\end{rmk}
-\begin{proof} 
-By hypothesis there is a linear dependence relation over $\QQ$,
-which can be written
-$$
-  \frac{m_1}{u} + \frac{m_2}{v}= m_3,
-$$
-for integers $m_1, m_2, m_3$. Without loss of generality
-we may suppose  at  least one of $m_1, m_2 $ is positive. The lemma asserts
-there is  a restriction 
-on the form of this linear relation: both $m_1, m_2$ are nonnegative,
-with at least  one of them positive,  and $m_3=1$.
-
-
-
-In this case the orbit of $\bv=(\frac{1}{u}, \frac{1}{v})$ lies on the set
-$$
-S_{m_1, m_2} :=  \{ (x, y) \in \RR^2/\ZZ^2 :  m_1 x + m_2 y  \equiv 0 \, (\bmod \, 1).\}
-  $$
- This set viewed in $[0,1]^2 \subset \RR^2$ is a finite collection of line segments 
-having the same rational slope. 
-%Treating first the case  $k \ell \ne 0$, we have 
-Since at  least one of $u, v$ is
-irrational,  the orbit $\sO(\bv) = \{ n \bv: \, n \in \ZZ\}$ 
-can be shown to be  dense in  $S_{m_1, m_2}$,
-the projection 
-to $\TT^2$ of the line segments above.  [ADD MORE DETAILS?]
-
-Using the criterion of Lemma \ref{lem:48} (1)  the disjointness condition is equivalent
-to none of 
-%the projections of 
-the lines $m_1x+ m_2 y =n$, for all  $n \in \ZZ$, crossing the open 
-set
-\begin{equation}\label{box}
-\{ (x,y) : 0 < x < \frac{1}{u}, \, 0 < y < \frac{1}{v} \}.
-\end{equation}
-If we had  integers $m_1, m_2$ of strictly opposite sign (meaning  $ m_1 m_2 <0$), then the line
-$m_1 x +  m_2 y =0$ will intersect the interior of this region, since it exits from the point $(0,0)$
-into the first quadrant. We then  obtain points where the criterion (i)
-of Lemma \ref{lem:48} implies $\sB_0(u) \bigcap \sB_0(v) \ne \emptyset$, whence
-\eqref{ineq} cannot be satisfied. See Figure \ref{fig_torus1}.
-Thus necessarily  both $m_1 \ge 0$ and $m_2 \ge 0$.
-
-\begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}[scale=4]
-  \draw[-] (0,0) -- (1,0);
-  \draw[-] (0,0) -- (0,1);
-  \draw[dotted] (1,0) -- (1,1);
-  \draw[dotted] (0,1) -- (1,1);
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x});
-  \draw[domain=0:1/3,smooth,variable=\x, blue] plot ({\x},{3/4*\x+3/4});
-  \draw[domain=1/3:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x-1/4});
-  \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/2});
-  \draw[domain=2/3:1,smooth,variable=\x, blue]  plot ({\x},{3/4*\x-1/2});
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/4});
- \end{tikzpicture}
-\end{center}
-\caption{Solutions to $3x-4y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
-\end{figure} \label{fig_torus1}
-
-
-We first treat the  the cases where both $m_1, m_2 \ge 1$. We  need
-to determine the conditions on $m_3$ such that  that no line
-segments of the configuration go inside the region \eqref{box}. 
-See Figure \ref{fig_torus2}.
-We must have $m_3 \ge 1$ to have strictly positive solutions.
-If  $m_3 \ge 2$ we find that some  line segment  of $S_{m_1, m_2}$ 
-extends strictly inside the region \eqref{box}. Now Lemma \ref{lem:48} (ii) implies
-that for $m_3\ge 2$ we have  $\sB_0(u) \bigcap \sB_0(v) \ne \emptyset$,
-ruling this possibility out.
-In the remaining case  $m_3=1$, 
-all line segments outside the  open region \eqref{box},
-hence $\sB_0(u) \bigcap \sB_0(v) = \emptyset$
-by Lemma \ref{lem:48}(1)  again.[ADD MORE DETAILS?]
-
-\begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}[scale=4]
-  \draw[-] (0,0) -- (1,0);
-  \draw[-] (0,0) -- (0,1);
-  \draw[dotted] (1,0) -- (1,1);
-  \draw[dotted] (0,1) -- (1,1);
-  \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({\x},{1-3/2*\x});
-  \draw[domain=2/3:1,smooth,variable=\x, blue] plot ({\x},{2-3/2*\x});
-  \draw[domain=0:1/3,smooth,variable=\x, blue] plot ({\x},{1/2-3/2*\x});
-  \draw[domain=1/3:1,smooth,variable=\x, blue] plot ({\x},{3/2-3/2*\x});
- \end{tikzpicture}
-\end{center}
-\caption{Solutions to $3x+2y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
-\end{figure} \label{fig_torus2}
-
-
-
-
-It remains to treat cases where  one of $m_1, m_2=0$. These cases
-are symmetric, so it suffices to give the argument for $m_1=0$.
-(See Figure \ref{fig_torus4} for an example.)
-In that case $m_2>0$
-and  $\frac{1}{v}= \frac{m_3}{m_2}$
-is rational, so the theorem hypotheses require that $u$ be irrational. The condition $v>1$ implies that necessary $1 \le m_3 < m_2$.
-We may suppose without loss of generality $\gcd(m_2, m_3)=1$.
-In this case the locus  $S_{0, m_2}$  in $\RR^2/\ZZ^2$ is a collection of horizontal line
-segments  $y \equiv \frac{j}{m_2} \, (\bmod \, 1)$ 
-where $0< j< m_2$ with $\gcd(j, m_2)=1$, and $0 \le x \le 1$.
-The orbit is dense on these horizontal lines. We 
-aim to apply the criterion of Lemma \ref{lem:48} (ii), so need  to know when any of these lines enter
-the region \eqref{box}, $0\le x \le \frac{1}{u}, \, 0 \le y \le \frac{1}{v}$. 
-This condition 
-%is entirely determined by the $y$-coordinate, and 
-requires that $\frac{m_3}{m_2}$
-be minimal among all the $\frac{j}{m_2}$ with $0< j< m_2$ and $\gcd(j, m_2)=1$.
-This requirement forces $m_3=1$. Indeed if $m_3=1$ then $v= \frac{m_2}{m_3} = m_2 \ge 1$
-is an integer, so $\sB_0(v) = \emptyset$ and $\sB_0(u)\cap \sB_0(v) = \emptyset.$
-(This case corresponds
-to case (i-a) of Theorem \ref{thm:main}.) 
-In the case $m_2=0$ a similar argument shows $m_3=1$ and 
-$u >1$ is an integer. (This case corresponds
-to case (i-b) of Theorem \ref{thm:main}.) 
-\end{proof} 
-
-\begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}[scale=4]
-  \draw[-] (0,0) -- (1,0);
-  \draw[-] (0,0) -- (0,1);
-  \draw[dotted] (1,0) -- (1,1);
-  \draw[dotted] (0,1) -- (1,1);
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{0});
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{1/4});
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{1/2});
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4});
- \end{tikzpicture}
-\end{center}
-\caption{Solutions to $4y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
-\end{figure} \label{fig_torus4}
-
-%%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 6.3.3
-%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Case 3: Dimension 1 vector space: rational solutions }\label{sec:443}
-
-
-We turn to the case  where $\dim_{\QQ} [1, u, v] =1$,
-which is the case where $u, v$ are both  rational.
-We start with some solutions that exist.
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.5
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:413}
- For $m_1, m_2 \ge 1$ all  rational points with $u, v >0$ on the rectangular hyperbola
- $$
- \frac{m_1}{u} + \frac{m_2}{v} =1
- $$
-satisfy $\sB_0(u) \bigcap \sB_0(v) = \emptyset$; such points necessarily have $u, v >1$.
-All points $(\alpha, \beta)$  in the first quadrant 
-such that  $(u, v) = (\frac{1}{\alpha}, \frac{\beta}{\alpha})$ 
-falls  on this hyperbola satisfy \eqref{ineq}.
-\end{lem}
-
-\begin{proof}
-In this case the orbit $\sO(\bv)$ is a finite set of points, and all
-these points lie on the set  $S_{m_1, m_2}$ inside $\RR/\ZZ$.
-The argument of Lemma \ref{lem:410} showed that $S_{m_1, m_2}$
-contains no points inside the open box \eqref{box}. Since the finite set
-lies inside $S_{m_1, m_2}$, we conclude from 
-the criterion of Lemma \ref{lem:48} that $\sB_0(u) \bigcap \sB_0(v) = \emptyset.$
-Now the criteria of Lemma \ref{lem:46} and Lemma \ref{lem:42} combine 
-to show that property \eqref{ineq} holds for $(\alpha, \beta)$. 
-\end{proof}
-
-Lemma \ref{lem:413} shows that  in Theorem \ref{thm:49a}
-there is no restriction to irrational points on the hyperbola, such as
- occurs  in ``Beatty's Theorem" (Theorem \ref{thm:44} ).
-
-It remains to analyze  the possibility that there are ``sporadic" rational points $u, v$
-satisfying $\sB_0(u) \bigcap \sB_0(v)= \emptyset$
- that do not lie on any hyperbola 
-$\frac{m_1}{u} + \frac{m_2}{v} =1$
-or any half-line $\frac{m_1}{u}=1$ or $\frac{m_2}{v} =1$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.6
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:413bb}
-There are no ``sporadic" rational points in the first quadrant $u, v >0$
-whose associated points $(\alpha, \beta): = (\frac{1}{u}, \frac{v}{u}) $ in the first quadrant satisfy \eqref{ineq}.
- \end{lem}
-
-In the next subsection we will show there are no ``sporadic" rational solutions
-in the first quadrant. 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sub-section 6.4. Sporadic case
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sporadic Rational Solutions and the Diophantine Frobenius Problem }\label{sec:64}
-
-
-We now switch to  the $(X, Y)$-coordinates given by $X: = \frac{1}{u}= \alpha$ and
-$Y := \frac{1}{v} = \frac{\alpha}{\beta}$. 
-This is a birational change of variable
-$\alpha = X$ and $\beta =\frac{X}{Y}$.
-The condition $(X, Y) \in \QQ^2$ is equivalent to $(\alpha, \beta) \in \QQ^2$.
-We write $(X, Y) = (\frac{a}{t}, \frac{b}{t})$ where $t$ is a common denominator of 
-such a rational. That is $\gcd(a, b, t) =1$, however we may have $\gcd(a, b) >1$.
-The corresponding $(\alpha, \beta) = (\frac{a}{t}, \frac{a}{b})$, where the second
-fraction may not be in lowest terms. The corresponding $(u, v) = (\frac{t}{a}, \frac{t}{b})$. 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Proposition  6.7
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{prop} \label{prop:414aa}
-{ \rm (Sporadic Rational Solution Criterion-First Quadrant)}
-Set   $(X, Y)= (\frac{a}{t}, \frac{b}{t})$ with integers $a,b, t >0$ and $\gcd(a, b, t)=1$.
-Then $(\alpha, \beta)=(\frac{a}{t}, \frac{a}{b})$ is a sporadic rational solution to \eqref{ineq}  if and only if 
-the denominator $t > \max\{a, b\}$ and:
-\begin{enumerate}
-%\item[(i)]
-%$\gcd(a, b)=1$, 
-\item[(i)]
-%The denominator $t > \max\{a, b\}$, and 
-There is no integer $0 \le n < t$ such that
-$$
-0 < \{ \frac{na}{t}\} <  \{ \frac{a}{t}\} \quad \mbox{and} \quad  0 < \{ \frac{nb}{t}\} <  \{ \frac{b}{t}\}.
-$$
-
-\item[(ii)]
-%The denominator $t$ has the property that 
-The linear
-Diophantine equation 
-\begin{equation}\label{eq:Frob2}
-a X_1 + bX_2= t
-\end{equation}
-is unsolvable in non-negative integers $(X_1,X_2)$. 
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-%Condition (i) is used to make \eqref{ineq} hold, while condition (ii) 
-%excludes membership in the known one-parameter families of solutions $\frac{m_1}{u}+ \frac{m_2}{v} =1$. 
-
-We first show that criterion (i) is equivalent to \eqref{ineq} holding. 
-We have $X = \frac{1}{u}, Y= \frac{v}{u}$ with $u = \frac{1}{\alpha}= \frac{t}{a}$ and $v= \frac{\beta}{\alpha}= \frac{b}{a}$.
-Lemma \ref{lem:43a} shows that  $u>1$ and $v>1$ are necessary conditions for \eqref{ineq} to hold.
-They require $t >a$ and $t>b$, whence  $t > \max \{ a, b\}.$
-The condition \eqref{ineq} holds  if and only if
-$\sB_0(u) \bigcap \sB_0(v) = \emptyset$, combining Lemma \ref{lem:43a} and Lemma \ref{lem:46}(2).
-%Lemma 4.3 and Lemma 4.7(2)
-The criterion of Lemma \ref{lem:48}(1) shows that this intersection is empty if 
-and only if the criterion given in (i) above holds for all $n \in \ZZ$. The fractional parts 
-$\{ \frac{na}{t}\} $ and $\{ \frac{nb}{t}\}$ are periodic with period $t$ so it suffices to check there is no solution over one period.
-This establishes the equivalence. 
- 
-
-
-We next show criterion (ii) is equivalent to $(u, v)$ not falling on any one-parameter solution to \eqref{ineq}.
-By Proposition \ref{prop:31} and the discussion after its statement,
-the  one-parameter solutions are  given by $\frac{m_1}{u} + \frac{m_2}{v} =1$
-for any integer $m_1, m_2 \ge 0$ with at least one $m_i$ nonzero.  The condition for $(u, v) = (\frac{t}{a}, \frac{t}{b})$ 
- falling on such a curve 
-is  $m_1 \frac{a}{t}  + m_2 \frac{b}{t}= 1$, which on clearing denominators becomes 
- $m_1 a + m_2 b= t$. This condition is easily seen to be equivalent to the equation 
-$$
-aX_1 + bX_2 = t,
-$$
-having no solution in non-negative integers $(X_1, X_2)$.
-%The case $(m_1, m_2)=(0,0)$ is inconsistent
-\end{proof}
-
-
-
-
-
-
-We use Proposition \ref{prop:414aa} to  exclude  sporadic rational solutions having
-$\gcd(a, b) >1$.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.7
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:415}
-Suppose we are given  positive integers $(a, b, t)$ with $\gcd (a,b, t) =1$. 
-Set  $\frac{1}{u} = \frac{a}{t}, \frac{1}{v} = \frac{b}{t}$, with $\gcd(a, b, t)=1$, and  suppose
-that $0< \frac{1}{u}<1$ and $0< \frac{1}{v} < 1$, i.e. $t > \max\{a, b\}$.
-Then the condition $\gcd(a, b) >1$ implies that there exists a positive integer $1 \le n< t$ such that
-$$
-0 <  \{ \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v}.
-$$
-Thus $(\alpha, \beta) = (\frac{a}{t}, \frac{a}{b})$ is not a sporadic rational solution of \eqref{ineq}.
- \end{lem}
-
-\begin{proof} 
-We look at the orbit of $\bv  = (X, Y) :=(\frac{a}{t}, \frac{b}{t}) = (\frac{1}{u}, \frac{1}{v} )$ on the torus $\RR^2/\ZZ^2$.
-We consider the line segment  $\sL := \{ (\frac{a}{t} \lambda, \frac{b}{t} \lambda): \, 0 \le  \lambda \le t \}$
-in $\RR^2$, which connects the lattice point $(0,0)$ to $(a, b)$. If $\gcd(a, b) = r>1$ then
-the line segment hits $r-1$ interior lattice points  $\lambda= \frac{j}{r}$, $1\le  j \le r-1.$ 
-By hypothesis $\gcd (r, t)=1$, and the condition $\gcd(a, b)\ge 2$ and $t > \max(a, b)$
-implies $t \ge 3$.
-We study the projection
-modulo one of this line segment $\sL$ into the unit square, which will be a set of line segments, 
-and we note that  $\sL$ traces each of these  line segments $r$ times. 
-We choose $n := \lceil \frac{t}{r} \rceil$. Then $2 \le n < t$
-since $r \ge 2$ and $t \ge 3$, and $\gcd(t, r) =1$ gives
-$0 < n - \frac{t}{r} <1$. Then we have
-$$
- n(\frac{a}{t}) = \frac{a}{r} + (n- \frac{t}{r}) \frac{a}{t} \equiv (n- \frac{t}{r}) \frac{a}{t} \, (\bmod \, 1).
-$$
-Since $t > a$ it  follows that $0 < \{ \frac{na}{t} \} < \frac{a}{t}$.
-By similar reasoning we obtain $0 < \{ \frac{nb}{t} \} < \frac{b}{t}$.
-Now $(\alpha, \beta)$ is not a sporadic rational solution to \eqref{ineq} since Proposition \ref{prop:414aa} (i)
-does not hold. 
-\end{proof}
-
-%This lemma together with Lemma \ref{lem:48} implies that any sporadic solution $(a, b, t)$
-%must satisfy $\gcd(a, b)=1$. 
-
-%Under the extra condition $\gcd(a. b)=1$   
-%linear Diophantine equation \eqref{Frob-eqn}.
-%We  have now arrived at a connection with the {\em linear Diophantine problem of Frobenius}. 
-%The  {\em Diophantine problem of Frobenius} 
-%see  Ram\'{i}rez Alfons\'{i}n \cite{RA05}. 
-%Proposition \ref{prop:414aa} (ii) when combined with Lemma \ref{lem:415} connects  with the linear Diophantine equation of Frobenius
-%in the case $n=2$.
-%which has an  especially nice structure absent for $n \ge 3$.
-The remaining problem relates  to the linear Diophantine equation of Frobenius, for which see
-the book of   Ram\'{i}rez Alfons\'{i}n \cite{RA05}.
-This general problem  is concerned with bounding above the largest positive  integer $t$ for which
-\begin{equation}\label{Frobenius-eqn}
-a_1 X_1 + a_2 X_2 + \cdots + a_n X_n = t
-\end{equation}
-has no solution in nonnegative integers $(X_1, X_2, ..., X_n)$
-as a function of  positive integers $a_1, a_2, ... , a_n$ having $\gcd(a_1, a_2, ..., a_n) =1$,
-We encounter  the $n=2$ case here.
-It is well known  that when $\gcd(a, b)=1$  there are only
-finitely many nonnegative integers $t$ for which the linear Diophantine equation \eqref{eq:Frob2} is unsolvable in nonnegative
-integers $(X, Y)$, and  that the  largest such value is $t= ab -a -b$; this result goes back to J. J. Sylvester in 1882.
-Proposition \ref{prop:414aa} (ii)  specifies that  $t$  belongs to  the  {\em unsolvable Frobenius set} for the pair $(a, b)$,
-which we define as
-$$
-N^{\star}(a, b) := \{ t \ge 0: \, t \, \mbox{ is not representable as a nonnegative integer combination of}\,  a \, \mbox{ and} \, b.\}.
-$$
-% We call the set of
-%such unsolvable values $N^{\star}(a, b)$
-%the {\em unsolvable Frobenius set} for the pair $(a, b)$.
-  Sylvester (\cite{Sylvester:1882} \cite{Sylvester:1884})
- showed that  for  each $0\le t \le ab-a-b$  exactly one member $t^{*}$of the pair $\{ t, ab-a- b-t \}$ has $aX_1 + bX_2 =t^{*}$
-  solvable in nonnegative integers. Thus the unsolvable Frobenius set
-has cardinality $\frac{1}{2} (a-1)(b-1)$ (\cite[Theorem 5.1.1]{RA05}).
-
-We can now complete the proof that  there are no sporadic rational solutions. 
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 6.8
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:416}
-Let $a, b \ge 1$ be positive integers with  $(a, b) =1$.
-Suppose that $t\in N^{*}(a,b)$ with  $t>\max(a,b)$.
-% Then $(\frac{1}{u} ,\frac{1}{v}) = (\frac{a}{t}, \frac{b}{t})$ has corresponding 
-Then  $(\alpha, \beta) = (\frac{t}{a}, \frac{b}{a})$  is not a sporadic rational 
-solution to \eqref{ineq}. 
-\end{lem}
-
-\begin{proof}
-We will exclude $(\alpha, \beta)$ using  the criterion of Proposition \ref{prop:414aa}.
-%$(\frac{1}{u} ,\frac{1}{v}) = (\frac{a}{t}, \frac{b}{t})$
-It is a classical result that:\\
-
-{\bf Claim.} $ t \in N^{\ast}(a,b) $ if and only if
-\begin{equation}\label{frob-lin-comb}
-ab-t = na + mb \quad \text{ for some } \quad n,m\geq 1.
-\end{equation}
-
-To verify the claim, a well known solution to the problem of Sylvester, see \cite[pp. 103--105]{RA05}  shows that
-for $0 \le t \le ab-a-b$ one has
-\[
-  t \in N^{\ast}(a, b) \quad \mbox{ if and only if}\quad  ab-a -b -t \not\in N^{\ast}(a, b).
-\]
-The latter condition says that 
-$$
-ab-a-b-t= na+ mb \quad \mbox{with} \quad  m, n \ge 0,
-$$
-and it  is clearly equivalent to 
-$$
-ab-t= na+ mb \quad \mbox{with} \quad  m, n \ge 1.
-$$
-The claim follows. 
-
-
-
-Given such $t$, the choice of $n,m \ge 1$ is in fact unique, since $t>0$ implies
-\[ 
-na < na+mb < ab \quad\Rightarrow\quad 0< n < b,
-\]
-and a similar argument shows that
- $0<m < a$. 
- By assumption that $a,b$ are coprime, the only way for $na + mb = n'a + m'b$ is to have  $n-n' \in b\ZZ$ and $m-m'\in a\ZZ$, 
- so the given inequalities uniquely determine $n$ and $m$ as claimed.
-
-Reducing (\ref{frob-lin-comb}) modulo $t$, we have
-%\begin{align*}
-$ 
-ab \equiv na + mb \,(\bmod\, t )
-$
-whence 
-$
-(b-n)a \equiv mb \, (\bmod \, t) 
-$
-and we deduce that 
- $$
- N_1: = \frac{b-n}{b} \equiv \frac{m}{a}  \, (\bmod \,t),
- $$
- %\end{align*}
-where the fractions are taken as  multiplicative inverses in $(\ZZ/t\ZZ)^\times$. Thus for 
-the vector $\bv =(\frac{a}{t}, \frac{b}{t})$
-viewed in $\RR^2/\ZZ^2$, 
-\[ 
-N_1 \bv = N_1(\frac{a}{t},\frac{b}{t}) = (\frac{N_1a}{t}, \frac{N_1b}{t}) \equiv  (\frac{m}{t}, \frac{b-n}{t}) \, (\bmod \, \RR^2/\ZZ^2).
-\]
-Now we have, using $t > \max \{ a, b\}$, 
-\[ 
-0< \{\frac{N_1a}{t} \} = \frac{m}{t} < \frac{a}{t} < 1 \quad\text{and}\quad 0< \{\frac{N_1b}{t}\} = \frac{b-n}{t }< \frac{b}{t} <1,
-\]
- violates the fractional-part condition (i)  in Proposition \ref{prop:414aa}, so $(\frac{a}{t}, \frac{a}{b})$ is not a sporadic rational solution. 
-\end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%
-% Sub-section 6.5
-%%%%%%%%%%%%%%%%%%%%%
-\subsection{ {\bf Proof of Disjoint Intersection Theorem \ref{thm:49a}.}}\label{sec445}
-
-%The results above  suffice to establish Theorem \ref{thm:49a}.
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% Proof of Theorem 6.2
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{proof}[Proof of Theorem \ref{thm:49a}.]
-%Theorem \ref{thm:49a}  follows from  the results above.
-
-\begin{proof}
-(1) The already proved cases {\it (i-a)} and {\it (i-b)} show that all rational and irrational points
-on any of the curves 
-$\frac{m_1}{u} + \frac{m_2}{v} =1$  with $m_1=0$ or
-$m_2=0$  yield solutions to the inequality \eqref{ineq}. 
-Lemma  \ref{lem:410} shows that for all $m_1, m_2 \ge 1$ 
-those  points on  for the hyperbolas 
-having irrational coordinates yield solutions to \eqref{ineq}.
-Finally Lemma \ref{lem:413}  shows that for $m_1, m_2 \ge 1$ 
-all points with rational coordinates on these hyperbolas  
- yield solutions to \eqref{ineq}.
-
-(2) Lemma \ref{lem:49} rules out all points in the plane having 
-$\dim_{\QQ} [1, u, v]=3$ from giving any solutions $(\alpha, \beta)= (\frac{1}{u}, \frac{v}{u})$  to \eqref{ineq}.
-Lemma \ref{lem:410} shows that all points having $\dim_{\QQ} [1, u, v]=2$
-that satisfy \eqref{ineq} must lie on a hyperbola or straight line solution for
-some pair $m_1, m_2 \ge 0$. There remain the case of rational points,
-where $\dim_{\QQ} [1, u, v]=1$.
-Lemma \ref{lem:416} rules out all possible 
-rational solutions not on any of these curves.
-\end{proof} 
- % $\quad~~~~~~~~~~~~~~~~~~~~~ \Box$
-%\end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% SECT 6.6 Proof of Propostion  3.1 from Section 3\ref{prop:31}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Completion of first quadrant case of Theorem \ref{thm:main}}\label{sec:45}
-
-%We deduce Proposition \ref{prop:31}  combining the earlier results in this section.
-\begin{proof}[Proof of Proposition \ref{prop:31}]
-(1)  Lemma \ref{lem:42} establishes that \eqref{ineq} will hold  in the first quadrant case  if and only if $R_u^{\pm} \cap R_v^{\pm} = \emptyset$.
- Lemma \ref{lem:46} shows that this condition is equivalent to $\sB_0(u) \bigcap \sB_0(v) = \emptyset$.
-In consequence  Theorem \ref{thm:49a} (1)   establishes (1) of Proposition \ref{prop:31}.
-
-(2)  Lemma \ref{lem:43a} shows that if neither of $u$, $v$ is a positive integer,
-then $u>1$ and $v>1$ are necessary conditions for \eqref{ineq} to hold. 
-Now Theorem \ref{thm:49a} (2) applies to prove  (2) of Proposition \ref{prop:31}.
-%In particular, sporadic rational solutions associated to $(u, v)$ satisfy the hypothesis that neither of $u$, $v$ is a positive integer.
-%These conditions apply to sporadic rational solutions.
-%Theorem \ref{thm:main}
-%This proposition  has the stated form if Conjecture \ref{conj:416} in Case 3  is true.
-%Otherwise, if  there were sporadic rational solutions in Case 3 above,
-%then there would be an additional set  of sporadic
-%rational solutions to be included in Proposition \ref{prop:31} (1) and 
-%hence  an additional category of solutions (i-d) in the statement of  Theorem \ref{thm:main}.
-\end{proof}
-
-
- 
- 
- 
- 
- 
- 
- 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Section 7  Third quadrant; residual set criterion
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Residual set and modified Beatty sequence criteria: Third Quadrant} \label{sec:5}
-\setcounter{equation}{0}
-
-We now begin the analysis of  the third quadrant case, which parallels that for the first quadrant
-but is more complicated, having sporadic rational solutions.
 
 In this section $(\alpha, \beta)$  falls  in the open third quadrant $\alpha<0$ and  $\beta <0$.
 We  will work using  the coordinates  
@@ -3018,9 +2228,9 @@ additional sporadic rational solutions.
 \caption{Third quadrant solutions in the $(X',Y')$ coordinates}
 \end{figure} \label{fig_thirdquadrant_XY}
 %%%%%%%%%%%%%%%%%%%
-% SECTION 7.1 Third quadrant RESIDUAL  Set
+% SECTION 5.1 Third quadrant RESIDUAL  Set
 %%%%%%%%%%%%%%%%%%%%%
-\subsection{Third Quadrant Residual Sets} \label{sec51}
+\subsection{Residual Sets} \label{sec51}
 
 In terms of the new parameters $\uu= -\frac{1}{\beta}$ and $\vv= \frac{\alpha}{\beta}$, condition \eqref{neg-level-set}, which
 is equivalent to \eqref{ineq}, becomes 
@@ -3061,10 +2271,10 @@ with $\uu = -\frac{1}{\beta}$ and $\vv = \frac{\alpha}{\beta}$.
 The residual set $\widetilde{R}_\vv$ has a nice union-of-intervals characterization.
 
 %%%%%%%%%%%%%%%%%%%%%
-% Lemma 71 Characterizing the third quadrant residual set
+% Lemma 51 Characterizing the third quadrant residual set
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:51}
- For any $\vv>0$, the (third quadrant) residual set 
+ For any $\vv>0$,
 \[ 
  \widetilde{\R}_\vv = \bigcup_{n\in\ZZ} \big[\textstyle \floor{{\vv} n}, \vv n \big).
 \]
@@ -3103,13 +2313,13 @@ $\floor{{\vv} n} < \tround_1(x) = \floor{x}+1$, whence we obtain
 as required.
 \end{proof}
 
-We next introduce the {\em symmetrized (third quadrant) residual set}
+We next introduce the {\em symmetrized residual set}
 \[ 
 \widetilde{\R}^\pm_\vv := \widetilde{\R}_\vv\cup (-\widetilde{\R}_\vv).
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 7.2 Characterizing the Residual set
+% Lemma 5.2 Characterizing the Residual set
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:52}
 For $\uu, \vv>0$  the following conditions are equivalent.
@@ -3117,13 +2327,13 @@ For $\uu, \vv>0$  the following conditions are equivalent.
 \begin{enumerate}
 \item[(1)] The inequality \eqref{ineq} holds for negative parameters $(\alpha, \beta)$ 
 given by $\alpha= -\frac{\vv}{\uu}, \beta= -\frac{1}{\uu}.$ 
-\item[(2)]  The inequality 
-$\tround_{\vv}( x)  = \vv\floor{\frac{1}{\vv}x} + \vv \ge \floor{x}+1 = \tround_{1} (x)$ holds for all $x \in {\uu}\ZZ$.
-%$-{\uu} \floor{ -\frac{\uu}{\vv} n} -{\uu} \le -\frac{\uu}{\vv} \floor{ -{\uu} n} - \frac{\uu}{\vv}$ holds for all $n\in\ZZ$.
-\item[(3)] 
+\item[(2)]  The inequality $-{\uu} \floor{ -\frac{\uu}{\vv} n} -{\uu} \le -\frac{\uu}{\vv} \floor{ -{\uu} n} - \frac{\uu}{\vv}$ holds for all $n\in\ZZ$.
+%$ \frac{1}{\uu}\ceil{\uu n} -\frac{1}{\uu}\leq \frac{\vv}{\uu} \ceil{\frac{\uu}{\vv} n}- \frac{\vv}{\uu}$ holds for all $n \in\ZZ.$
+\item[(3)] $\frac{\uu}{\vv}\ZZ \bigcap \frac1{\vv}\widetilde{\R}_\vv = \emptyset$.
+\item[(4)] 
 %Let $B_v^{\pm} = B_v \bigcup (- B_v)$.  Then 
 $\uu\ZZ \bigcap \widetilde{\R}_\vv = \emptyset.$
-\item[(4)] 
+\item[(5)] 
 ${\uu} \ZZ \bigcap \widetilde{\R}_\vv^{\pm} = \emptyset.$
 \end{enumerate}
 \end{lem}
@@ -3132,14 +2342,11 @@ ${\uu} \ZZ \bigcap \widetilde{\R}_\vv^{\pm} = \emptyset.$
 We showed above  that (1) $\Leftrightarrow (2) \Leftrightarrow (3)$. 
 (It follows from  the discussion made around  \eqref{u-prime-v-0} and \eqref{u-prime-v-1}.)
 
-The equivalence (3) $\Leftrightarrow$ (4) follows because the lattice $\uu \ZZ$
+The equivalence (3) $\Leftrightarrow$ (4)  is obtained by a rescaling by ${\vv}$.
+The equivalence (4) $\Leftrightarrow$ (5) follows because the lattice $\uu \ZZ$
 is invariant under the reflection $\uu \mapsto -\uu$.
 %In (5) the parameters $\uu$, $\vv$ appear in  both sets in the intersection.)
 \end{proof}
-
-\begin{rmk}
-Note that the equivalent conditions given in the previous lemma do not include one that in symmetric under interchanging the coordinates $\uu$ and $\vv$. In fact this interchange does not preserve third-quadrant solutions in general (although it does preserve many of them), in contrast to what we saw in the first quadrant. This indicates an extra subtlety of the problem of classifying third quadrant solutions.
-\end{rmk}
 
 Lemma \ref{lem:51}  shows that 
 \begin{align*}
@@ -3162,14 +2369,13 @@ If $\vv\geq 1$, then the adjacent intervals in the union are disjoint and
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% 7.2 Comparison with  first quadrant case
+% 5.2 Connection to first quadrant
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparison  of  first quadrant and third quadrant residual sets }\label{sec52}
-We compare  the third-quadrant residual set criterion \eqref{wide-R-vbig}
-in Lemma \ref{lem:52} 
-with that for  first quadrant solutions,   \eqref{Rn-formula}, which states
-% for the residual sets from Section \ref{sec:4}, namely
+\subsection{Connection with First Quadrant}\label{sec52}
+To connect the criterion in Lemma \ref{lem:52} 
+with the analysis done in the case of first quadrant solutions, 
+we compare \eqref{wide-R-vbig}  with the formula \eqref{Rn-formula} for the residual sets from Section \ref{sec:4}, namely
   \[
  R_{v}^{\pm} = \bigcup_{x\in v\ZZ \smallsetminus \ZZ} \big(\floor{x},\ceil{x} \big) .
 \]
@@ -3177,35 +2383,24 @@ with that for  first quadrant solutions,   \eqref{Rn-formula}, which states
 %  \[ 
 %  \frac1{\vv}\widetilde{\R}^\pm_\vv = \bigcup_{x\in \frac1{\vv}\ZZ \smallsetminus\ZZ} \big(\big[ \floor{x}, \ceil{x}\big] \smallsetminus  x\big).
 %  \]
-They are quite similar; there  are only  two  differences, namely that the intervals in $\widetilde{R}^\pm_{\vv}$ now include both endpoints,  
-but are  punctured in the middle by the removal of a point in $\vv\ZZ$. 
-
-This similarity motivates introducing the {\em closed symmetrized residual set} 
-\[ 
-\bar{R}_v := \bigcup_{x\in v\ZZ \smallsetminus\ZZ} \big[ \floor{x},\ceil{x} \big] = \bigcup_{m\in \sB_0(v)} [m,m+1] 
-\]
+The only two  differences are that the intervals in $\widetilde{R}^\pm_{\vv}$ now include the endpoints,  but are  punctured in the middle by the removal of a point in $\vv\ZZ$. This motivates introducing the {\em closed (symmetrized) residual set} 
+\[ \bar{R}_v = \bigcup_{x\in v\ZZ \smallsetminus\ZZ} \big[ \floor{x},\ceil{x} \big] = \bigcup_{m\in \sB_0(v)} [m,m+1] \]
 that is the common closure of the residual sets in quadrants one and three. That is, we have the following lemma.
 
-%%%%%%%%%%%%%%%%
-% Lemma 7.3
-%%%%%%%%%%%%%%%%
 \begin{lem}\label{closed-residue-set}
 \begin{enumerate}
 \item The closure of the first-quadrant symmetrized residual set $R_v^\pm$ is $\bar{R}_v$, and the difference
 is a discrete set of points
 \[ \bar{R}_v \smallsetminus R_v^\pm \subset \ZZ .\]
-\item The closure of the third-quadrant symmetrized residual set $\widetilde{R}_{\vv}^\pm$ is $\bar{R}_{\vv}$, and the 
-set difference is a discrete set of points
+\item The closure of the third-quadrant symmetrized residual set $\widetilde{R}_{\vv}^\pm$ is $\bar{R}_{\vv}$, and the set difference is a discrete set of points
 \[ \bar{R}_{\vv} \smallsetminus \widetilde{R}_{\vv}^\pm \subset \vv\ZZ . \]
 \end{enumerate}
 \end{lem}
 \begin{proof}
 \begin{enumerate}
-\item To go from $\bar{R}_v$ to $R_v^\pm$, we simply remove the endpoints of all closed intervals to make them open intervals. 
-But the endpoints all have the form $\floor{x}$ or $\ceil{x}$, which are clearly in $\ZZ$.
+\item To go from $\bar{R}_v$ to $R_v^\pm$, we simply remove the endpoints of all closed intervals to make them open intervals. But the endpoints all have the form $\floor{x}$ or $\ceil{x}$, which are clearly in $\ZZ$.
 
-\item The punctures in the intervals making up $\widetilde{R}_{\vv}^\pm$ are located at $x\in \vv\ZZ\smallsetminus\ZZ$, 
-so the set difference is contained in $\vv\ZZ$.
+\item The punctures in the intervals making up $\widetilde{R}_{\vv}^\pm$ are located at $x\in \vv\ZZ\smallsetminus\ZZ$, so the set difference is contained in $\vv\ZZ$.
 \end{enumerate}
 \end{proof}
 
@@ -3240,10 +2435,6 @@ For $(\alpha,\beta)$ in the first quadrant, we had the equivalence of \eqref{ine
 % \[ \bar{R}_v = \bigcup_{x\in v\ZZ-\ZZ} \big[ \floor{x}, \ceil{x} \big],\]
 % which we call the {\em closed residual set} since it is the common closure of both $R_v^\pm$ and $v\widetilde{R}_{1/v}^\pm$. 
 We now relate the various empty-intersection conditions among residual sets that pertain to the main problem.
-
-%%%%%%%%%%%%%%%%
-% Lemma 7.4
-%%%%%%%%%%%%%%%%
 \begin{lem}\label{empty-intersections}
 \begin{enumerate}
 \item For any parameters $u,v>0$, if
@@ -3271,261 +2462,66 @@ If $v\geq 1$ then $ \bar{R}_v$ does not contain $0$ ({\em a fortiori}, it does n
 If $v\geq 1$ then the intersection $ u\ZZ\cap \bar{R}_v$ is empty because $\bar{R}_v$ does not contain $0$. If $0<v<1$, then $\widetilde{R}_{v}^\pm \subset \RR - v\ZZ$. Since $u/v$ is assumed irrational, $u\in \RR - v\ZZ$ so this contradicts our initial empty-intersection hypothesis.
 \end{enumerate}
 \end{proof}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 7.3 Beatty Sequences- part 2
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Connection with Beatty sequences: Third Quadrant Case }\label{sec:73}
-
-By Lemma \ref{lem:52} \eqref{ineq} is equivalent  to  ${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm} = \emptyset$.
- When $\uu \ge 1$ we  can  obtain a third quadrant criterion   in terms of the intersection of a full Beatty sequences $\sB(\uu)$
- with the   reduced Beatty sequences $\sB_0(\vv)$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 7.5 Beatty sequence classification 
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:53}
-(1) For ${\uu} \ge 1$ and  $\vv>1$, the 
-condition ${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm} = \emptyset$
-is equivalent to the condition
- \begin{equation}\label{third-q}
-\bigg( \sB({\uu}) \bigcap \sB_0({\vv})\bigg)  \smallsetminus  X_{\uu, \vv} = \emptyset ,
-\end{equation}
-in which the exceptional set  $X_{\uu,\vv}$ is defined by
-\[
-X_{\uu, \vv} := \{ \floor{ w } :  w \in {\uu} \ZZ \cap {\vv} \ZZ \}.
-\] 
-
-
-(2) If in addition $\frac{\uu}{\vv}$ is irrational then \eqref{third-q}
-%this condition 
-simplifies to
-\begin{equation} \label{third-q-2}
-\sB({\uu}) \bigcap \sB_0({\vv}) =\emptyset.
-\end{equation}
-
-(3) If in addition both $\frac{\uu}{\vv}$ and $\uu$  are irrational then \eqref{third-q} simplifies to 
-\begin{equation} \label{third-q-3}
-\sB_0({\uu}) \bigcap \sB_0({\vv}) =\emptyset.
-\end{equation}
-\end{lem}
-
-\begin{proof}
-(1) Suppose $\uu\ZZ\cap \widetilde{R}^\pm_\vv$ is nonempty and contains some point $n_1\uu$. Since $\vv>1$ the 
-residual set is a disjoint union of punctured intervals
-\[ \widetilde{R}^\pm_\vv = \bigcup_{x\in {\vv}\ZZ \smallsetminus\ZZ} \bigg(\big[ \floor{x}, \ceil{x}\big] \smallsetminus\{x\} \bigg) 
-=\bigg( \bigcup_{n\in \ZZ}\big[ \floor{n\vv}, \ceil{n\vv}\big] \bigg) \smallsetminus \vv\ZZ .\]
-Hence $n_1\uu\in \widetilde{R}^\pm_\vv$ implies  $n_1\uu \in [\floor{n_2\vv},\ceil{n_2\vv}]$  for a unique integer $n_2$, for which
-
-(i) $n_2\vv\not\in \ZZ$ so this interval has length one. 
-
-(ii) $n_1\uu \neq n_2\vv$  since $n_1\uu \not\in \vv\ZZ$.
-
-\noindent If $n_1\uu$ lies in the half-open interval $[\floor{n_2\vv},\ceil{n_2\vv})$, then we claim taking the floor $k := \floor{n_1\uu}$ produces an element of $ \big( \sB({\uu}) \cap \sB_0({\vv})\big)  \smallsetminus  X_{\uu, \vv}$. 
-Indeed it is clear that 
-\[ k = \floor{n_1\uu} = \floor{n_2\vv} \in \sB({\uu}) \bigcap \sB({\vv}) \]
-and since $n_2\vv$ is not integral, $k$ lies in the reduced Beatty set $\sB_0({\vv})$. Moreover $k= \floor{n_2\vv}$ does not lie in the exceptional set  $X_{\uu,\vv}$ since if $k= \floor{w}$ for some $w\in \uu\ZZ\cap\vv\ZZ$, then $w$ would be contained in the same unit interval as  both $n_1\uu $ and $ n_2\vv$ (distinct points), which  contradicts our assumption that $\uu,\vv>1$. 
-This proves the claim.
-
-If, on the other hand, $n_1\uu$ is equal to the upper endpoint $\ceil{n_2\vv}$ of our chosen interval then the above argument applied to $-n_1\uu \in [ -\ceil{n_2\vv}, -\floor{n_2\vv}) = [ \floor{-n_2\vv}, \ceil{-n_2\vv})$
-shows that $k' := \floor{-n_1\uu} =\floor{-n_2\vv}$ lies in $ \big( \sB({\uu}) \cap \sB_0({\vv})\big)  \smallsetminus  X_{\uu, \vv}$. 
-
-Conversely, suppose $ \big( \sB({\uu}) \cap \sB_0({\vv})\big)  \smallsetminus  X_{\uu, \vv}$ is nonempty and contains some integer $k$. Since $\uu>1$ and $k \in\sB({\uu})$, there is a unique $n_1\uu \in \uu\ZZ$ such that $k = \floor{n_1\uu}$; in fact $n_1\uu = r_{\uu}(k)$. Then we claim
-$ n_1\uu \in \uu\ZZ\cap \widetilde{R}^\pm_\vv $.
-Indeed, $k\in \sB_0({\vv})$ implies that $n_2\vv = r_{\vv}(k)$ is a non-integral point of the lattice $\vv\ZZ$, such that the closed interval $[\floor{n_2\vv},\ceil{n_2\vv}] = [k, k+1]$. Then our choice of $n_1$, $n_1\uu \in [k,k+1)$ lies in this interval as well. Finally $n_1\uu$ cannot be equal to the puncture $n_2\vv \in [k,k+1]$, since in that case $k = \floor{n_1\uu} = \floor{n_2\vv}$ lies in the exceptional set $X_{\uu,\vv}$ contradicting our hypothesis.
-
-
-
-%[NEEDS CHECKING RIGHT ENDPOINT PROBLEM]
-%% The discussion above showed $u\ZZ \bigcap \widetilde{R}_v^{\pm} = \emptyset$
-%% is equivalent to $\frac{u}{v}\ZZ \bigcap \frac{1}{v}\widetilde{R}_v^{\pm} = \emptyset$.
-%The set $\widetilde{R}_\vv^{\pm}$ is a union of punctured integer intervals by \eqref{wide-R}.
-%The point  ${\uu}n \in {\uu}\ZZ$ will fall in one such interval if and only if $\floor {\uu n }$
-%is a left endpoint of such an interval, or if $\uu n \in \ZZ$ is a right endpoint of such an interval.
-%(However if the latter case occurred then $\uu(-n)$ would be the left endpoint of another such interval.
-%Note that punctures can never be an integer points.) 
-%The condition ${\uu} \ge 1$ is imposed to insure there will be at
-%most one such point inside each unit interval (except when ${\uu} =1$ and they are the endpoints,
-%and can never be puncture points).
-%Such a point ${\uu}n$ will belong to the intersection
-%${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm}$
-%unless it coincides with  a puncture, described by   the set $X_{\uu,\vv}$.
-%Since the  set of all $\floor {\uu n }$ is $\sB({\uu} )$, we obtain  \eqref{third-q}.
-
-(2) If $\frac{\uu}{\vv}$ is irrational then the intersection $\uu\ZZ\cap\vv\ZZ = \{0\}$ is trivial so the exceptional set $X_{\uu,\vv} = \{ 0\}$.
-However $0$ is omitted from $\sB_0({\vv})$ by our assumption $\vv>1$, so we  obtain \eqref{third-q-2}.
-
-
-(3) If  ${\uu}$ is irrational then $\sB_0({\uu}) = \sB({\uu}) \smallsetminus \{ 0\},$
-and  we  may replace $\sB({\uu})$ with $\sB_0({\uu})$ in \eqref{third-q}
-in the intersection.
-Thus if both irrationality conditions hold we may additionally remove $X_{\uu, \vv}$ from
-the intersection, obtaining \eqref{third-q-3}.
-\end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% SEction 7.4 Intersections of  Beatty sequences
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Intersections of Beatty sequences: Torus subgroup criterion}\label{sec:74}
-
-The  criterion of Lemma \ref{lem:53} requires an analysis of \eqref{ineq} in the
-third quadrant  of the structure of the intersection of  a full Beatty sequence $\sB(\uu)$ with a reduced Beatty sequence $\sB_0(\vv)$. 
- The next lemma gives a formula for such an intersection.
-%of  a full Beatty sequence $\sB_0(v)$ with a reduced Beatty sequence $\sB(v)$, the latter case being needed for  the third quadrant case; 
-This parallels Lemma \ref{lem:48}.
- 
- %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 7.6 Beatty Sequence Intersection
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:beatty-intersection-third}
-{\rm (Intersection of full and reduced Beatty sequences)} 
-Let  $\uu, \vv >1$ be given. There holds 
-\begin{equation*}
-\sB(\uu) \bigcap \sB_0(\vv) =  \big\{ -n \in \ZZ: \,   0 \le \{  \frac{n}{\uu}\} < \frac{1}{\uu}  \quad \mbox{and} \quad 0 < \{ \frac{n}{\vv}\} < \frac{1}{\vv} \big\}.
-\end{equation*}
-\end{lem}
-
-\begin{proof} 
-The argument for $\sB(\uu) \bigcap \sB_0(\vv)$ is similar to that in Lemma \ref{lem:48}, except
-that  we start with 
-the non-strict inequality $0 \le x_1<1$ in $m_1\uu= -n+ x_1$, but we  still have
-$m_2 \vv= -n+ x_2$ with $0< x_2 <1$.
-\end{proof}
-
-\begin{lem}\label{lem:78}
-The ``exceptional set''
-\[ X_{u,v} := \{ \floor{x} : x\in (u\ZZ\cap v\ZZ) \,\} = \sB(\lcm(u,v)) \]
-satisfies
-\[ X_{u,v} = \big\{ -n\in\ZZ: \, (\{\frac{n}{u}\},\, \{ \frac{n}{v}\}) =\lambda(\frac{1}{u},\, \frac{1}{v})   \quad\mbox{for some }0\leq \lambda<1\big\}\]
-\end{lem}
- 
-\begin{proof} 
-Let $w=\lcm(u,v)$, so there are integers $m_1, m_2$ such that $w = m_1 u$ and $w=m_2 v$.
-Suppose $-n = \floor{mw} \in X_{u,v}$ where $m$ is an integer. Then
-\[ mm_1 u = mw = \floor{mw} + \{mw\} = -n + \{mw\},\]
-so after dividing by $u$ we have
-\[ mm_1 = -\frac{n}{u} + \frac{\{mw\}}{u} \equiv 0 \,(\bmod \, 1).\]
-Rearranging this equation gives the fractional part of $\frac n u$:
-\[ \{ \frac{n}{u} \} = \{mw\}\frac1u\]
-since $0\leq \{mw\}\frac1u < \frac1u < 1$. Similarly, we have
-\[ \{ \frac{n}{v} \} = \{mw\}\frac1v,\]
-so taking $\lambda = \{mw\} \in [0,1)$ gives one direction of the claim, that is
-\[ X_{u,v} \subseteq \big\{ -n\in\ZZ: \, (\{\frac{n}{u}\},\, \{ \frac{n}{v}\}) =\lambda(\frac{1}{u},\, \frac{1}{v})   \quad\mbox{for some }0\leq \lambda<1\big\}.\]
-
-The other direction follows from taking the same steps in reverse: given $n$ and $\lambda$ satisfying the specified conditions, $\frac n u = \floor{\frac n u} + \{ \frac n u\} = m_1 + \frac\lambda{u}$ so multiplying by $u$ gives $n = m_1 u + \lambda$. This implies $\lambda - n =-m_1u \in u\ZZ$, and the same reasoning gives $\lambda - n \in v\ZZ$. 
-Thus $\lambda-n \in u\ZZ\cap v\ZZ = w\ZZ$. Since $0\leq \lambda <1$, taking the floor gives
-\[ -n = \floor{\lambda-n} \in X_{u,v}\]
-as desired.
-\end{proof}
-
-The preceeding two lemmas may be combined to give a convenient criterion for when \eqref{ineq} is satisfied in the third quadrant. This criterion uses the new ``torus coordinates'' $X' = \frac{1}{\uu}$, $Y' = \frac{1}{\vv}$ analogous to the first quadrant.
-
-\begin{prop}\label{prop:torus-crit-third}
-{\rm (Torus subgroup criterion)} 
-For $\uu\geq 1$ and $\vv \geq 1$, the set
-\[ 
-\bigg( \sB({\uu}) \bigcap \sB_0({\vv})\bigg)  \smallsetminus  X_{\uu, \vv} 
- = \emptyset\]
-if and only if all integers  $n$ such that
-\begin{equation}
-0 \le  \{ nX'\} <  X' \quad \mbox{and} \quad  0 < \{ n Y'\} <   Y'.
-\end{equation}
-satisfy 
-\begin{equation}
-(\{ nX'\}, \, \{nY'\}) = \lambda (X',\, Y')\quad \text{for some }0\leq\lambda <1.
-\end{equation}
-\end{prop}
-\begin{proof}
-This follows directly from Lemmas \ref{lem:beatty-intersection-third} and \ref{lem:78}.
-\end{proof}
-
-As a consequence of Lemma \ref{lem:53} and Lemma \ref{lem:52}, 
-the conditions of the previous proposition are equivalent to the main inequality \eqref{ineq} for $\alpha$ and $\beta$, where
-  $(\uu, \vv) = (-\frac{1}{\beta}, \frac{\alpha}{\beta})$ 
-and $(X^{'}, Y^{'}) = (-{\beta}, \frac{\beta}{\alpha})$,
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  Section 8 Third Quadrant CASE 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Third Quadrant Analysis: Proposition \ref{prop:32}}
-
-We now complete the analysis of the third quadrant case in Theorem \ref{thm:main}, proving Proposition \ref{prop:32}
-in Section \ref{sec:84}. In this  case sporadic rational solutions do exist.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% 8.1 Case Analysis
+% 5.3  Case Analysis
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Case analysis for  third quadrant solutions}\label{sec52a}
-We recall that $\vv \geq 1$ is a necessary condition for 
+We recall from Section \ref{sec:rounding-3quad} that $\vv\geq 1$ 
+%(i.e. old $\vv \le 1$) 
+is a necessary condition for 
 \eqref{ineq} to hold 
- in the third quadrant case (see \eqref{necessary} in Section \ref{sec:rounding-3quad});  furthermore  \eqref{ineq} always holds
+ in the third quadrant case (see \eqref{necessary});  furthermore  \eqref{ineq} always holds
 for $\vv=1$ by case {\it (iii-a)} with $m_1=1$.
-It  therefore suffices to treat the case  $\vv>1$ in this section. 
+It  therefore suffices to treat the case  $\vv>1$. 
 %( old $0 < \vv<1$).
-
-We split the  analysis of criterion \eqref{intermediate} when $\vv>1$   splits into cases, 
-depending on whether $0 < {\uu} <1$ or ${\uu}\ge 1$. 
-This distinction is made because 
-%we can analyze sporadic rational solutions in the first case, and because
-solutions on hyperbolas are confined to  the second case  ${\uu}>1$,
- The case division we use is:
+The analysis of criterion \eqref{intermediate} when $\vv >1$   splits into cases, 
+depending on whether ${0 < \uu <1}$ or $\uu\ge 1$. 
+The case division we use is:
 \begin{enumerate}
 \item
-Case 1. $0 < {\uu} <1$; line segment and sporadic rational solutions (Sect. \ref{sec:53})
-\item
-Case 2. $ {\uu} \ge 1$  (Sect. \ref{sec:54} and \ref{sec:55})
+Case 1. $\uu/\vv$ irrational (Sect. \ref{sec:uv-irrational})
 \begin{enumerate}
 \item[(a)]
-$\frac{\uu}{\vv}$ is irrational. (Sect. \ref{sec:54})
-\begin{enumerate}
-\item[(i)]
-$\uu$ is irrational: hyperbola solutions (Sect. \ref{sec:541})
-\item[(ii)]
- $\uu$ is rational: no solutions  (Sect. \ref{sec:542})
-\end{enumerate}
+$\uu$ is irrational, $\uu/\vv$ is irrational.
 \item[(b)]
-$\frac{\uu}{\vv}$ is rational.  (Sect. \ref{sec:55})
+$\uu$ is rational, $\uu/\vv$ is irrational.
+\end{enumerate}
+\item Case 2. $\uu/\vv$ rational. (Sect. \ref{sec:uv-rational})
 \begin{enumerate}
-\item[(i)]
-one-parameter solutions, straight line segments  (Sect. \ref{sec:551})
-\item[(ii)]
-rational solutions on hyperbolas (Sect. \ref{sec:552})
-\item[(iii)]
-sporadic rational solutions  (Sect. \ref{sec:553})
+\item[(a)]
+$\uu$ is irrational, $\uu/\vv$ is rational.
+\item[(b)]
+$\uu$ is rational, $\uu/\vv$ is rational.
+\begin{enumerate}
+\item 
+Case 2.b.i. $0 < \uu <1$; line segment and sporadic rational solutions (Sect. \ref{sec:53})
+\item 
+Case 2.b.ii. $\uu \geq 1$, ...
 \end{enumerate}
-\end{enumerate}
-\end{enumerate}
-The case (2)(b)(iii) is not covered in   Proposition \ref{prop:32} and we 
-treat it further in Sect. \ref{sec:9}.
-We consider these possibilities in turn, in the next three subsections.
 
+\end{enumerate}
+\end{enumerate}
+%Solutions on hyperbolas are confined to  the region $\frac{u}{v} >1$.
+We consider these possibilities in the next three subsections.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% 8.2 Beatty Sequences- part 1
+% 5.4 empty intersections- part 1
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Case 1. $0 < {\uu} <1$}\label{sec:53}
+\subsubsection{Characterizing empty intersections: Case 2.b.ii. $0 < {\uu} <1$}\label{sec:53}
 
-We assume ${\vv} >1$,
-and treat the range $0 < {\uu} <1$.
+We assume ${\vv} >1$, and treat the range $0 < {\uu} <1$.
 %We assume throughout this subsection that $0< v<1$, so that  $\frac{1}{v} >1$.
 %In this subsection we treat the first case. 
-
 % or $\frac{u}{v}  >  1$.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.1.1/5.3 Beatty sequence  0< u/v <1
+% Lemma 5.3 Beatty sequence  0< u <1
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:53aa}
 For $0<\uu<1<\vv$, 
@@ -3533,13 +2529,11 @@ the condition
 $${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm} = \emptyset$$
 holds if and only if one of the following holds.
 \begin{enumerate}
-\item[(a)]   (Continuous family) For integer $m_1 \ge 1$ all  values $(\uu, \vv)$ with $\uu>0$ and 
-$\vv = {m_1}$.
+\item[(a)]   (Continuous family) $\vv=m_1$ for some integer $m_1 \ge 1$, and $\uu>0$ arbitrary
 %for some integer $m_1 \ge 1$. 
-\item[(b)] (Sporadic solutions) For integers $m_2 \ge 2$,   $r \ge 2$ and $j$ with $1\le j\le m_2-1$ and $j$ not a multiple of $r$,
-all points  $(\uu, \vv)$ with
-% := (\frac{1}{m_1},  \frac{r}{m_1 r-j})$
-$\uu= 1 - \frac{j}{m_2r}$ and  $\vv = m_2-\frac{j}{r}$ \end{enumerate}
+\item[(b)] (Sporadic solutions) $\uu= 1-\frac{j}{m_2r}$ and  $\vv=m_2- \frac{j}{r}$ 
+for integers $m_2 \ge 2$,   $r \ge 2$ , and $1\le j\le m_2-1$ with $j$ not a multiple of $r$ (or, with $(j,r)$ coprime).
+\end{enumerate}
 \end{lem}
 
 
@@ -3562,7 +2556,7 @@ fall at the puncture $\vv$.
 Thus we obtain the constraint ${\vv} = m_2 {\uu}$ for some integer $m_2$,
 whence  $\vv/\uu = {m_2}$; 
 necessarily   $m_2 \ge 2$ because ${\uu} < 1 < {\vv}$.
-
+%Thus all solutions not covered by (a) must satisfy the restriction on $\uu$ given in (b).
 
 The condition that for each $k \in \ZZ$ the interval $[ \floor{k\vv} ,\ceil{k\vv}]$  not contain
 two points in ${\uu}\ZZ$ is  equivalent to the condition that the two neighboring points  
@@ -3600,8 +2594,9 @@ the case (b) conditions then we obtain a disjoint intersection, by reversing the
 
 
 
+
 %%%%%%%%%%%%%%%
-% Remark 8.3 /5.4
+% Remark 5.4
 %%%%%%%%%%%%%%%%
 \begin{rmk}\label{rem:54}
 We express the two cases in Lemma \ref{lem:53aa} in terms of the $(\alpha, \beta)$ parameters.
@@ -3616,8 +2611,8 @@ but allow only a restricted range of $\alpha$ parameters.
 %%%%%%%%%%%%%%%%%%%
 \item[(2)]
 % In terms of the $(\alpha, \beta)$ paremeters, 
-Case (b) corresponds to   $\alpha =-m_2$ for integers $m_2 \ge 2$ 
-but has a discrete set of solutions $(\alpha, \beta) = (-m_2, - (\frac{m_2 r}{m_2 r -j}))$ with $r \ge 1$ and $1 \le j \le m_2 -1$, 
+Case (b) corresponds to   $\alpha =-m_1$ for integers $m_1 \ge 2$ 
+but has a discrete set of solutions $(\alpha, \beta) = (-m_1, - (\frac{m_1 r}{m_1 r -j}))$ with $r \ge 1$ and $1 \le j \le m_1-1$, 
 whence  $|\beta| >1$.
 The case (b) solutions are all sporadic rational solutions in the third quadrant. That is, they do not
 lie on any line segment specified in cases {\it (iii-a)} and {\it (iii-b)} or on any hyperbola given in case {\it (iii-c)}
@@ -3633,69 +2628,38 @@ with associated $(\alpha, \beta) = (-2, -\frac{4}{3})$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  Section 8.3 / formerly 5.5 Beatty Sequences- part 2
+% 5.5 empty intersections- part 2
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Case 2 (a).  $ \uu\ge 1$, $\frac{\uu}{\vv}$ irrational}\label{sec:54}
+\subsection{Characterizing empty intersections: Case 1. $\uu/\vv$ irrational}\label{sec:uv-irrational}
 
- 
-In this subsection we treat the case where the parameter ratio $\frac{\uu}{\vv}$ is irrational. 
-
- % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 8.3.1/formerly 5.5.1 u/v irrational case
+In this subsection we treat the cases where the parameter ratio $\uu/\vv$ is irrational. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 5.5.1 u/v irrational
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ Subcase 2 (a)(i). $\frac{\uu}{\vv}$ irrational, ${\uu}$ irrational}\label{sec:541}
+\subsubsection{Case 1(a). $\uu$ and $\uu/\vv$ irrational}\label{sec:both_irrational}
+By Lemma \ref{empty-intersections}, we have
+\[ u\ZZ\cap \widetilde{R}_{v}^\pm =\emptyset\quad\Leftrightarrow\quad u\ZZ\cap \bar{R}_v = \emptyset \quad\Leftrightarrow\quad u\ZZ\cap R_v^\pm=\emptyset.\]
+But this last condition was already studied / solved in the first quadrant case.
 
-We  treat the subcase  when $\uu \ge 1$ is irrational
-(which forces $\uu >1$.) 
+The solutions fall into three types: 
+\begin{enumerate}[(a)]
+\item {``horizontal line'' $\vv = m\geq 1$}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.3/ formerly .6 Empty Intersection
-%%%%%%%%%%%%%%%%%%%%%%
+\item {``vertical line'' $\uu = m\geq 1$}.
+\item {``Beatty hyperbola'' $1 = \frac{m_1}{\uu} + \frac{m_2}{\vv}$}. 
+
+\end{enumerate}
+
+The second type does not qualify because we assumed $\uu$ irrational, but the other solutions go through with appropriate restrictions on the parameter $\uu$. (If $\uu$ is irrational, the condition $\uu/\vv$ irrational will automatically be satisfied in the above solutions.) This proves the following lemma.
+
 \begin{lem}\label{lem:54}
-(1) For  $\uu, \vv$ satisfying $\uu, \vv \ge 1$,  
-such that $\uu$ and $\frac{\uu}{\vv}$ are both irrational, the condition
-$\uu \ZZ \cap  \widetilde{R}_{\vv}^{\pm} = \emptyset$ holds if and only if
-there are integers $m_1, m_2 \ge 1$ such that
-\begin{equation} \label{uv-frac}
- \frac{m_1}{\uu}+ \frac{m_2}{\vv}= 1.
-\end{equation}
-
-(2) All solutions to equation \eqref{uv-frac} such that  $\uu$ is  irrational,  also  have
-$\frac{\uu}{\vv}$  irrational, so have $\uu \ZZ \cap \widetilde{R}_{\vv}^{\pm} = \emptyset$.
+For $\uu,\vv>0$ such that both $\uu$ and $\uu/\vv$ are irrational, the condition $\uu\ZZ\cap \widetilde{R}^\pm_\vv = \emptyset$ holds if and only if there are integers $m_1\geq 0$ and $m_2 \geq 1$ such that
+\begin{equation}\label{uv-frac} 
+\frac{m_1}{\uu} + \frac{m_2}{\vv} = 1 .\end{equation}
 \end{lem}
-
-\begin{proof} 
-(1) Under these hypotheses  Lemma \ref{lem:53} (3)  yields an equivalence
-of $\uu \ZZ \cap   \widetilde{R}_{  \vv}^{\pm} = \emptyset$
-to the condition 
-$$\sB_0(\uu) \bigcap \sB_0( {\vv}) =\emptyset.$$
-We now may apply the criterion of Theorem \ref{thm:49a}
- to $\uu$, which is irrational,
-to obtain the criterion that for such points there  must exist  integers $m_1, m_2 \ge 0$ such that
-$$
-\frac{m_1}{\uu} + \frac{m_2}{\vv} =1.
-$$
-The case $m_1=0$ cannot occur because in that case $\vv=  {m_2}$ would be rational, and 
-$m_2=0$ cannot occur because $\uu = \frac{1}{m_1}$ would be rational. 
-Thus $m_1, m_2 \ge 1$.
-
-(2) Conversely, if for $m_1, m_2\ge 1$ 
-the equation has a solution with $\uu$  irrational, then we claim $\sB_0(\uu ) \bigcap \sB_0(\vv) =\emptyset$ will hold. 
-To see this, for $m_1, m_2 \ge 1$ the equation  
-%implies, first,  that $\vv$ is irrational. 
-can be rewritten as
-$$
-{m_1} + m_2\frac{\uu}{\vv} = \uu,
-$$
-which implies that $\frac{\uu}{\vv}$ is irrational since $\uu$ is irrational. 
-Now that both $\uu$ and $\frac{\uu}{\vv}$ are
-irrational, we have $\sB_0(\uu ) \bigcap \sB_0( {\vv}) =\emptyset$ equivalent to 
- $\uu\ZZ \cap \widetilde{R}_{\vv}^{\pm} = \emptyset$ by Lemma \ref{lem:53} (3).
-\end{proof}
-
 %%%%%%%%%%%
-%  Remark 8.4/formerly 5.7
+%  Remark 5.7
 %%%%%%%%%%%%%%%%%
 \begin{rmk} 
 Changing variables using $\uu= -\frac{1}{\beta}$ and $\vv= \frac{\alpha}{\beta}$
@@ -3705,121 +2669,383 @@ Changing variables using $\uu= -\frac{1}{\beta}$ and $\vv= \frac{\alpha}{\beta}$
 %Multiplying by $- \beta $ and rearranging
 %%%%%%%%%%%%%%%%%%%%%%%%% 
 and simplifying yields the rectangular hyperbola 
-$$m_1 \alpha \beta  +\alpha= m_2 \beta.$$
+$$m_1 \alpha \beta  +\alpha= m_2 \beta$$
+if $m_1\neq 0$, and yields the diagonal line
+$ \alpha = m_2 \beta $
+if $m_1=0$.
 Thus Lemma \ref{lem:54} establishes the irrational part of
- case {\it (iii-c)} of Theorem \ref{thm:main}.
+ cases {\it (iii-a)}, {\it (iii-c)} of Theorem \ref{thm:main}.
 \end{rmk}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 8.3.2/formerly 5.5.2 u irrational, u/v rational case
+% Sub-sub-section 5.5.2 u/v irrational, u rational case
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Subcase 2 (a) (ii). $\frac{\uu}{\vv}$ irrational, $\uu$ rational}\label{sec:542}
-
+\subsubsection{Case 1(b). $\uu$ rational, $\uu/\vv$ irrational} 
 We show there  are no solutions in this subcase.
 
- %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.5/ formerly 58
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:57}
-If  $\uu, \vv$ satisfy ${\vv}>1, \uu \ge 1$, such that
- $\frac{\uu}{\vv}$ is irrational and $\uu$ is rational, then
-  $\uu\ZZ \bigcap  \widetilde{R}_\vv^{\pm} \ne \emptyset.$
+By Lemma \ref{empty-intersections} we have
+\[ \big( u\ZZ\cap \widetilde{R}_{v}^\pm =\emptyset \quad\Leftrightarrow\quad u\ZZ\cap \bar{R}_v = \emptyset \big) \quad\Rightarrow\quad  u\ZZ\cap R_v^\pm=\emptyset.\]
+We already solved the right-side condition in the first quadrant case. Since $u\ZZ\cap R_v^\pm=\emptyset$ is a necessary condition for $u\ZZ\cap \widetilde{R}_{v}^\pm =\emptyset$ to hold, (but not sufficient) it suffices to check the cases we found previously.
+
+\begin{enumerate}[(a)]
+\item \underline{``horizontal line'' $\vv = m\geq 1$}. In this case $\vv\ZZ\subset \ZZ$, so 
+\[ \widetilde{R}_{\vv}^\pm = \bigcup_{x\in \vv\ZZ \smallsetminus \ZZ} (-) = \bigcup_{x\in\emptyset} (-) =\emptyset\]
+and the condition holds.
+However, $v_2\in\ZZ$ violates our assumption that $u_2$ is rational and $u_2/v_2$ is irrational, so this does not actually happen in this subcase.
+
+\item \underline{``vertical line'' $\uu = m\geq 1$}.
+If $\uu$ is an integer, then the condition
+\[ \uu\ZZ\cap \widetilde{R}_{\vv}^\pm = \uu\ZZ\cap \bigg(\bigcup_{n\in \sB_0(\vv)} [n, n+1] \smallsetminus r_{\vv}(n) \bigg) =\emptyset\]
+implies that all $n\in \sB_0(\vv)$ satisfy $n \not\equiv 0, -1$ modulo $\uu$. But since $\vv$ is irrational, $\vv\ZZ/\uu\ZZ$ is in fact dense in $\RR/\uu\ZZ$, so this condition fails.
+
+\item \underline{``Beatty hyperbola'' $1 = m_1/\uu + m_2/\vv$}. 
+If $\uu$ is rational, then the above relation implies that $\vv$ is also rational. But then $\uu/\vv$ is rational, contradicting our assumption that $\uu/\vv$ is irrational. So this case does not happen here.
+
+% we have that the reduced Beatty sequences are disjoint $\sB_0(u_2)\cap\sB_0(v_2) = \emptyset$. In terms of first-quadrant residual sets $R_v^\pm = \cup_{n\in \sB_0(v)} (n, n+1)$, this means
+% \[R_{u_2}^\pm \cap R_{v_2}^\pm = \emptyset \]
+% are disjoint. But given two disjoint open sets, they will remain disjoint after taking the closure of {\em one} of the two sets. So
+% \[ R_{u_2}^\pm \cap (R_{v_2}^\pm)^{cl} = R_{u_2}^\pm \cap \bar{R}_{v_2} =\emptyset.\]
+\end{enumerate}
+Thus there are no solutions in this subcase, as claimed.
+
+\begin{lem}\label{lem:55}
+For $\uu,\vv>0$ such that $\uu$ is rational and $\uu/\vv$ is irrational, the condition $\uu\ZZ\cap \widetilde{R}^\pm_\vv = \emptyset$ never holds.
 \end{lem}
-
-\begin{proof}
-Since $\frac{\uu}{\vv}$ is irrational, 
- Lemma \ref{lem:53} (2) applies to show  that empty
- intersection is equivalent 
-to $\sB(\uu) \bigcap \sB_0({\vv}) =\emptyset.$
-Now ${\uu} = \frac{r}{s}$ is rational, hence $ \sB(r) \subseteq \sB(\uu)$
-and $\sB(r) = r\ZZ$  is an infinite arithmetic progression. 
-To show $\sB(\uu) \bigcap \sB_0({\vv}) \ne \emptyset$
-it suffices to show $\sB(r ) \bigcap \sB_0( {\vv}) \ne \emptyset,$ i.e. 
- that $\sB_0( {\vv})$  
-contains a nonzero  element $ \floor{ {k}{\vv} } $ divisible by $r$.
-The hypothesis that $\frac{\uu}{\vv}$ is irrational and $\uu$ is
-rational  implies that $\theta := {\vv} $ is irrational.
-More generally, for any irrational $\theta >1$, there is some $\floor{ n \theta }$
-that is divisible by any fixed integer $r$. For any  Diophantine approximation $\frac{p}{q}$ with 
-$0 < \theta - \frac{p}{q}   \le \frac{1}{q^2}$ we have $jp \leq \floor{ j q \theta } \leq  jp + \floor{\frac{j}{q}}$ so $\floor{ j q \theta } =  jp$ for $1\le j \le q-1$.
-Finding a large enough approximation, with $q > r+1$ we may choose $j=r$
-and get the result. It follows that the intersection is nonempty; in fact it is infinite.
-\end{proof}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Sect. 8.4/ formerly 5.6 EMPTY INTERSECTION: $u/v \ge 1$,  $u% rational
+% Sect. 5.5 EMPTY INTERSECTION: $u/v \ge 1$,  $u% rational
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Case 2 (b):  $\uu \ge 1$: $\frac{\uu}{\vv}$ rational }\label{sec:55}
-
-We  suppose $\vv>1$ and  $\uu \ge 1$, and treat cases 
-where the parameter  ratio $\frac{\uu}{\vv}$
- is rational. (Equivalently, $\alpha$ is rational.) 
- We use the  criterion in Lemma \ref{lem:53} (1), 
-noting that the  exceptional set $X_{\uu,\vv}$   is an infinite set whenever $\frac{\uu}{\vv}$ is rational. 
-
+\subsection{Characterizing empty intersections: Case 2. $\uu/\vv$ rational}\label{sec:uv-rational}
+In this subsection we treat the cases where the parameter ratio $\uu/\vv$ is rational. 
 
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
-% Sub-sub-section 8.4.1/ formerly 5.5.1
+% Sub-sub-section 5.5.1
 %%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Subcase 2 (b)(i).  $\frac{\uu}{\vv}$ rational, continuous parameter cases}\label{sec:551}
+\subsubsection{Case 2(a). $\uu$ irrational, $\uu/\vv$ rational}
 
-Certain  one-dimensional families for $\alpha= -\frac{m_1}{m_2}$ a fixed rational
-were found in the proof of case (iii-b) of Theorem \ref{thm:main}, which was given in Section \ref{sec:rounding-3quad}.
-For the reader's convenience we  restate that result in the $(\uu, \vv)$-coordinates, as follows, noting that $\frac{\uu}{\vv}= -\frac{1}{\alpha}= \frac{m_2}{m_1} $
-and ${\uu} = -\frac{1}{\beta} \geq  {m_2} $.
+By Lemma \ref{empty-intersections} we have
+\[ \big( u\ZZ\cap \bar{R}_v = \emptyset \quad\Leftrightarrow\quad u\ZZ\cap R_v^\pm=\emptyset\big) \quad\Rightarrow\quad u\ZZ\cap \widetilde{R}_{v}^\pm =\emptyset.\]
+In this case the ``known'' condition (quadrant 1) is sufficient, but not necessary. (Note that the ``vertical line'' case does not occur here since we have assumed $\uu$ is irrational.) Since $\uu/\vv$ is rational, the intersection $\uu\ZZ\cap \vv\ZZ$ is a nontrivial lattice. Let $W_2>0$ be the positive generator for this lattice so that
+\[ W_2\ZZ = \uu\ZZ\cap \vv\ZZ .\]
+(i.e. $W_2 = \lcm(\uu,\vv)$) This implies there are unique positive integers $M,N\geq 1$ such that $\uu = W_2/M$ and $\vv = W_2/N$, and $\uu/\vv = N/M$ expresses the ratio in reduced terms.
+Further, let $w_2 = \gcd(\uu/\vv)$ denote the positive generator of the sum
+\[ w_2\ZZ = \uu\ZZ + \vv\ZZ = \{ \uu n + \vv m : n,m\in \ZZ\} \]
+which satisfies $w_2 = \uu/N = \vv/M = W_2/MN$.
+
+Under the quotient map
+\[ \RR \to \RR/W_2\ZZ,\]
+both $\uu\ZZ$ and $\vv\ZZ$ have discrete image consisting of $N$ and $M$ points, respectively, but $\ZZ$ has dense image in the quotient. The image of $\widetilde{R}_{\vv}^\pm$ under this quotient consists of the union of half-open intervals of the form  $[a,b)=[ \floor{n\vv},n\vv)$ or $(c,d]=(n\vv, \ceil{n\vv}]$, where each open endpoint $b,c$ is in $\vv\ZZ$ and each closed endpoint $a,d$ is the closest integer in the appropriate direction. In particular, we have $|b-a|<1$ and $|d-c|<1$. 
+But for a fixed coset $b/(M\vv)\ZZ \in \vv\ZZ/(Mv_2)\ZZ$ corresponding to open endpoints, as we vary over representatives $b+M\vv n$ in $\vv\ZZ$ the closest integer in either direction will be arbitrarily close to this bound since the integers are dense in $\RR/(M\vv)\ZZ$. 
+Thus
+\[ \widetilde{R}_{\vv}^\pm / (MN\ww)\ZZ = \bigcup_{b \in\vv\ZZ/(M\vv)\ZZ} (b-1,b)\cup(b,b+1) \subset \RR/(MN\ww)\ZZ\]
+(where the endpoints are interpreted modulo $(MN\ww)\ZZ$.) 
+For the sets $\uu\ZZ ,\, \widetilde{R}_{\vv}^\pm$ to be disjoint, it is necessary and sufficient [ELABORATE?] that their images under the quotient map $\RR/(MN\ww)\ZZ$ are disjoint. If $\vv<1$, then this is not possible because the image of $\widetilde{R}_\vv$ will cover the whole quotient set. If $\vv\geq 1$, we claim it is necessary and sufficient that $\ww>1$. (really $\ww\geq1$, but $\ww$ must be irrational.) Indeed, by observing that $M,N$ are coprime, it is clear there must be some $a\in \uu\ZZ/(MN\ww)\ZZ$ and $b\in \vv\ZZ/(MNw_2)\ZZ$ such that $|a-b| = \ww$, so the restriction $\ww>1$ is necessary for the disjointness condition. It is clear this condition is sufficient. Thus the necessary and sufficient condition is
+\[ \ww>1 \quad\Leftrightarrow\quad \uu = M\ww > M,\, \vv = N\ww>N.\]
+
+This proves the following lemma.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.7/ formerly 5.9
+% Lemma 5.9
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}\label{lem:59}
-For each rational $\frac{\uu}{\vv}= \frac{m_2}{m_1}$  given in lowest terms, with $m_1, m_2 \ge 1$, 
-one has  $\uu\ZZ \bigcap  \widetilde{R}_\vv^{\pm} = \emptyset$
-for all points on the rational-slope line segment $(\uu,\frac{m_1}{m_2} \uu)$ having $ \uu \geq m_2$.
-Equivalently,  $\vv \geq m_1$ and $\uu = \frac{m_2}{m_1}\vv$. 
+For $\uu,\vv>0$ such that $\uu$ is irrational and $\uu/\vv = \frac{m_2}{m_3}$ is rational in lowest terms, the condition $\uu\ZZ \cap \widetilde{R}^\pm_\vv = \emptyset$ holds if and only if $\uu \geq m_2$ or equivalently $\vv\geq m_3$.
+
+(Since $\uu,\vv$ are irrational, the inequalities could be replaced with strict ones.)
+\end{lem}
+
+\begin{rmk}
+Certain  one-dimensional families for $\alpha= -\frac{m_2}{m_3}$ a fixed rational
+were found in the proof of case (iii-b) of Theorem \ref{thm:main}, which was given in Section \ref{sec:rounding-3quad}.
+For the reader's convenience we  restate that result in the $(\uu, \vv)$-coordinates, as follows, noting that $\vv/\uu= -{\alpha}= \frac{m_2}{m_3} $
+ and $\uu = -\frac1{\beta} \geq m_2 $ (and $\vv \geq m_1$).
+\end{rmk}
+
+\begin{lem}
+For each rational $\frac{m_2}{m_3}$  (given in lowest terms,) with $m_2, m_3 \ge 1$, 
+one has  ${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm} = \emptyset$
+for all $(\uu,\vv)$ on the rational-slope half-line $\vv = \frac{m_2}{m_3}\uu$ having $ \vv \geq {m_2}$, or equivalently ${\uu} \geq m_3 $. 
+\end{lem}
+
+\subsubsection{Case 2(b). $\uu$ and $\uu/\vv$ rational}
+Here the intersection $\uu\ZZ\cap \vv\ZZ$ is again a nontrivial lattice, so we may define $W, \ww$, $M$, and $N$ as above. 
+%Let $W = MN\ww$ denote the least common multiple $\lcm(\uu,\vv)$, so $W\ww = \uu\vv$.
+In this case when we apply the quotient map
+\[ \RR \to \RR/W\ZZ,\]
+all three lattices $\uu\ZZ$, $\vv\ZZ$, and $\ZZ$ have discrete image.
+The image $\ZZ/W\ZZ$ will have cardinality $D$, where $D$ is the numerator of the fraction
+\[ W = \frac{\uu\vv}{\ww} = \frac{D}{E} \in \QQ\]
+expressed in lowest terms. (since $\ZZ/(D/E)\ZZ \cong (E/D)\ZZ/\ZZ \cong (1/D)\ZZ/\ZZ$.)
+The points in $\ZZ/W \ZZ$ will be spaced evenly apart, with uniform spacing $\delta = W/D = 1/E$.
+
+By an analysis similar to the above, we deduce that
+\[ \widetilde{R}_{\vv}^\pm / W\ZZ = \bigcup_{a\in v_2\ZZ/(Mv_2)\ZZ} [a-(1-\delta_a^+),a)\cup(a,a+(1-\delta_a^-)]\]
+where 
+\[\delta_a^+ = \min\{|x-a| : x\in \frac1E\ZZ, x>a \} \quad\text{and}\quad \delta_a^- = \min\{|x-a| : x\in \frac1E\ZZ, x<a\}.\]
+
+If $a \in \frac1E\ZZ$, i.e. $Ea \in \ZZ$, then $\delta_a^\pm = \delta = 1/E$ as defined above. However, we may also have $a\not\in \frac1E\ZZ$ for some $a\in v_2\ZZ$, since $v_2 = \frac 1M W = \frac1M \cdot\frac DE$.
+
+Thus for the desired disjointness condition, it is necessary and sufficient that $w_2 > 1-\delta = 1-1/E $ where $E$ {\em depends on} the values of $w_2$, $u_2$, $v_2$. [CLASSIFICATION NOT COMPLETE]
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 5.11
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:511}
+For $\uu,\vv>0$ with $\uu$ and $\uu/\vv$ rational, the condition $\uu\ZZ \cap \widetilde{R}^\pm_\vv$ holds if either $(\uu,\vv)$ satisfies
+\[ \frac{m_1}{\uu} + \frac{m_2}{\vv} = 1\]
+for some integers  $m_1,m_2\geq 0$, or 
+\[ \vv = \frac{m_1}{m_2}\uu, \quad \uu\geq m_2,\, \vv\geq m_1\]
+for some integers $m_1,m_2\geq 1$, or
+\[ (\uu,\vv) = (m_2 - \frac{m_2 j}{m_1 r}, m_1 - \frac{j}{r})\]
+for some integers $m_1, m_2 \geq 1$, $r \geq 1$, $0 \leq j \leq (m_1-1)r$.
 \end{lem}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 7 Beatty Sequences, Torus subgps
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Connection with Beatty sequences: Torus subgroup criterion}\label{sec:torus-subgp}
 
-%For rational  
-For  rational  $\frac{\uu}{\vv}= \frac{m_2}{m_1}$ the
-next lemma rules out  any further  irrational points  $(\uu,\vv)$ not covered by
-Lemma \ref{lem:59}.
+%In this section we prove Proposition \ref{prop:31}.
+%We relate the hyperbola solutions to Beatty sequences in Section \ref{sec:43}.
+Our object in this section is to prove Proposition \ref{prop:31}, which is competed in Section \ref{sec:44}.
+The final section \ref{sec:45} presents a criterion for sporadic rational solutions. 
+It uses $(X,Y)$-coordinates, with $(X, Y) := (\frac{1}{u}, \frac{1}{v}) = (\alpha, \frac{\alpha}{\beta})$,
+and makes a connection with the two-dimensional Diophantine Frobenius Problem.
 
+The  criterion of Lemma \ref{lem:46} (2)  reduces the analysis of \eqref{ineq} in the
+first quadrant  to a disjointness property of reduced Beatty sequences. 
+ The next lemma characterizes the intersection of two reduced Beatty sequences,
+ and of a full Beatty sequence and a reduced Beatty sequence, the latter case being
+ needed for  the third quadrant case, to be treated in Section \ref{sec:5}.
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.8/ formerly 510
+% Lemma 7.1
 %%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:510}
-Suppose 
-that $\frac{\uu}{\vv} =  \frac{m_2}{m_1}$ is rational,  given in  lowest terms with $m_1, m_2 \ge 1$.
-Then each  irrational $\vv$ with $1<\vv < {m_1}$
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%they must fall in the specified ranges given in Lemma \ref{lem:59}, else  u/v <1.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-has $\uu\ZZ \bigcap  \widetilde{R}_\vv^{\pm} \ne \emptyset$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Thus
-% $\alpha = -\frac{1}{u}, \beta = -\frac{v}{u}$
-% does not satisfy   \eqref{ineq}.
+\begin{lem}\label{lem:48}
+ Let  $u, v >1$ be given. 
+ 
+ (1) There holds
+\begin{equation*}
+\sB_0(u) \bigcap \sB_0(v) =  \big\{-n \in \ZZ: \, 0< \{ \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v} \, \big\}.
+\end{equation*}
+
+(2)  In addition there holds
+ \begin{equation*}
+\sB(u) \bigcap \sB_0(v) =  \big\{ -n \in \ZZ: \,   0 \le \{  \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v} \big\}.
+\end{equation*}
+ \end{lem}
+ 
+ 
+\begin{proof} 
+Suppose that the integer $-n \in \sB_0(u) \bigcap \sB_0(v)$. That is, there
+exist integers $m_1,m_2$ with
+$m_1u = -n + x_1$ with $0< x_1 <1$ and $m_2 v= -n+ x_2$ with $0< x_2 <1$.
+Dividing the first equality by $u$ yields 
+$$-\frac{n}{u} + \frac{x_1}{u} \equiv 0 \, (\bmod \, 1).$$
+Since $0 < \frac{x_1}{u} < \frac{1}{u}<1$, the above equation implies  $ \{ \frac{n}{u} \}= \frac{x_1}{u}$ 
+so we obtain $ 0 < \{ \frac{n}{u} \}< \frac{1}{u}$. In the same fashion we obtain $0 <\{ \frac{n}{v} \}< \frac{1}{v}$
+from the second equality. This gives the equivalence in one direction.
+All the steps are reversible, so the converse implication  follows.
+
+The argument for $\sB(u) \bigcap \sB_0(v)$ is similar, except we start with 
+a non-strict inequality $0 \le x_1<1$ in $m_1u= -n+ x_1$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sect. 4.3 Intersecting REDUCED BEATTY SEQUENCES
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Intersections of  Reduced Beatty Sequences  }\label{sec:43}
+
+%There is a large literature studying  disjointness  properties of Beatty sequences
+%on the positive integers,  generalized  to allow  shifted Beatty sequences. 
+A disjointness  criterion for  Beatty
+sequences was found in 1957 by Th. Skolem \cite[Theorem 8]{Sko57},
+which is stated below.  
+Skolem's work was discussed
+further in  section 3  of a
+supplementary note by T. Bang \cite{Ban57}. Later work,
+starting with Skolem \cite{Sko57b},  studied disjointness of shifted Beatty 
+sequences $\lfloor \alpha n + \gamma\rfloor$.
+We mention\footnote{Fraenkel \cite{Fra69} noted that 
+a subsequent work of Skolem \cite{Sko57b} on intersective properties of shifted Beatty sequences
+has incorrectly stated theorems with defective proofs.} Fraenkel \cite{Fra69}, \cite{Fra73} , Graham \cite{Gr70}, Morikawa \cite{Mor85}, 
+with further work surveyed in \cite{OB03}.  
+%Another proof was given by Sungyu Kim \cite{Kim15}.
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Theorem 4.9
+%%%%%%%%%%%%%%%%%%%
+\begin{thm} \label{thm:47} {\em (Skolem)}
+The Beatty sequences 
+\[ \sB^{+}(u) \bigcap \sB^{+}(v)= \emptyset \]
+are disjoint
+ if and only if $u,v$ are irrational and satisfy 
+\[
+ \frac{m_1}{u} + \frac{m_2}{v} =1
+ \]
+for some integers $m_1, m_2 \ge 1$.
+\end{thm}
+ 
+Skolem's basic arguments, supplemented by Bang \cite[Sect. 5]{Ban57}, apply to
+our case, where we replace $\sB^{+}(u)$ with $\sB_0(u)$. We will show:
+ 
+ %%%%%%%%%%%%%%%%%%%%
+% Theorem 4.10
+%%%%%%%%%%%%%%%%%%%
+\begin{thm} \label{thm:49a} 
+ (1) For rational or irrational numbers $u, v>1$, 
+ if there are integers $m_1, m_2 \ge 0$ such that
+ $$
+ \frac{m_1}{u} + \frac{m_2}{v} =1,
+ $$
+then the intersection of reduced Beatty sequences 
+$$\sB_0(u) \bigcap \sB_0(v)= \emptyset.$$
+
+(2) Conversely, if $\sB_0(u) \bigcap \sB_0(v)= \emptyset$ with $u, v>1$ 
+  then $(u, v)$ must
+satisfy an equation of the  form 
+$ \frac{m_1}{u} + \frac{m_2}{v} =1,$
+for some integers $m_1,m_2 \ge 0$ (not both zero).  
+ \end{thm}
+
+Our proof uses ideas from Skolem's arguments which apply
+in the case where at least one of   $u$ or $v$ is irrational.  The conclusions of
+the two theorems differ in the case of rational points, and new methods 
+are required to cover this case. 
+%We leave open the problem of existence
+%of exceptional solutions not on any of these curves.  
+%and requires additional ideas. [CURRENTLY INCOMPLETE] 
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sect. 4.4 PROOF OF THEOREM 4.10
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof of Theorem \ref{thm:49a} }\label{sec:44}
+
+%Lemma \ref{lem:48} applies whether $\frac{1}{u}$ and $\frac{1}{v}$ are irrational or rational.
+We study the $\ZZ$-orbit $\sO(\bv)$
+of the vector $\bv := (\frac{1}{u}, \frac{1}{v})$ under multiplication
+by integers on the 
+torus $\RR^2/\ZZ^2$. We note that this torus is defined in  the $(X, Y)$-coordinate system, since
+$X = \alpha = \frac{1}{u}$ and $Y= \frac{\alpha}{\beta} = \frac{1}{v}$.
+This two-sided orbit  is
+$$
+\sO(\bv) := \{ n \bv: \, n \in \ZZ\} \subset \TT^2= \RR^2 / \ZZ^2.
+$$
+Its 
+structure depends the dimension of
+the $\QQ$-vector space spanned by $[1, \frac{1}{u}, \frac{1}{v}]$,
+which can be $1, 2$ or $3$.
+We treat these cases separately. The first two cases follow approach  of Skolem,
+ while the third case (dimension $1$) requires new arguments which make
+ a  connection with
+ the $2$-dimensional Frobenius problem.
+%The problem of Beatty concerns a case
+%where both $u$ and $v$ are irrational. 
+
+%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 4.3.1
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case 1. Dimension 3 vector space}\label{sec:431}
+
+In the dimension $3$ case both coordinates $u$, $v$ are irrational.
+ %%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 4.11
 %%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:49}
+ For $u, v >1$ suppose that $[1, \frac{1}{u}, \frac{1}{v}]$ in $\RR$ are linearly 
+ independent over $\QQ$, so span a vector space of dimension $3$ over $\QQ$. 
+ In this case the orbit $\sO(\bv)$ is dense on $\TT^2$, and  
+ $$ 
+ \sB_0(u) \bigcap \sB_0(v) \ne \emptyset.
+  $$
 \end{lem}
 
 \begin{proof}
-In torus coordinates $X' = \frac1{\uu}$ and $Y' = \frac1{\vv}$, we have $\frac{X'}{Y'} = \frac{m_1}{m_2}$ is rational and $Y'$ is irrational with $\frac1{m_1} < Y' < 1$.
-Let $\sO(\bv) = \{ n\bv : n\in\ZZ\}$ denote the subgroup generated by the point $\bv = (X',Y')\in \RR^2/\ZZ^2$. 
-We define the $\RR$-orbit of $\bv$ by
-\[ \sO_{\RR}(\bv) = \{\pi(\lambda \bv) : \lambda\in \RR \}\]
-where the multiplication $\lambda\bv$ is done in $\RR^2$ and $\pi:\RR^2 \to \RR^2/\ZZ^2$ is the canonical projection map.
-Since $\bv$ lies at rational slope $\frac{m_1}{m_2}$ from the origin, the $\RR$-orbit $\sO_\RR(\bv)$ will be a closed one-dimensional submanifold of the torus, 
-and since $Y'$ is irrational the subgroup $\sO(\bv)$ is dense  inside of $\sO_\RR(\bv)$.
+It is well known that in this case the $\ZZ$-orbit of $(\frac{1}{u}, \frac{1}{v})$
+on the torus $\RR/\ZZ$ is dense. In consequence there are infinitely many
+orbit points in the open rectangular region $(0, \frac{1}{u}) \times (0, \frac{1}{v})$. Now
+Lemma \ref{lem:48} applies to show nonempty intersection.  
+\end{proof}
 
-The generator $\bv$ lies on the ``main diagonal'' of $\sO(\bv)$ coming out of the origin. The assumption that $Y' > \frac1{m_1}$ means the rectangular region $C$  ($C$ for ``corner'')
-to the lower-left of $\bv$ will contain at least two addition line segments, one on each side of the main diagonal (see figure below). Thus $C$ contains points of $\sO(\bv)$ not on main diagonal. By the criterion in Proposition \ref{prop:torus-crit-third}, this implies $\uu\ZZ \cap \widetilde{R}^\pm_\vv \neq \emptyset$ as claimed.
+
+%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 4.3.2
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case 2. Dimension 2 vector space}\label{sec:432}
+
+In the dimension 2 case at least one coordinate $u$ or $v$ must be irrational.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 4.12
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:410}
+ For $u, v >1$ suppose that the numbers $[1, \frac{1}{u}, \frac{1}{v}]$  in $\RR$ have dimension $2$
+ as a vector space over $\QQ$. In this case the orbit is dense on a finite set of lines all having the 
+ same rational slope on $\RR^2/\ZZ^2$.  The condition
+ $ \sB_0(u) \bigcap \sB_0(v) =  \emptyset$
+ holds if and only if there are nonnegative integers $m_1,  m_2$, with at least one positive,  such that
+ $$
+ \frac{m_1}{u} + \frac{m_2}{v} =1.
+ $$
+\end{lem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REmark 4.13 REMOVED REMARK-PUT IT BEFORE THE LEMMA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{rmk}\label{rmk:412}
+%In the dimension 2 case at least one of $u$ or $v$ must be irrational.
+%\end{rmk}
+\begin{proof} 
+By hypothesis there is a linear dependence relation over $\QQ$,
+which can be written
+$$
+  \frac{m_1}{u} + \frac{m_2}{v}= m_3,
+$$
+for integers $m_1, m_2, m_3$. Without loss of generality
+we may suppose  at  least one of $m_1, m_2 $ is positive. The lemma asserts
+there is  a restriction 
+on the form of this linear relation: both $m_1, m_2$ are nonnegative,
+with at least  one of them positive,  and $m_3=1$.
+
+
+
+In this case the orbit of $\bv=(\frac{1}{u}, \frac{1}{v})$ lies on the set
+$$
+S_{m_1, m_2} :=  \{ (x, y) \in \RR^2/\ZZ^2 :  m_1 x + m_2 y  \equiv 0 \, (\bmod \, 1).\}
+  $$
+ This set viewed in $[0,1]^2 \subset \RR^2$ is a finite collection of line segments 
+having the same rational slope. 
+%Treating first the case  $k \ell \ne 0$, we have 
+Since at  least one of $u, v$ is
+irrational,  the orbit $\sO(\bv) = \{ n \bv: \, n \in \ZZ\}$ 
+can be shown to be  dense in  $S_{m_1, m_2}$,
+the projection 
+to $\TT^2$ of the line segments above.  [ADD MORE DETAILS?]
+
+Using the criterion of Lemma \ref{lem:48} (1)  the disjointness condition is equivalent
+to none of 
+%the projections of 
+the lines $m_1x+ m_2 y =n$, for all  $n \in \ZZ$, crossing the open 
+set
+\begin{equation}\label{box}
+\{ (x,y) : 0 < x < \frac{1}{u}, \, 0 < y < \frac{1}{v} \}.
+\end{equation}
+If we had  integers $m_1, m_2$ of strictly opposite sign (meaning  $ m_1 m_2 <0$), then the line
+$m_1 x +  m_2 y =0$ will intersect the interior of this region, since it exits from the point $(0,0)$
+into the first quadrant. We then  obtain points where the criterion (i)
+of Lemma \ref{lem:48} implies $\sB_0(u) \bigcap \sB_0(v) \ne \emptyset$, whence
+\eqref{ineq} cannot be satisfied. See Figure \ref{fig_torus1}.
+Thus necessarily  both $m_1 \ge 0$ and $m_2 \ge 0$.
 
 \begin{figure}[h]
 \begin{center}
@@ -3834,145 +3060,505 @@ to the lower-left of $\bv$ will contain at least two addition line segments, one
   \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/2});
   \draw[domain=2/3:1,smooth,variable=\x, blue]  plot ({\x},{3/4*\x-1/2});
   \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/4});
-  
-  \draw[-] (1/3,0) -- (1/3,0) node[below] {$\frac{1}{m_2}$};
-  \draw[-] (0,1/4) -- (0,1/4) node[left] {$\frac{1}{m_1}$};
-  \draw[dotted, green] (1/3,0) -- (1/3,1/4);
-  \draw[dotted, green] (0,1/4) -- (1/3,1/4);
-  
-  \node[draw,circle,inner sep=1.5pt,fill,red] at (2/3*12/13,2/4*12/13) {};
-  \draw[-] (2/3*12/13,2/4*12/13) node[above] {$(X',Y')$};
-  \fill[gray,nearly transparent] (0,0) -- (0,6/13) -- (8/13,6/13) -- (8/13,0) -- cycle;
-  \end{tikzpicture}
+ \end{tikzpicture}
 \end{center}
-\caption{Real orbit $\sO_\RR(\bv)$}
-\end{figure}
-\end{proof}
+\caption{Solutions to $3x-4y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
+\end{figure} \label{fig_torus1}
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %
-% Sub-sub-section 8.4.2/ 5.6.2 non-sporadic rational solutions on hyperbolas
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Sub-case 2 (b)(ii). $\frac{\uu}{\vv}$ rational, non-sporadic solutions on hyperbolas}\label{sec:552}
 
-We now consider points with rational $\frac{\uu}{\vv}$ that  ``glue into" the hyperbola 
-solutions given in Lemma \ref{lem:54} and show that they are  themselves solutions to \eqref{ineq}.
+We first treat the  the cases where both $m_1, m_2 \ge 1$. We  need
+to determine the conditions on $m_3$ such that  that no line
+segments of the configuration go inside the region \eqref{box}. 
+See Figure \ref{fig_torus2}.
+We must have $m_3 \ge 1$ to have strictly positive solutions.
+If  $m_3 \ge 2$ we find that some  line segment  of $S_{m_1, m_2}$ 
+extends strictly inside the region \eqref{box}. Now Lemma \ref{lem:48} (ii) implies
+that for $m_3\ge 2$ we have  $\sB_0(u) \bigcap \sB_0(v) \ne \emptyset$,
+ruling this possibility out.
+In the remaining case  $m_3=1$, 
+all line segments outside the  open region \eqref{box},
+hence $\sB_0(u) \bigcap \sB_0(v) = \emptyset$
+by Lemma \ref{lem:48}(1)  again.[ADD MORE DETAILS?]
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[scale=4]
+  \draw[-] (0,0) -- (1,0);
+  \draw[-] (0,0) -- (0,1);
+  \draw[dotted] (1,0) -- (1,1);
+  \draw[dotted] (0,1) -- (1,1);
+  \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({\x},{1-3/2*\x});
+  \draw[domain=2/3:1,smooth,variable=\x, blue] plot ({\x},{2-3/2*\x});
+  \draw[domain=0:1/3,smooth,variable=\x, blue] plot ({\x},{1/2-3/2*\x});
+  \draw[domain=1/3:1,smooth,variable=\x, blue] plot ({\x},{3/2-3/2*\x});
+ \end{tikzpicture}
+\end{center}
+\caption{Solutions to $3x+2y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
+\end{figure} \label{fig_torus2}
+
+
+
+
+It remains to treat cases where  one of $m_1, m_2=0$. These cases
+are symmetric, so it suffices to give the argument for $m_1=0$.
+(See Figure \ref{fig_torus4} for an example.)
+In that case $m_2>0$
+and  $\frac{1}{v}= \frac{m_3}{m_2}$
+is rational, so the theorem hypotheses require that $u$ be irrational. The condition $v>1$ implies that necessary $1 \le m_3 < m_2$.
+We may suppose without loss of generality $\gcd(m_2, m_3)=1$.
+In this case the locus  $S_{0, m_2}$  in $\RR^2/\ZZ^2$ is a collection of horizontal line
+segments  $y \equiv \frac{j}{m_2} \, (\bmod \, 1)$ 
+where $0< j< m_2$ with $\gcd(j, m_2)=1$, and $0 \le x \le 1$.
+The orbit is dense on these horizontal lines. We 
+aim to apply the criterion of Lemma \ref{lem:48} (ii), so need  to know when any of these lines enter
+the region \eqref{box}, $0\le x \le \frac{1}{u}, \, 0 \le y \le \frac{1}{v}$. 
+This condition 
+%is entirely determined by the $y$-coordinate, and 
+requires that $\frac{m_3}{m_2}$
+be minimal among all the $\frac{j}{m_2}$ with $0< j< m_2$ and $\gcd(j, m_2)=1$.
+This requirement forces $m_3=1$. Indeed if $m_3=1$ then $v= \frac{m_2}{m_3} = m_2 \ge 1$
+is an integer, so $\sB_0(v) = \emptyset$ and $\sB_0(u)\cap \sB_0(v) = \emptyset.$
+(This case corresponds
+to case (i-a) of Theorem \ref{thm:main}.) 
+In the case $m_2=0$ a similar argument shows $m_3=1$ and 
+$u >1$ is an integer. (This case corresponds
+to case (i-b) of Theorem \ref{thm:main}.) 
+\end{proof} 
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[scale=4]
+  \draw[-] (0,0) -- (1,0);
+  \draw[-] (0,0) -- (0,1);
+  \draw[dotted] (1,0) -- (1,1);
+  \draw[dotted] (0,1) -- (1,1);
+  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{0});
+  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{1/4});
+  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{1/2});
+  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4});
+ \end{tikzpicture}
+\end{center}
+\caption{Solutions to $4y\in\ZZ$ in the torus $\RR^2/\ZZ^2$}
+\end{figure} \label{fig_torus4}
+
+%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 4.4.3
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case 3: Dimension 1 vector space: rational solutions }\label{sec:443}
+
+
+We turn to the case  where $\dim_{\QQ} [1, u, v] =1$,
+which is the case where $u, v$ are both  rational.
+We start with some solutions that exist.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.8/  foremerly 5.11
+% Lemma 4.13
 %%%%%%%%%%%%%%%%%%%%%%
-\begin{lem} \label{lem:511}
-Suppose that   $\uu, \vv>0$ with  $\frac{\uu}{\vv}$ rational, and
-that there are integers $m_1, m_2 \ge 1$ such that
-$$
- \frac{m_1}{\uu}+ \frac{m_2}{ {\vv}}= 1.
-$$
-then $\uu \ZZ \cap  \widetilde{R}_{ \vv}^{\pm} = \emptyset$ holds.
-In addition $\vv$ is rational, with  $ {\vv} >1$ and $\uu >1$.
+\begin{lem}\label{lem:413}
+ For $m_1, m_2 \ge 1$ all  rational points with $u, v >0$ on the rectangular hyperbola
+ $$
+ \frac{m_1}{u} + \frac{m_2}{v} =1
+ $$
+satisfy $\sB_0(u) \bigcap \sB_0(v) = \emptyset$; such points necessarily have $u, v >1$.
+All points $(\alpha, \beta)$  in the first quadrant 
+such that  $(u, v) = (\frac{1}{\alpha}, \frac{\beta}{\alpha})$ 
+falls  on this hyperbola satisfy \eqref{ineq}.
 \end{lem}
 
 \begin{proof}
-The inequalities $ {\vv} > m_1 \ge 1$ and $\uu >m_2 \ge 1$ are immediate
-from the hyperbola equation, since both values must be positive by assumption. 
-Lemma \ref{lem:53}(1) now applies to shows the empty intersection is equivalent to the condition
+In this case the orbit $\sO(\bv)$ is a finite set of points, and all
+these points lie on the set  $S_{m_1, m_2}$ inside $\RR/\ZZ$.
+The argument of Lemma \ref{lem:410} showed that $S_{m_1, m_2}$
+contains no points inside the open box \eqref{box}. Since the finite set
+lies inside $S_{m_1, m_2}$, we conclude from 
+the criterion of Lemma \ref{lem:48} that $\sB_0(u) \bigcap \sB_0(v) = \emptyset.$
+Now the criteria of Lemma \ref{lem:46} and Lemma \ref{lem:42} combine 
+to show that property \eqref{ineq} holds for $(\alpha, \beta)$. 
+\end{proof}
+
+Lemma \ref{lem:413} shows that  in Theorem \ref{thm:49a}
+there is no restriction to irrational points on the hyperbola, such as
+ occurs  in ``Beatty's Theorem" (Theorem \ref{thm:44} ).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 4.4.4 Sporadic case
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case 3: Dimension 1 vector space, non-existence of sporadic rational solutions }\label{sec:444}
+
+
+It remains to analyze  the possibility that there are ``sporadic" rational points $u, v$
+satisfying $\sB_0(u) \bigcap \sB_0(v)= \emptyset$
+ that do not lie on any hyperbola 
+$\frac{m_1}{u} + \frac{m_2}{v} =1$
+or any half-line $\frac{m_1}{u}=1$ or $\frac{m_2}{v} =1$.
+
+
+
+We now use the $(X, Y)$-coordinates given by $X: = \frac{1}{u}= \alpha$ and
+$Y := \frac{1}{v} = \frac{\alpha}{\beta}$. This is a birational change of variable
+$\alpha = X$ and $\beta =\frac{X}{Y}$.
+The condition $(X, Y) \in \QQ^2$ is equivalent to $(\alpha, \beta) \in \QQ^2$.
+We write $(X, Y) = (\frac{a}{t}, \frac{b}{t})$ where $t$ is a common denominator of 
+such a rational. That is $\gcd(a, b, t) =1$, however we may have $\gcd(a, b) >1$.
+The corresponding $(\alpha, \beta) = (\frac{a}{t}, \frac{a}{b})$, where the second
+fraction may not be in lowest terms. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Proposition  414
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{prop} \label{prop:414aa}
+{ \rm (Sporadic Rational Solution Criterion-First Quadrant)}
+Set   $(X, Y)= (\frac{a}{t}, \frac{b}{t})$ with integers $a,b, t >0$ and $\gcd(a, b, t)=1$.
+Then $(\alpha, \beta)=(\frac{a}{t}, \frac{a}{b})$ is a sporadic rational solution to \eqref{ineq}  if and only if 
+the denominator $t > \max\{a, b\}$ and:
+\begin{enumerate}
+%\item[(i)]
+%$\gcd(a, b)=1$, 
+\item[(i)]
+%The denominator $t > \max\{a, b\}$, and 
+There is no integer $0 \le n < t$ such that
 $$
- \bigg( \sB(\uu) \bigcap \sB_0(\vv)\bigg)  \smallsetminus  X_{\uu,\vv} = \emptyset,
+0 < \{ \frac{na}{t}\} <  \{ \frac{a}{t}\} \quad \mbox{and} \quad  0 < \{ \frac{nb}{t}\} <  \{ \frac{b}{t}\}.
+$$
+
+\item[(ii)]
+%The denominator $t$ has the property that 
+The linear
+Diophantine equation 
+\begin{equation}\label{eq:Frob2}
+a X_1 + bX_2= t
+\end{equation}
+is unsolvable in non-negative integers $(X_1,X_2)$. 
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+%Condition (i) is used to make \eqref{ineq} hold, while condition (ii) 
+%excludes membership in the known one-parameter families of solutions $\frac{m_1}{u}+ \frac{m_2}{v} =1$. 
+
+We first show criterion (i) is equivalent to \eqref{ineq} holding. 
+We have $X = \frac{1}{u}, Y= \frac{v}{u}$ with $u = \frac{1}{\alpha}= \frac{t}{a}$ and $v= \frac{\beta}{\alpha}= \frac{b}{a}$.
+Lemma \ref{lem:43a} shows that  $u>1$ and $v>1$ are necessary conditions for \eqref{ineq} to hold.
+They require $t >a$ and $t>b$, whence  $t > \max \{ a, b\}.$
+The condition \eqref{ineq} holds  if and only if
+$\sB_0(u) \bigcap \sB_0(v) = \emptyset$, combining Lemma \ref{lem:43a} and Lemma \ref{lem:46}(2).
+%Lemma 4.3 and Lemma 4.7(2)
+The criterion of Lemma \ref{lem:48}(1) shows that this intersection is empty if 
+and only if the criterion given in (i) above holds for all $n \in \ZZ$. The fractional parts 
+$\{ \frac{na}{t}\} $ and $\{ \frac{nb}{t}\}$ are periodic with period $t$ so it suffices to check there is no solution over one period.
+This establishes the equivalence. 
+ 
+
+
+We next show criterion (ii) is equivalent to $(u, v)$ not falling on any one-parameter solution to \eqref{ineq}.
+By Proposition \ref{prop:31} and the discussion after its statement,
+the  one-parameter solutions are  given by $\frac{m_1}{u} + \frac{m_2}{v} =1$
+for any integer $m_1, m_2 \ge 0$ with at least one $m_i$ nonzero.  The condition for $(u, v) = (\frac{t}{a}, \frac{t}{b})$ 
+ falling on such a curve 
+is  $m_1 \frac{a}{t}  + m_2 \frac{b}{t}= 1$, which on clearing denominators becomes 
+ $m_1 a + m_2 b= t$. This condition is easily seen to be equivalent to the equation 
+$$
+aX_1 + bX_2 = t,
+$$
+having no solution in non-negative integers $(X_1, X_2)$.
+%The case $(m_1, m_2)=(0,0)$ is inconsistent
+\end{proof}
+
+
+
+
+
+
+The next lemma shows that there are no sporadic rational solutions having
+$\gcd(a, b) >1$, by showing that condition (i) above   fails to hold.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 4.15
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:415}
+Suppose we are given  positive integers $(a, b, t)$ with $\gcd (a,b, t) =1$. 
+Set  $\frac{1}{u} = \frac{a}{t}, \frac{1}{v} = \frac{b}{t}$, with $\gcd(a, b, t)=1$, and  suppose
+that $0< \frac{1}{u}<1$ and $0< \frac{1}{v} < 1$, i.e. $t > \max\{a, b\}$.
+Then the condition $\gcd(a, b) >1$ implies that there exists a positive integer $1 \le n< t$ such that
+$$
+0 <  \{ \frac{n}{u}\} < \frac{1}{u}  \quad \mbox{and} \quad 0 < \{ \frac{n}{v}\} < \frac{1}{v}.
+$$
+ \end{lem}
+
+\begin{proof} 
+We look at the orbit of $\bv  = (X, Y) :=(\frac{a}{t}, \frac{b}{t}) = (\frac{1}{u}, \frac{1}{v} )$ on the torus $\RR^2/\ZZ^2$.
+We consider the line segment  $\sL := \{ (\frac{a}{t} \lambda, \frac{b}{t} \lambda): \, 0 \le  \lambda \le t \}$
+in $\RR^2$, which connects the lattice point $(0,0)$ to $(a, b)$. If $\gcd(a, b) = r>1$ then
+the line segment hits $r-1$ interior lattice points  $\lambda= \frac{j}{r}$, $1\le  j \le r-1.$ 
+By hypothesis $\gcd (r, t)=1$, and the condition $\gcd(a, b)\ge 2$ and $t > \max(a, b)$
+implies $t \ge 3$.
+We study the projection
+modulo one of this line segment $\sL$ into the unit square, which will be a set of line segments, 
+and we note that  $\sL$ traces each of these  line segments $r$ times. 
+We choose $n := \lceil \frac{t}{r} \rceil$. Then $2 \le n < t$
+since $r \ge 2$ and $t \ge 3$, and $\gcd(t, r) =1$ gives
+$0 < n - \frac{t}{r} <1$. Then we have
+$$
+ n(\frac{a}{t}) = \frac{a}{r} + (n- \frac{t}{r}) \frac{a}{t} \equiv (n- \frac{t}{r}) \frac{a}{t} \, (\bmod \, 1).
+$$
+Since $t > a$ it  follows that $0 < \{ \frac{na}{t} \} < \frac{a}{t}$.
+By similar reasoning we obtain $0 < \{ \frac{nb}{t} \} < \frac{b}{t}$.
+\end{proof}
+
+%This lemma together with Lemma \ref{lem:48} implies that any sporadic solution $(a, b, t)$
+%must satisfy $\gcd(a, b)=1$. 
+
+%Under the extra condition $\gcd(a. b)=1$   
+%linear Diophantine equation \eqref{Frob-eqn}.
+We  have now arrived at a connection with the {\em linear Diophantine problem of Frobenius}. 
+%The  {\em Diophantine problem of Frobenius} 
+This problem  is concerned with bounding above the largest positive  integer $t$ for which
+\begin{equation}\label{Frobenius-eqn}
+a_1 X_1 + a_2 X_2 + \cdots + a_n X_n = t
+\end{equation}
+has no solution in nonnegative integers $(X_1, X_2, ..., X_n)$
+as a function of  positive integers $a_1, a_2, ... , a_n$ having $\gcd(a_1, a_2, ..., a_n) =1$,
+see the book of Ram\'{i}rez Alfons\'{i}n \cite{RA05}. 
+Proposition \ref{prop:414aa} (ii) when combined with Lemma \ref{lem:415} connects  with the linear Diophantine equation of Frobenius
+in the case $n=2$.
+%which has an  especially nice structure absent for $n \ge 3$.
+For fixed $(a, b)$ with $\gcd(a, b)=1$ it is well known 
+ that  there are only
+finitely many nonnegative integers $t$ for which the linear Diophantine equation \eqref{eq:Frob2} is unsolvable in nonnegative
+integers $(X, Y)$, and  that the  largest such value is $t= ab -a -b$; this result goes back to J. J. Sylvester in 1882.
+Proposition \ref{prop:414aa} (ii)  specifies that  $t$  belongs to  the set
+$$
+N^{\star}(a, b) := \{ t \ge 0: \, t \, \mbox{ is not representable as a nonnegative integer combination of}\,  a \, \mbox{ and} \, b.\}.
+$$
+ We call the set of
+such unsolvable values $N^{\star}(a, b)$
+the {\em unsolvable Frobenius set} for the pair $(a, b)$.
+It is  a result of Sylvester (\cite{Sylvester:1882} \cite{Sylvester:1884})
+that  for 
+each $0\le t \le ab-a-b$  exactly one member of the pair $\{ t, ab-a- b-t \}$ has the
+\eqref{eq:Frob2}  solvable in nonnegative integers, and the other is unsolvable. Thus the unsolvable Frobenius set
+has cardinality $\frac{1}{2} (a-1)(b-1)$ (\cite[Theorem 5.1.1]{RA05}).
+
+The following lemma completes the proof  that there are no sporadic rational solutions. 
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 4.16
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:416}
+Let $a, b \ge 1$ be positive integers with  $(a, b) =1$.
+Suppose that $t\in N^{*}(a,b)$ with  $t>\max(a,b)$. Then $(\frac{1}{u} ,\frac{1}{v}) = (\frac{a}{t}, \frac{b}{t})$ has corresponding 
+vector $(\alpha, \beta) = (\frac{t}{a}, \frac{b}{a})$  not a (sporadic rational) 
+solution to \eqref{ineq}. 
+\end{lem}
+
+\begin{proof}
+It is a classical result that:\\
+
+{\bf Claim.} $ t \in N^{\ast}(a,b) $ if and only if
+\begin{equation}\label{frob-lin-comb}
+ab-t = na + mb \quad \text{ for some } \quad n,m\geq 1.
+\end{equation}
+
+To verify the claim, a well known solution to the problem of Sylvester, see \cite[pp. 103--105]{RA05}  shows that
+for $0 \le t \le ab-a-b$ one has
+\[
+  t \in N^{\ast}(a, b) \quad \mbox{ if and only if}\quad  ab-a -b -t \not\in N^{\ast}(a, b).
+\]
+The latter condition says that 
+$$
+ab-a-b-t= na+ mb \quad \mbox{with} \quad  m, n \ge 0,
+$$
+and it  is clearly equivalent to 
+$$
+ab-t= na+ mb \quad \mbox{with} \quad  m, n \ge 1.
+$$
+The claim follows. 
+
+
+
+Given such $t$, the choice of $n,m \ge 1$ is in fact unique, since $t>0$ implies
+\[ 
+na < na+mb < ab \quad\Rightarrow\quad 0< n < b,
+\]
+and a similar argument shows that
+ $0<m < a$. 
+ By assumption that $a,b$ are coprime, the only way for $na + mb = n'a + m'b$ is to have  $n-n' \in b\ZZ$ and $m-m'\in a\ZZ$, 
+ so the given inequalities uniquely determine $n$ and $m$ as claimed.
+
+Reducing (\ref{frob-lin-comb}) modulo $t$, we have
+%\begin{align*}
+$ 
+ab \equiv na + mb \,(\bmod\, t )
+$
+whence 
+$
+(b-n)a \equiv mb \, (\bmod \, t) 
+$
+and we deduce that 
  $$
- in which
-$$ X_{\uu, {\vv}} := \{ \floor{w} : \, w \in \uu \ZZ \bigcap  {\vv} \ZZ\}.$$
-
-We again study
- the orbit $\sO(\bbv) = \{ n \bbv : \, n\in \ZZ\}$ of the vector $\bbv := (\frac1{\uu}, \frac{1}{\vv}) = (X', Y')$
-viewed on the torus $\TT^2 = \RR^2/\ZZ^2$. 
-All members $(x,y)$ of this orbit lie on the locus
-$$
-S_{m_1, m_2} := \{ (x, y) \in \TT^2: \, m_1 x + m_2 y \equiv \, 0 \, (\bmod \, 1)\}.
-$$
-Since $m_1, m_2 \ge 1$ this locus intersects the closure of the rectangular  region 
-$$C_{X', Y'} := \{ (x, y): \, 0 \le x < X', \, 0 < y< Y'\}$$
- on $\TT^2$
-only in the points $(0,0)$ and $(\frac{\vv}{\uu}, \vv)$, and neither of these points lies in $C_{X',Y'}$ itself since each $y$-coordinate is disallowed.
-By Lemma \ref{lem:beatty-intersection-third} this gives the desired result.
-\end{proof}
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Section 8.4.3 empty intersections- part 2 (BOILERPLATE-NO CONTENT)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Characterizing empty intersections: Case 2(b)(ii). $ {\uu} \ge 1$}\label{sec:553}
-
-The range $\uu \ge 1$ corresponds to $\beta = - \frac{1}{\uu}$ having $|\beta|\le 1$.
-Here $\vv = \frac{\alpha}{\beta} >1.$ We already know that for $\alpha= -\frac{m_1}{m_2}$
-we have solutions for all $|\beta| \le \frac{1}{m_2}$ so it remains to consider rational solutions with
-$\frac{1}{m_2} < |\beta| \le 1$, which are sporadic if they do not fall on any hyperbola. 
-Such sporadic solutions do exist for every such $\alpha$ by applying 
-suitable  self-similar symmetries in Section \ref{sec:23}. 
-We defer further study of them to Section \ref{sec:9}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Sect. 8.5 Proof of Proposition 4.2
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Completion of third quadrant case of Theorem \ref{thm:main} }\label{sec:84}
-
-
-Now we can complete the proof of Theorem \ref{thm:main} in the third quadrant case,
-which we reduced in Section \ref{sec:rounding-3quad} to showing Proposition \ref{prop:32}.
-That proposition classifies some, but not all, sporadic rational solutions.
-%(We do not classify all sporadic rational solutions)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PROOF OF PROP>< 4.2
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proof}[Proof of Proposition \ref{prop:32}]
-(1) Lemma \ref{lem:54} shows that irrational solutions on a rectangular hyperbola \eqref{uv-frac} with $m_1, m_2 \ge 1$
-will satisfy ${\uu} \ZZ \bigcap \widetilde{R}_{\vv}^{\pm} = \emptyset$, whence Lemma \ref{lem:52} implies that
-\eqref{ineq}  holds for the associated $(\alpha, \beta)$. 
- Lemma \ref{lem:511} shows that all rational solutions on these hyperbolas
- satisfy ${\uu} \ZZ \bigcap  \widetilde{R}_{\vv}^{\pm} = \emptyset$, whence \eqref{ineq} holds for the associated 
- rational $(\alpha, \beta)$.
- 
- (2) For the parameter range $0 < {\uu} <1$, Lemma \ref{lem:53aa} excludes all $(\uu,\vv)$ having at least one irrational coordinate,
- in that the solutions listed in (a) are removed by exclusion (a), while those listed in (b) have no irrational coordinate. For the parameter
-  value ${\uu}=1$,  $\uu/\vv$ and $\vv$ are both irrational or both rational, so in  the irrational case, $\uu/\vv$ is irrational, whence Lemma \ref{lem:59}
- excludes all solutions. For the remaining parameter range ${\uu} >1$, suppose first $\uu/\vv$ is rational. Writing $\frac\uu\vv= \frac{m_2}{m_1}$, 
- Lemma \ref{lem:59} excludes all irrational $v$ having $1 < \vv <m_1$,
- which covers the complete range of $\vv$  not excluded by exclusion (b). (Recall that $\vv \le 1$, see (3) below.) 
- Finally suppose ${\uu} >1$ and $\uu/\vv$ is irrational. In this case Lemma \ref{lem:54} 
- and Lemma \ref{lem:55} together exclude all solutions $(\uu, \vv)$ not on one of the hyperbolas excluded by exclusion (c).
- 
- (3)  
- %An infinite set of sporadic rational solutions is given in 
-Lemma \ref{lem:53aa} (b) classified all the sporadic rational solutions having $0< \uu <1< \vv$, which are all such solutions having ${\uu} <1$.
- These consist of  and infinite set $(\uu, \vv)$ with
- $\uu= 1-\frac{j}{m_1r}$ and  $\vv = m_1-\frac{j}{r}$ for some integers $ m_1 \ge 2$,  $r\geq 2$ and $1\le j\le m_1-1$.
-All other sporadic rational solutions necessarily  have ${\uu} > 1$.
- %The fact that all solutions have $v \le 1$ follows from $v= \frac{\beta}{\alpha}$ together with \eqref{necessary}. 
+ N_1: = \frac{b-n}{b} \equiv \frac{m}{a}  \, (\bmod \,t),
+ $$
+ %\end{align*}
+where the fractions are taken as  multiplicative inverses in $(\ZZ/t\ZZ)^\times$. Thus for $\bv =(\frac{a}{t}, \frac{b}{t})$
+viewed in $\RR^2/\ZZ^2$, 
+\[ 
+N_1 \bv = N_1(\frac{a}{t},\frac{b}{t}) = (\frac{N_1a}{t}, \frac{N_1b}{t}) \equiv  (\frac{m}{t}, \frac{b-n}{t}) \, (\bmod \, \RR^2/\ZZ^2).
+\]
+Now we have, using $t > \max \{ a, b\}$, 
+\[ 
+0< \{\frac{N_1a}{t} \} = \frac{m}{t} < \frac{a}{t} < 1 \quad\text{and}\quad 0< \{\frac{N_1b}{t}\} = \frac{b-n}{t }< \frac{b}{t} <1,
+\]
+ violates the fractional-part condition (i)  in Proposition \ref{prop:414aa}, so $(\frac{a}{t}, \frac{a}{b})$ is not a sporadic rational solution. 
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% 9 Beatty Sequences, Torus subgps
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Third Quadrant Sporadic Rational Solutions with $u', v' \ge 1$}\label{sec:9}
 
 
-We follow the analysis of sporadic rational solutions in the first quadrant case,
-in giving a necessary and sufficient condition for their existence. 
-%[SECTION NEEDS COMPLETE REWRITING]
-%In this section we prove Proposition \ref{prop:31}.
-%We relate the hyperbola solutions to Beatty sequences in Section \ref{sec:43}.
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% Sub-sub-section 4.4.5
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ {\bf Proof of Theorem \ref{thm:49a}.}}\label{sec445}
+
+%The results above  suffice to establish Theorem \ref{thm:49a}.
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Proof of Theorem 4.9
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{proof}[Proof of Theorem \ref{thm:49a}.]
+%Theorem \ref{thm:49a}  follows from  the results above.
+
+\begin{proof}
+(1) The already proved cases {\it (i-a)} and {\it (i-b)} show that all rational and irrational points
+on any of the curves 
+$\frac{m_1}{u} + \frac{m_2}{v} =1$  with $m_1=0$ or
+$m_2=0$  yield solutions to the inequality \eqref{ineq}. 
+Lemma  \ref{lem:410} shows that for all $m_1, m_2 \ge 1$ 
+those  points on  for the hyperbolas 
+having irrational coordinates yield solutions to \eqref{ineq}.
+Finally Lemma \ref{lem:413}  shows that for $m_1, m_2 \ge 1$ 
+all points with rational coordinates on these hyperbolas  
+ yield solutions to \eqref{ineq}.
+
+(2) Lemma \ref{lem:49} rules out all points in the plane having 
+$\dim_{\QQ} [1, u, v]=3$ from giving any solutions $(\alpha, \beta)= (\frac{1}{u}, \frac{v}{u})$  to \eqref{ineq}.
+Lemma \ref{lem:410} shows that all points having $\dim_{\QQ} [1, u, v]=2$
+that satisfy \eqref{ineq} must lie on a hyperbola or straight line solution for
+some pair $m_1, m_2 \ge 0$. There remain the case of rational points,
+where $\dim_{\QQ} [1, u, v]=1$.
+Lemma \ref{lem:416} rules out all possible 
+rational solutions not on any of these curves.
+\end{proof} 
+ % $\quad~~~~~~~~~~~~~~~~~~~~~ \Box$
+%\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% SECT 4.5 Proof of Propostion  3.1 from Section 3\ref{prop:31}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof of  Proposition \ref{prop:31}}\label{sec:45}
+
+%We deduce Proposition \ref{prop:31}  combining the earlier results in this section.
+\begin{proof}
+%[Proof of Proposition \ref{prop:31}}
+(1)  Lemma \ref{lem:42} establishes that \eqref{ineq} will hold  in the first quadrant case  if and only if $R_u^{\pm} \cap R_v^{\pm} = \emptyset$.
+ Lemma \ref{lem:46} shows that this condition is equivalent to $\sB_0(u) \bigcap \sB_0(v) = \emptyset$.
+In consequence  Theorem \ref{thm:49a} (1)   establishes (1) of Proposition \ref{prop:31}.
+
+(2)  Lemma \ref{lem:43a} shows that if neither of $u$, $v$ is a positive integer,
+then $u>1$ and $v>1$ are necessary conditions for \eqref{ineq} to hold. 
+Now Theorem \ref{thm:49a} (2) applies to prove  (2) of Proposition \ref{prop:31}.
+%In particular, sporadic rational solutions associated to $(u, v)$ satisfy the hypothesis that neither of $u$, $v$ is a positive integer.
+%These conditions apply to sporadic rational solutions.
+%Theorem \ref{thm:main}
+%This proposition  has the stated form if Conjecture \ref{conj:416} in Case 3  is true.
+%Otherwise, if  there were sporadic rational solutions in Case 3 above,
+%then there would be an additional set  of sporadic
+%rational solutions to be included in Proposition \ref{prop:31} (1) and 
+%hence  an additional category of solutions (i-d) in the statement of  Theorem \ref{thm:main}.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 5.5 Beatty Sequences- part 2
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Connection with Beatty sequences:  Case 2 (a).  $\frac{\uu}{\vv}$ rational, $\uu \geq 1$ rational}\label{sec:54}
+
+ We first  obtain a criterion for non-intersection  in terms of intersections of Beatty sequences.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Lemma 5.5 Beatty sequence classification 
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}\label{lem:53}
+(1) For ${\uu} \ge 1$ and  $\vv>1$, the 
+condition ${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm} = \emptyset$
+is equivalent to the condition
+ \begin{equation}\label{third-q}
+\bigg( \sB({\uu}) \bigcap \sB_0({\vv})\bigg)  \smallsetminus  X_{\uu, \vv} = \emptyset ,
+\end{equation}
+in which 
+\[
+X_{\uu, \vv} := \{ \floor{ w } :  w \in {\uu} \ZZ \cap {\vv} \ZZ \}.
+\] 
+We term $X_{\uu,\vv}$ the  exceptional set.
+
+(2) If in addition $\uu$ is irrational then \eqref{third-q}
+%this condition 
+simplifies to
+\begin{equation} \label{third-q-2}
+\sB({\uu}) \bigcap \sB_0({\vv}) =\emptyset.
+\end{equation}
+
+(3) If both $\uu$ and $\frac{\uu}{\vv}$ are irrational then \eqref{third-q} simplifies to 
+\begin{equation} \label{third-q-3}
+\sB_0({\uu}) \bigcap \sB_0({\vv}) =\emptyset.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+(1) 
+% The discussion above showed $u\ZZ \bigcap \widetilde{R}_v^{\pm} = \emptyset$
+% is equivalent to $\frac{u}{v}\ZZ \bigcap \frac{1}{v}\widetilde{R}_v^{\pm} = \emptyset$.
+The set $\widetilde{R}_\vv^{\pm}$ is a union of punctured integer intervals by \eqref{wide-R}.
+The point  ${\uu}n \in {\uu}\ZZ$ will fall in one such interval if and only if $\floor {\uu n }$
+is a left endpoint of such an interval. The condition ${\uu} \ge 1$ is imposed to insure there will be at
+most one such point inside each unit interval (except when ${\uu} =1$ and they are the endpoints,
+and can never be puncture points).
+Such a point ${\uu}n$ will belong to the intersection
+${\uu}\ZZ \bigcap \widetilde{R}_\vv^{\pm}$
+unless it coincides with  a puncture, described by   the set $X_{\uu,\vv}$.
+Since the  set of all $\floor {\uu n }$ is $\sB({\uu} )$, we obtain  \eqref{third-q}.
+
+(2) If $\uu/\vv$ is irrational then the exceptional set $X_{\uu,\vv} = \{ 0\}$.
+However $\{0\}$ is always omitted from $\sB_0({\vv})$ so we  obtain \eqref{third-q-2}.
+If  ${\uu}$ is irrational then $\sB_0({\uu}) = \sB({\uu}) \smallsetminus \{ 0\},$
+and  we  may replace $\sB({\uu})$ with $\sB_0({\uu})$ in \eqref{third-q}
+in the intersection.
+
+(3)  If both conditions hold we may additionally remove $X_{\uu, \vv}$ from
+the intersection, obtaining \eqref{third-q-3}.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Sub-sub-section 5.6.2 non-sporadic rational solutions on hyperbolas
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sporadic rational solutions in Third Quadrant}\label{sec:92}
+\subsubsection{Sporadic rational solutions}\label{sec:552}
 
 We  assume ${\uu} \ge 1$.
 This case  considers points with rational $\uu$ do not belong to any
@@ -3998,7 +3584,7 @@ $$
 These are the three parametric continuous families (a)-(c) excluded
 in Proposition \ref{prop:32} (2).
 
-We recall the  $(X^{'}, Y^{'})$-coordinates defined by 
+We now introduce  $(X^{'}, Y^{'})$-coordinates defined by 
 $$X^{'} := \frac{1}{\uu} = -\beta, \quad  Y^{' }:= \frac1{\vv} = \frac{\beta}{\alpha}.$$
 These coordinates are a birational
 change of variable from $(\alpha, \beta)$ in the open third
@@ -4007,10 +3593,6 @@ We coordinatize a rational point in these coordinates as
 $$(X', Y') = (\frac{c}{t}, \frac{d}{t}),$$
  with least common denominator $t$, requiring
 $\gcd(c, d, t)=1$. 
-
-(Explicitly, $t$ is chosen to be the unique  positive integer such that
-\[ \frac1t\ZZ = \ZZ + X'\ZZ + Y'\ZZ,\]
-i.e. $\frac1t = ``\gcd``(1,X',Y')$, and then $c$ and $d$ are determined by $c = tX'$, $d = tY'$.)
 %In terms of this coordinatization 
 %the corresponding $(\alpha, \beta) = (-\frac{c}{d}, - \frac{c}{t}).$ 
 
@@ -4022,64 +3604,32 @@ solutions must satisfy.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Proposition  5.12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{prop} \label{prop:514aa}
-%{ \rm (Sporadic Rational Solution Criterion-Third Quadrant)} 
-%%(INCOMPLETE- MAYBE NOT YET CORRECTLY STATED)
-%Let  $(\uu, \vv) = (-\frac{1}{\beta}, -\frac{\alpha}{\beta})$ and suppose that ${\uu} \ge  1$ is rational.
-%Set $(X^{'}, Y^{'}) = (\frac{1}{\uu}, \frac1{\vv}) := (\frac{c}{t}, \frac{d}{t})$, with integers $c,d, t >0$ with $\gcd(c, d, t)=1$.
-%In this case $(\alpha, \beta)=(- \frac{c}{d}, - \frac{c}{t})$ is a sporadic rational solution to \eqref{ineq}  if and only if 
-%$t > \max\{ c, d\}$ and:
-%\begin{enumerate}
-%\item[(i)]
-%All integers  $0 \le n < [c,d] t$ such that
-%$$
-%0 \le  \{ \frac{nc}{t}\} <  \{ \frac{c}{t}\} \quad \mbox{and} \quad  0 < \{ \frac{nd}{t}\} <  \{ \frac{d}{t}\}.
-%$$
-%satisfy 
-%\begin{equation}\label{eq:512-2}
-%n \in \{ \lceil w\rceil: \, w \in \frac{[c,d]}{t} \ZZ\}, 
-%\end{equation}
-%  where $[c,d]$ denotes  the least common
-%multiple of $c$ and $d$.
-%\item[(ii)]
-%The denominator $t$ has the property  that $t \le cd$ and the  linear
-%Diophantine equation 
-%\begin{equation}\label{eq:Frob1}
-%c X_1 + dX_2= t
-%\end{equation}
-%is unsolvable in non-negative integers $(X_1,X_2)$ having $X_2 \ge 1$. 
-%\end{enumerate}
-%\end{prop}
-
-\begin{prop} \label{prop:sporadic-rational}
+\begin{prop} \label{prop:514aa}
 { \rm (Sporadic Rational Solution Criterion-Third Quadrant)} 
-Let  $(\uu, \vv) = (-\frac{1}{\beta}, \frac{\alpha}{\beta})$ and suppose that ${\uu} \ge  1$ is rational.
+%(INCOMPLETE- MAYBE NOT YET CORRECTLY STATED)
+Let  $(\uu, \vv) = (-\frac{1}{\beta}, -\frac{\alpha}{\beta})$ and suppose that ${\uu} \ge  1$ is rational.
 Set $(X^{'}, Y^{'}) = (\frac{1}{\uu}, \frac1{\vv}) := (\frac{c}{t}, \frac{d}{t})$, with integers $c,d, t >0$ with $\gcd(c, d, t)=1$.
+In this case $(\alpha, \beta)=(- \frac{c}{d}, - \frac{c}{t})$ is a sporadic rational solution to \eqref{ineq}  if and only if 
+$t > \max\{ c, d\}$ and:
 \begin{enumerate}
 \item[(i)]
-The point $(\alpha, \beta)=(- \frac{c}{d}, - \frac{c}{t})$ is a  rational solution to \eqref{ineq}  if and only if 
-%$t > \max\{ c, d\}$ and:
-all integers  $0 \le n < t$ such that
+All integers  $0 \le n < t$ such that
 $$
-0 \le  \{ nX'\} <  X' \quad \mbox{and} \quad  0 < \{ n Y'\} <   Y'.
+0 \le  \{ \frac{nc}{t}\} <  \{ \frac{c}{t}\} \quad \mbox{and} \quad  0 < \{ \frac{nd}{t}\} <  \{ \frac{d}{t}\}.
 $$
 satisfy 
-\begin{equation}
-(\{ nX'\}, \, \{nY'\}) = \lambda (X',\, Y')\quad \text{for some }0\leq\lambda <1.
+\begin{equation}\label{eq:512-2}
+n \in \{ \lceil w\rceil: \, w \in \frac{[c,d]}{t} \ZZ\}, 
 \end{equation}
-% \begin{equation}\label{eq:512-2}
-% n \in \{ \lceil w\rceil: \, w \in \frac{[c,d]}{t} \ZZ = [X',Y']\ZZ\}, 
-% \end{equation}
-%   where $[c,d]$ denotes  the least common
-% multiple of $c$ and $d$.
+  where $[c,d]$ denotes  the least common
+multiple of $c$ and $d$.
 \item[(ii)]
-The point $(\alpha, \beta)=(- \frac{c}{d}, - \frac{c}{t})$ is a sporadic rational solution if, in addition,
-the denominator $t$ has the property  that $t \le \frac{cd}{(c,d)} = {[c,d]}$ and the  linear
+The denominator $t$ has the property  that $t \le \frac{cd}{(cd)} = {[c,d]}$ and the  linear
 Diophantine equation 
 \begin{equation}\label{eq:Frob1}
-c n_1 + dn_2= t
+c X_1 + dX_2= t
 \end{equation}
-is unsolvable in non-negative integers $(n_1,n_2)$ having $n_2 \ge 1$. 
+is unsolvable in non-negative integers $(X_1,X_2)$ having $X_2 \ge 1$. 
 \end{enumerate}
 \end{prop}
 
@@ -4087,8 +3637,53 @@ is unsolvable in non-negative integers $(n_1,n_2)$ having $n_2 \ge 1$.
 In parallel to Proposition \ref{prop:414aa},   the role of condition (i) is   to make \eqref{ineq} hold, and
 the role of  condition (ii) is to exclude membership in the three one-parameter families of solutions. 
 
-Criterion (i) is simply a restatement of Proposition \ref{prop:torus-crit-third}, with the added observation that the torus orbit generated by $\bv = (X',Y')$ is periodic modulo $t$, so is suffices to check a representative from each residue class.
-This reduces the question of checking rational solutions to a finite computation.
+We show criterion (i) is equivalent to \eqref{ineq} holding for the associated $(\alpha, \beta)$. 
+%We have $X = \frac{1}{u}, Y= \frac{v}{u}$ with $u = -\frac{1}{\alpha}= \frac{t}{a}$ and $v= \frac{\beta}{\alpha}= \frac{b}{a}$.
+%By hypothesis $\frac{u}{v} \ge 1$ and we have $0 < v <1$, since $v=1$ is excluded by exclusion (a) for $m_1=1$.
+By hypothesis  ${\uu}>1$, and by  Proposition \ref{prop:32}(3) the condition ${\vv}>1$ is a  necessary condition for \eqref{ineq} to hold
+in the sporadic rational case. Now ${\uu} =\frac{1}{X'}= \frac{t}{c}$
+gives $t >c$ and and ${\vv} =\frac{1}{Y'}= \frac{t}{d}$ gives
+$t>d$ so $t > \max \{ c, d\}.$ (Thus $0 < \frac{c}{t}, \frac{d}{t}<1$.)
+Now by Lemma \ref{lem:53}(1)
+the condition   \eqref{ineq} holds  if and only if
+$$\sB({\uu}) \bigcap \sB_0({\vv}) \subseteq X_{{\uu},{\vv}}.$$
+%Lemma 4.3 and Lemma 4.7(2)
+The criterion of Lemma \ref{lem:48} (2) shows that
+\[
+\sB({\uu}) \bigcap \sB_0({\vv}) = \{ -n \in \ZZ: \, 0 \le \{ \frac{n }{\uu} \}< \{ \frac{1}{\uu}\} \quad \mbox{and} \quad
+0 < \{ \frac n \vv \}< \{ \frac1\vv\}\,\, \}.
+\]
+In terms of $(c,d,t)$  this criterion can be rewritten:
+\begin{equation}\label{negative-cond}
+\sB({\uu}) \bigcap \sB_0({\vv}) = \{-n \in \ZZ: \,0 \le \{ \frac{nc}{t} \} < \frac{c}{t} \quad \mbox{and} \quad 0 < \{ \frac{nd}{t} \}< \frac{d}{t} \, \, \}.
+\end{equation}
+On the other hand [ERROR! $u' = t/c, v' = t/d$]
+\[
+X_{{\uu}, {\vv}} := \{ \floor{ w} : \, w \in {\uu} \ZZ \bigcap {\vv} \ZZ\} =  \{ \floor{w} : \, w \in \frac{t}{c} \ZZ \bigcap \frac{t}{d} \ZZ\, \}
+\]
+Since $(c, d, t)=1$ we have $\frac{t}{c}\ZZ \bigcap \frac{t}{d}\ZZ = \frac{t}{(c,d)} \ZZ,$ 
+(where $(c,d)$ denotes the greatest common divisor of $c$ and $d$). Thus
+\begin{equation}\label{positive-cond}
+X_{{\uu}, {\vv}} := \{ \floor{w} : \, w \in \frac{t}{(c,d)} \ZZ \}.
+\end{equation}
+The inclusion of the set \eqref{negative-cond} in the set \eqref{positive-cond} gives
+a  necessary and sufficient condition for \eqref{ineq} to hold for the associated $(\alpha, \beta)$.
+This condition is in turn equivalent to the assertion that 
+for all $n \in \ZZ$ with $n$ satisfying \eqref{negative-cond} 
+%must belong to $ \{ \lfloor w \rfloor : \, w \in \frac{[c,d]}{t} \ZZ \}$; equivalently 
+the integer $-n$ belongs to
+$ \{ \lfloor -w \rfloor: \, w \in \frac{[c,d]}{t} \ZZ \}$, where we replaced $w$ by $-w$ 
+using the invariance of the lattice  $\frac{[c,d]}{t} \ZZ$  under reflection $x \to -x$. In consequence
+\[
+n = - \lfloor -w \rfloor = \lceil w \rceil,   \quad  \mbox{for some} \quad w \in \frac{t}c \ZZ \bigcap \frac{t}d \ZZ ,
+\]
+using the relation $\lceil x \rceil = - \lfloor -x \rfloor$ valid for all real $x$.
+The condition \eqref{negative-cond} has set of differences  periodic in
+$n$ with period $t$, while the set of allowed values $\lfloor w \rfloor$
+ has a set of differences periodic with (possibly non-minimal) period $[c,d] t$. 
+It follows that  we need only check the inclusion condition holds over a single period $0 \le n < [c,d]t $,
+which is a finite computation.
+%However both sets are periodic $(\bmod \, t)$
 
 
 We show that criterion (ii) is equivalent to $(\frac{1}{\uu}, \frac1{\vv})$ not falling on any one-parameter solution to \eqref{ineq}.
@@ -4096,7 +3691,7 @@ These are classified as exclusion types {\it (iii-a)} through {\it (iii-c)} in t
 By Proposition \ref{prop:32} and the discussion after its statement,
 the  one-parameter solutions of exclusion type {\it (iii-c)}  are  given by $\frac{m_1}{{\uu}} + \frac{m_2}{{\vv}} =1$
 for any integer $m_1, m_2 \ge 1$. 
-  The  condition for $(\frac{1}{\uu}, \frac1\vv) = (\frac{c}{t}, \frac{d}{t})$ 
+  The  condition for $(\frac{1}{\uu}, \frac1\vv) = (\frac{t}{c}, \frac{t}{d})$ 
  to fall on such a curve 
 is  $m_1 \frac{c}{t}  + m_2 \frac{d}{t}= 1$, which on clearing denominators becomes 
  $m_1 c + m_2 d= t$. This condition is easily seen to be equivalent to the equation 
@@ -4110,272 +3705,61 @@ the equation $d X_2= t$
 having no positive integer solution; this excludes solutions above having $X_1=0$. 
 
 Exclusion {\it (iii-b)}  removes all solutions
-with $\frac\uu\vv = \frac{m_2}{m_1}$ having also   $\vv \geq {m_1}$, if $\frac{m_2}{m_1}$ is in lowest terms. 
-% Here the exclusion affects all rational $\uu$, for small enough $\vv$.  
-Suppose $\frac{c_0}{d_0} = \frac{c}{d} = \frac{X'}{Y'} = \frac{\vv}{\uu}$ expresses this ratio in lowest terms. 
-Explicitly, $c_0 = \frac{c}{(c,d)}$ and $d_0 = \frac{d}{(c,d)}$ where $(c,d)$ is the greatest common divisor.
-Then $\vv =\frac{t}{d} \geq c_0$  is equivalent to 
-\[ t \geq c_0d = \frac{cd}{(c,d)} = [c,d] \]
-as claimed, where $[c,d]$ is the least common multiple.
-%Since  $\frac\uu\vv = \frac{Y^{'}}{X^{'}}=\frac{d}{c}$
-%and $\frac1\vv=Y'= \frac{c}{t}$, so (assuming $(c, d)=1$) we may choose $m_1=c, m_2=d$ and
-%$ v \geq {m_1}$ becomes $\frac{d}{t} \le \frac{1}{c}$ whence $cd \le t$. 
-%The condition to be a sporadic solution is  the complementary condition  $t < cd$.
-%[TBA-GO OVER THIS LAST CASE]
+with $\frac\uu\vv = \frac{m_2}{m_1}$ having also   $\vv \geq {m_1}.$ 
+Here the exclusion affects all rational $\uu$, for small enough $\vv$.  
+Since  $\frac\uu\vv = \frac{Y^{'}}{X^{'}}=\frac{d}{c}$
+and $\frac1\vv=Y'= \frac{c}{t}$, so (assuming $(c, d)=1$) we may choose $m_1=c, m_2=d$ and
+$ v \geq {m_1}$ becomes $\frac{d}{t} \le \frac{1}{c}$ whence $cd \le t$. 
+The condition to be a sporadic solution is  the complementary condition  $t < cd$.
+[TBA-GO OVER THIS LAST CASE]
+
+
+
 \end{proof}
 
-We now provide some intuition for how sporadic solutions may be found computationally with an extended example.
 
-\begin{exa}
-Consider when $(X',Y')$ lies on the line of slope 2/3, so $(X',Y') = (\frac{3n}{t},\frac{2n}{t})$ for some coprime integers $n$, $t$. (i.e. $(c,d,t) = (c_0 n,d_0n,t)$ with $(c_0,d_0) = (3,2)$) Since we assume here $X',Y'\leq 1$, these integers must satisfy $\frac{n}{t} \leq  \frac13$.
-If $\frac{n}t \leq \frac16$, then the necessary condition {\it (i)} is satisfied. These are non-sporadic rational solutions, falling in case {\it (iii-b)}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sect. 5.7 Proof of Proposition 3.2
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof of Proposition \ref{prop:32} }\label{sec;56}
 
-If $\frac16 < \frac{n}{t} \leq \frac13$ satisfies (i) and (ii), it is a sporadic rational solution. 
-Since $n$ and $t$ are coprime, the subgroup $H$ generated by $(X',Y')$ will have $t$ points in the torus. (i.e. $H = \langle (\frac{3n}t,\frac{2n}t)\rangle =  \langle (\frac{3}t,\frac{2}t)\rangle$) 
-To satisfy (i), there are essentially two obstructions: the lower-left rectangle could contain a ``bad'' point along the line segment $L_1 \subset H_\RR$ starting at $(\frac12,0)$ on the bottom axis, or it could contain a ``bad'' point along the segment $L_2 \subset H_\RR$ starting at $(0,\frac13)$ on the left axis. 
-The smallest point in $H$ on segment $L_1$ has horizontal coordinate $\frac{3}{t}(\floor{\frac12 t}+1) - 1$, so a necessary condition is 
-\[ (\text{x-coord}) \quad \frac{3n}{t} \leq \frac{3}{t}(\floor{\frac12 t}+1) - 1 .\]
-The smallest point in $H$ on segment $L_2$ has vertical coordinate $\frac{2}{t}\ceil{\frac23 t} - 1$, so a second necessary condition is
-\[ (\text{y-coord}) \quad \frac{2n}{t} \leq \frac{2}{t}\ceil{\frac23 t} - 1.\]
-Solving these inequalities for $n$ yields
-\[ n \leq  \min\bigg\{
-\displaystyle \bfloor{\frac12 t} + 1 - \frac{t}{3} ,\quad
- \bceil{\frac23 t} - \frac{t}{2}
-\bigg\}\]
-The floor and ceiling functions in the two expressions may be broken down into cases modulo 2 and 3, respectively. For example
-\[ \bfloor{\frac12 t} + 1 - \frac{t}{3} = \begin{dcases}
-\displaystyle (\frac{t}2) + 1 - \frac{t}{3} = \frac{t}{6}+1 & \text{if }t \text{ even}\\
-\displaystyle(\frac{t-1}2) + 1 - \frac{t}{3} = \frac{t}{6}+\frac12 & \text{if } t \text{ odd}
-\end{dcases}\]
-Considering the residue of $t$ modulo 6, this is equivalent to 
-\[ n \leq \begin{cases}
-\frac{t}6 & \text{if }t\equiv 0,3 \,(6)\\
-\frac{t}{6} + \frac13 & \text{if } t \equiv 1,4 \,(6) \\
-\frac{t}{6} + \frac23 & \text{if } t \equiv 2 \,(6)\\
-\frac{t}{6} + \frac12 & \text{if } t \equiv 5 \,(6) .
-\end{cases}\]
-Since $n$ must be integral, this may be further simplified by applying floors to the right-hand expressions. This gives
-\[ n \leq \begin{cases}
-\floor{\frac{t}6} & \text{if }t\equiv 0,1,3 \,(6)\\
-\floor{\frac{t}{6}} + 1 & \text{if } t \equiv 2,4,5 \,(6) .
-\end{cases}\]
-The first case, $n \leq \floor{\frac{t}{6}}$ is not interesting, because it produces a non-sporadic solution. The sporadic solutions come from the second case, $n > \floor{\frac{t}{6}}$:
-\[ n =\begin{cases}
-\frac{t+4}{6} & \text{if }t\equiv 2 \,(6)\\
-\frac{t+2}{6} & \text{if }t\equiv 4 \,(6)\\
-\frac{t+1}{6} & \text{if }t\equiv 5 \,(6).
-\end{cases}\]
-The corresponding values of $(X,Y)$ are, for $t \equiv 2\,(6)$,
-\[ (X,Y) = (\frac{3n}{t},\frac{2n}{t}) =  (\frac{t+4}{2t}, \frac{t+4}{3t} )\]
-or, taking $6r = t+4$,
-\[ (X,Y) = (\frac{6r}{12r-8},\frac{6r}{18r-12}) = (\frac{3r}{6r-4},\frac{2r}{6r-4}).\]
-\end{exa}
-It should be straightforward to carry out this same computation with (3,2) replaced with any pair of coprime positive integers $(c_0,d_0)$. The end result will be
-\[ n\leq  \begin{cases}
-\floor{\frac{t}{c_0d_0}} & \text{if }t\equiv a_i \,(c_0d_0)\\
-\floor{\frac{t}{c_0d_0}} + 1 & \text{if } t \equiv b_i \,(c_0d_0) .
-\end{cases}\]
-for some residue classes $a_i,b_i$ modulo $c_0d_0$.
-Why can we never have $n = \floor{\frac{t}{c_0d_0}} + 2$? If so, then $(X',Y') = (\frac{c_0 n}{t},\frac{d_0 n}{t})$ will span a lower-left rectangle that intersects $L_1 \subset H_\RR$, the segment starting at $(\frac1{d_0},0)$, at a horizontal-length strictly greater than $\frac {c_0}{t}$. 
-Since the points in $H$ are evenly spaced, this implies the intersection must contain at least one point in its interior, violating the condition of Proposition \ref{prop:sporadic-rational} (i). This has some immediate consequences.
+%We deduce Proposition \ref{prop:32} using  earlier results in this section.
 
-%\begin{prop}
-%For fixed values of $c_0, d_0$ and $t$, there are finitely many positive integers $n$ such that
-%\[ (X', Y') = (\frac{c_0n}{t}, \frac{d_0n}{t})\]
-%corresponds to a solution to \eqref{ineq}.
-%\end{prop}
-%\begin{proof}
-%We observed earlier (ref?) that all solutions to \eqref{ineq} have $Y'\leq 1$. Thus $1\leq n \leq \frac{t}{d_0}$, which proves the claim.
-%\end{proof}
-
-\begin{prop}
-%For fixed values of $c_0, d_0$ and $t$, with $c_0,d_0$ coprime, there is at most one positive integer $n$ such that
-Suppose
-\[ (X',Y') = (\frac{c_0n}{t}, \frac{d_0n}{t})\]
-corresponds to a sporadic rational solution to \eqref{ineq}, where $c_0,d_0$ are coprime positive integers and $n,t$ are pairwise coprime positive integers. Then
-\[ n\geq 2\]
-and
-\[ t > c_0d_0\]
-and
-\[  \frac{t}{c_0d_0} < n < \frac{t}{c_0d_0}+1 .\]
-\end{prop}
 \begin{proof}
-If $n = 1$, then the exceptional set only contains the 0 residue class modulo $t$ by the criterion in (ref. diagonal line lemma). Thus the Beatty sequence disjointness criterion is equivalent to the disjointness condition in the first quadrant. These solutions are non-sporadic since they fall in case {\it(a)} or {\it (c)}. Thus $n\geq 2$ is necessary for $(X',Y')$ to be a sporadic solution.
-
-Assuming for now we have proved the third line of inequalities, the bounds
-\[ 2 \leq n < \frac{t}{c_0d_0} + 1\]
-clearly imply $t > c_0d_0$ after subtracting 1 from both sides.
-
-We now prove the inequalities in  the third line by contradiction. If $n \leq \frac{t}{c_0d_0}$, then the corresponding point
-$ (\uu,\vv) = (\frac{t}{c_0n},\frac{t}{d_0n})$
-satisfies 
-\[\vv = \frac{t}{d_0}\cdot \frac{1}{n} \geq \frac{t}{d_0}\big(\frac{c_0d_0}{t}\big) = c_0 \]
-which is the numerator of the ratio $\frac{\vv}{\uu} = \frac{c_0}{d_0}$ in lowest terms.
-Thus $(X',Y')$ is non-sporadic since it falls in case {\it(b)} according to Proposition \ref{prop:32}.
-
-If $n \geq \frac{t}{c_0d_0}+1$, then we must consider the configuration of the torus subgroup more carefully.
-As before let $H\subset \RR^2/\ZZ^2$ denote the subgroup generated by the point $(X',Y')$, so that $H$ consists of all integer multiples of $(X',Y')$, and let $H_\RR$ consist of all real multiples of $(X',Y')$. (Since $\RR^2/\ZZ^2$ is not uniquely divisible, to define $H_\RR$ we should first take all $\RR$-multiples of $(X',Y')$ in $\RR^2$, and then let $H_\RR$ be the image under the projection $\RR^2 \to \RR^2/\ZZ^2$.) Note that $H_\RR$ depends only on the parameters $(c_0,d_0)$, and not on $(n,t)$.
-
-Let $R$ denote the region to the lower-right of the point $(X',Y')$. Let $L_1$ be the first segment below the main diagonal in $R$, and let $L_2$ be the first segment in $R$ to the left of the main diagonal. (See figure below.) Because of the Beatty sequence criterion (ref?), we consider $L_1$ with both endpoints open, and $L_2$ with its left-endpoint closed and its right-endpoint open.
-If $L_2$ contains a point of the subgroup $H$, then $(X',Y')$ fails the Beatty intersection criterion (ref?). 
-
-We claim that this is the case if $n\geq \frac{t}{c_0d_0}+1$. 
-If so, the height of $L_2$ (i.e. the length of its projection on the $y$-axis) is
-\[ \text{height}(L_2) = Y' - \frac1{c_0} = \frac{d_0n}{t} - \frac{1}{c_0} \geq \frac{d_0}{t}\bigg(\frac{t}{c_0d_0}+1\bigg) - \frac{1}{c_0} = \frac{d_0}{t}.\]
-However, since $n$ and $t$ are assumed coprime the subgroup $H$ is generated by the point
-\[ \frac1{n}(X',Y') = (\frac{c_0}{t},\frac{d_0}{t}).\]
-Thus the vertical height between consecutive points of $H$ is exactly $\frac{d_0}{t}$.
-Since $Y'$ has height no smaller than this gap-distance $\frac{d_0}{t}$, it must contain a point in the subgroup $H$. This violates the disjointness criterion so $(X',Y')$ does not correspond to a solution.
+(1) Lemma \ref{lem:54} shows that irrational solutions on a rectangular hyperbola \eqref{uv-frac} with $m_1, m_2 \ge 1$
+will satisfy ${\uu} \ZZ \bigcap \widetilde{R}_{\vv}^{\pm} = \emptyset$, whence Lemma \ref{lem:52} implies that
+\eqref{ineq}  holds for the associated $(\alpha, \beta)$. 
+ Lemma \ref{lem:511} shows that all rational solutions on these hyperbolas
+ satisfy ${\uu} \ZZ \bigcap  \widetilde{R}_{\vv}^{\pm} = \emptyset$, whence \eqref{ineq} holds for the associated 
+ rational $(\alpha, \beta)$.
+ 
+ (2) For the parameter range $0 < {\uu} <1$, Lemma \ref{lem:53aa} excludes all $(\uu,\vv)$ having at least one irrational coordinate,
+ in that the solutions listed in (a) are removed by exclusion (a), while those listed in (b) have no irrational coordinate. For the parameter
+  value ${\uu}=1$,  $\uu/\vv$ and $\vv$ are both irrational or both rational, so in  the irrational case, $\uu/\vv$ is irrational, whence Lemma \ref{lem:59}
+ excludes all solutions. For the remaining parameter range ${\uu} >1$, suppose first $\uu/\vv$ is rational. Writing $\frac\uu\vv= \frac{m_2}{m_1}$, 
+ Lemma \ref{lem:59} excludes all irrational $v$ having $1 < \vv <m_1$,
+ which covers the complete range of $\vv$  not excluded by exclusion (b). (Recall that $\vv \le 1$, see (3) below.) 
+ Finally suppose ${\uu} >1$ and $\uu/\vv$ is irrational. In this case Lemma \ref{lem:54} 
+ and Lemma \ref{lem:55} together exclude all solutions $(\uu, \vv)$ not on one of the hyperbolas excluded by exclusion (c).
+ 
+ (3)  
+ %An infinite set of sporadic rational solutions is given in 
+Lemma \ref{lem:53aa} (b) classified all the sporadic rational solutions having $0< \uu <1< \vv$, which are all such solutions having ${\uu} <1$.
+ These consist of  and infinite set $(\uu, \vv)$ with
+ $\uu= 1-\frac{j}{m_1r}$ and  $\vv = m_1-\frac{j}{r}$ for some integers $ m_1 \ge 2$,  $r\geq 2$ and $1\le j\le m_1-1$.
+All other sporadic rational solutions necessarily  have ${\uu} > 1$.
+ %The fact that all solutions have $v \le 1$ follows from $v= \frac{\beta}{\alpha}$ together with \eqref{necessary}. 
 \end{proof}
 
-\begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}[scale=4]
-  \draw[-] (0,0) -- (1,0);
-  \draw[-] (0,0) -- (0,1);
-  \draw[dotted] (1,0) -- (1,1);
-  \draw[dotted] (0,1) -- (1,1);
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x});
-  \draw[domain=0:1/3,smooth,variable=\x, blue] plot ({\x},{3/4*\x+3/4});
-  \draw[domain=1/3:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x-1/4});
-  \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/2});
-  \draw[domain=2/3:1,smooth,variable=\x, blue]  plot ({\x},{3/4*\x-1/2});
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({\x},{3/4*\x+1/4});
-  
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (1/3*12/13,1/4*12/13) {};
-  \node[draw,circle,inner sep=1.5pt,fill,red] at (2/3*12/13,2/4*12/13) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (3/3*12/13,3/4*12/13) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (4/3*12/13-1,4/4*12/13) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (5/3*12/13-1,5/4*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (6/3*12/13-1,6/4*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (7/3*12/13-2,7/4*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (8/3*12/13-2,8/4*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (9/3*12/13-2,9/4*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (10/3*12/13-3,10/4*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (11/3*12/13-3,11/4*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (12/3*12/13-3,12/4*12/13-2) {};
-  
-  \draw[-] (1/3,0) -- (1/3,0) node[below] {$1/d_0$};
-  \draw[-] (0,1/4) -- (0,1/4) node[left] {$1/c_0$};
-  \draw[dotted, green] (1/3,0) -- (1/3,1/4);
-  \draw[dotted, green] (0,1/4) -- (1/3,1/4);
-  
-  \draw[dashed, red] (1/3*24/13,0) -- (1/3*24/13,1/4*24/13);
-  \draw[dashed, red] (0,1/4*24/13) -- (1/3*24/13,1/4*24/13);
-  \draw[-] (2/3*12/13,2/4*12/13) node[above] {$(X',Y')$};
-  
-  \node at (0.08,0.45) {$L_2$};
-  \draw [decorate,decoration={brace,amplitude=5pt},rotate=0] (0.02,0.28) -- (0.24,0.44);
-  \node at (0.5,0.26) {$L_1$};
-  \draw [decorate,decoration={brace,amplitude=5pt},rotate=0] (0.35,0.03) -- (0.60,0.22);
- \end{tikzpicture}
- \begin{tikzpicture}[scale=4]
-  \draw[-] (0,0) -- (1,0);
-  \draw[-] (0,0) -- (0,1);
-  \draw[dotted] (1,0) -- (1,1);
-  \draw[dotted] (0,1) -- (1,1);
-  
-  \draw[domain=0:1,smooth,variable=\x, blue] plot ({3/4*\x},{\x});
-  \draw[domain=0:1/3,smooth,variable=\x, blue] plot ({3/4*\x+3/4},{\x});
-  \draw[domain=1/3:1,smooth,variable=\x, blue] plot ({3/4*\x-1/4},{\x});
-  \draw[domain=0:2/3,smooth,variable=\x, blue] plot ({3/4*\x+1/2},{\x});
-  \draw[domain=2/3:1,smooth,variable=\x, blue] plot ({3/4*\x-1/2},{\x});
-  \draw[domain=0:1.0,smooth,variable=\x, blue] plot ({3/4*\x+1/4},{\x});
-  
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (1/4*12/13,1/3*12/13) {};
-  \node[draw,circle,inner sep=1.5pt,fill,red] at (2/4*12/13,2/3*12/13) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (3/4*12/13,3/3*12/13) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (4/4*12/13,4/3*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (5/4*12/13-1,5/3*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (6/4*12/13-1,6/3*12/13-1) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (7/4*12/13-1,7/3*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (8/4*12/13-1,8/3*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (9/4*12/13-2,9/3*12/13-2) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (10/4*12/13-2,10/3*12/13-3) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (11/4*12/13-2,11/3*12/13-3) {};
-  \node[draw,circle,inner sep=0.5pt,fill,red] at (12/4*12/13-2,12/3*12/13-3) {};
-  \draw[-] (1/4,0) -- (1/4,0) node[below] {$1/d_0$};
-  \draw[-] (0,1/3) -- (0,1/3) node[left] {$1/c_0$};
-  \draw[dotted, green] (1/4,0) -- (1/4,1/3);
-  \draw[dotted, green] (0,1/3) -- (1/4,1/3);
-  
-  \draw[dashed, red] (1/4*24/13,0) -- (1/4*24/13,1/3*24/13);
-  \draw[dashed, red] (0,1/3*24/13) -- (1/4*24/13,1/3*24/13);
-  \draw[-] (2/4*12/13,2/3*12/13) node[right] {$(X',Y')$};
-  
-  \node at (0.47,0.1) {$L_1$};
-  \draw [decorate,decoration={brace,amplitude=5pt},rotate=0] (0.44,0.24)-- (0.28,0.02);
-  \node at (0.26,0.5) {$L_2$};
-  \draw [decorate,decoration={brace,amplitude=5pt},rotate=0] (0.22,0.60) -- (0.03,0.35);
- \end{tikzpicture}
-\end{center}
-\caption{Torus criterion with $(c_0,d_0) = (4,3)$. The subgroup $H$ is indicated by red dots; $H_\RR$ is indicated by blue lines.}
-\end{figure} \label{fig:torus_sporadic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %
+% Section 5.8 sporadic rational solutions
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Sporadic Rational Solutions: Case $\frac{\uu}{\vv} >1$}\label{sec:57}
 
-\begin{cor}
-If
-\[ (X',Y') = (\frac{c_0n}{t}, \frac{d_0n}{t})\]
-corresponds to a sporadic rational solution to \eqref{ineq}, with $c_0,d_0$ coprime and $n,t$ coprime, then
-\[ \frac{1}{d_0} < X' < \frac{2}{d_0} \quad\text{and}\quad \frac{1}{c_0} < Y' < \frac{2}{c_0}.\]
-\end{cor}
-\begin{proof}
-By the previous proposition, sporadic rational solutions satisfy $\frac{t}{c_0d_0} < n$ which implies the lower bound on $X'$.
-The previous proposition also shows
-\[ n < \frac{t}{c_0d_0}+1 \quad\text{and}\quad t > c_0d_0.\]
-These bounds on $n$ and $t$ imply
-\[ X' = \frac{c_0}{t}n < \frac{c_0}{t}\bigg(\frac{t}{c_0d_0}+1\bigg) = \frac1{d_0} + \frac{c_0}{t} < \frac1{d_0} + \frac{c_0}{c_0d_0} = \frac2{d_0}.\]
-The same argument applies for $Y'$.
-\end{proof}
-
-\begin{rmk}
-This corollary should be interpreted as saying that the ``sporadic range'' extends at most twice as far as the ``stable range'' i.e. case {\it(iii-b)}.
-\end{rmk}
-
-\begin{cor}\label{cor:sporadic-bound}
-If $r=\frac{c_0}{d_0}$ is a fixed positive rational in reduced terms, then the set $S^*_r$ of sporadic solutions to (1) in (X',Y')-coordinates satisfying $\frac{X'}{Y'}=r$ is a discrete set of points in the open segment from $(\frac{1}{d_0},\frac{1}{c_0})$ to $(\frac{2}{d_0},\frac{2}{c_0})$, with at most a single limit point at the lower endpoint $(\frac{1}{d_0},\frac{1}{c_0})$.
-\end{cor}
-\begin{proof}
-We have shown that all sporadic solutions lie in the stated range. It remains to show that the topology of these points is as claimed.
-The bounds
-\[ \frac{t}{c_0d_0} < n < \frac{t}{c_0d_0} + 1\]
-and the restriction that $n$ is integral implies that for fixed choice of $c_0$, $d_0$, and $t$, there is at most one $n$-value that produces a sporadic solution, namely $n = \ceil{\frac{t}{c_0d_0}}$. This condition is necessary but not sufficient; for example, one also needs $n$ to be relatively prime to $t$. This implies the sporadic solutions are a subset $S_r^*  \subset T_r$ where
-\[ T_r := \{ (\frac{c_0}{t}\ceil{\frac{t}{c_0d_0}}, \frac{d_0}{t}\ceil{\frac{t}{c_0d_0}}) : t \geq c_0d_0 + 1\} = \{ (r_{c_0/t}(\frac1{d_0}), r_{d_0/t}(\frac{1}{c_0}) : t\geq c_0d_0+1\}.\]
-The set $T_r$ is discrete and has a single limit point $(\frac{1}{d_0},\frac{1}{c_0})$. Thus the same is true for any subset, which proves the claim.
-\end{proof}
-% \begin{cor}
-% If $r = \frac{c_0}{d_0}$ is a fixed positive rational in reduced terms, then the set $S_r$ of solutions to \eqref{ineq} in $(X',Y')$-coordinates satisfying $\frac{X'}{Y'} = r$ has the following structure:
-% \[ S_r = S_r^{(0)} \sqcup S_r^{(1)}\]
-% where
-
-% (i) $S_r^{(0)}$ is a half-closed line segment from $(0,0)$ to $(\frac1{d_0},\frac1{c_0})$, closed at $(\frac1{d_0},\frac1{c_0})$.
-
-% (ii) $S_r^{(1)}$ is a discrete set of points contained in the half-closed segment from $(\frac1{d_0},\frac1{c_0})$ to $(\frac{c_0}{d_0}, 1)$, closed at $(\frac{c_0}{d_0}, 1)$, with a single limit point at $(\frac1{d_0},\frac1{c_0})$.
-% \end{cor}
-
-\subsection{Closure of solution set}\label{sec:93}
-We conclude here with a proof that the solutions to \eqref{ineq} form a closed subset of the plane, as an application of the partial results on sporadic solutions in the previous section.
-
-\begin{cor}
-The set $S$ of solutions to \eqref{ineq} is a closed subset of $\RR^2$.
-\end{cor}
-\begin{proof}
-This claim clearly holds in the (closed) first, second and fourth quadrants by our classification of solutions given above. It remains to show that the third quadrant solutions form a closed subset of the plane.
-
-Let $S_1$ denote the union of the coordinate axes with all non-sporadic solutions in the third quadrant, meaning those in cases {\it(iii-a)}, {\it(iii-b)} and {\it(iii-c)} of Theorem \ref{thm:main}. Let $S_2$ denote the union of the coordinate axes with third quadrant solutions in case {\it(iii-b)} and case {\it(iii-b')}. It suffices to show that both $S_1$ and $S_2$ are closed. For $S_1$ this is clear.
-
-To see that $S_2$ is closed we consider some Cauchy sequence of points $p_i = (\alpha_i,\beta_i)$ in $S_2$ which converge to $p = \lim p_i$ in $\RR^2$. If the $\beta$-coordinates $\beta_i$ tend to zero, then the limit $p$ lies on the $\alpha$-axis which is contained in $S_2$. Otherwise, if $\beta(p) <0$ there exists some $\epsilon >0$ such that $\beta_i < -\epsilon$ for sufficiently large $i$. 
-By Corollary \ref{cor:sporadic-bound} (translated into $(\alpha,\beta)$ coordinates) 
-the points in $S_2$ with $\alpha$-coordinate of the form
-$ \alpha = -\frac{m}{n}$
-in lowest terms
-all have $\beta$-coordinate in the range
-\[ 0 < |\beta| < \frac2{n}. \]
-Therefore the bound $|\beta_i| > \epsilon$ implies the corresponding $\alpha$-coordinate 
-$\alpha_i = -\frac{m_i}{n_i}$
-in reduced terms must satisfy
-$  \epsilon < \frac2{n_i}$
-or equivalently $n_i < \frac{2}{\epsilon}$. The set of rationals with bounded denominator forms a discrete subset of $\RR$ so the $\alpha_i$-coordinates are eventually constant. Corollary \ref{cor:sporadic-bound} proves that the restriction of $S_2$ to a fixed $\alpha$-coordinate is closed, so again the limit $p$ lies in $S_2$. This completes the proof.
-\end{proof}
 
 
 %%%%%%%%
@@ -4483,8 +3867,7 @@ pp. 39--52, Springer: New York 2010.
  \bibitem{LMR16}
  % Sec 1.0
  J. C. Lagarias, T. Murayama, and D. H. Richman,
- \emph{Dilated floor functions that commute,} American
- Math. Monthly, to appear.
+ \emph{Dilated floor functions that commute,} preprint.
  
  \bibitem{Lan66}
  % 5.5.1
@@ -4691,213 +4074,3 @@ giving $0 < \alpha <\beta$, which completes the assertion applying to the sporad
 In Section \ref{sec:45} we give a criterion (Proposition \ref{prop:414aa})
 for sporadic rational solutions. It makes a 
 connection with the two-dimensional Diophantine Frobenius Problem, cf. \cite{RA05}.
-%%%%%%%%%%%%%%%%
-% Sub-sub-section 8.3.2
-%%%%%%%%%%%%%%%%
-\subsubsection{Case 2(b). Both $\uu$ and $\uu/\vv$ rational}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Lemma 8.7
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{lem}\label{lem:511}
-For $\uu,\vv>0$ with $\uu$ and $\uu/\vv$ rational, the condition $\uu\ZZ \cap \widetilde{R}^\pm_\vv$ holds if either $(\uu,\vv)$ satisfies
-\[ \frac{m_1}{\uu} + \frac{m_2}{\vv} = 1\]
-for some integers  $m_1,m_2\geq 0$, or 
-\[ \vv = \frac{m_1}{m_2}\uu, \quad \uu\geq m_2,\, \vv\geq m_1\]
-for some integers $m_1,m_2\geq 1$, or
-\[ (\uu,\vv) = (m_2 - \frac{m_2 j}{m_1 r}, m_1 - \frac{j}{r})\]
-for some integers $m_1, m_2 \geq 1$, $r \geq 1$, $0 \leq j \leq (m_1-1)r$.
-\end{lem}
-
-Here the intersection $\uu\ZZ\cap \vv\ZZ$ is again a nontrivial lattice, so we may define $W, \ww$, $M$, and $N$ as above. 
-%Let $W = MN\ww$ denote the least common multiple $\lcm(\uu,\vv)$, so $W\ww = \uu\vv$.
-In this case when we apply the quotient map
-\[ \RR \to \RR/W\ZZ,\]
-all three lattices $\uu\ZZ$, $\vv\ZZ$, and $\ZZ$ have discrete image.
-The image $\ZZ/W\ZZ$ will have cardinality $D$, where $D$ is the numerator of the fraction
-\[ W = \frac{\uu\vv}{\ww} = \frac{D}{E} \in \QQ\]
-expressed in lowest terms. (since $\ZZ/(D/E)\ZZ \cong (E/D)\ZZ/\ZZ \cong (1/D)\ZZ/\ZZ$.)
-The points in $\ZZ/W \ZZ$ will be spaced evenly apart, with uniform spacing $\delta = W/D = 1/E$.
-
-By an analysis similar to the above, we deduce that
-\[ \widetilde{R}_{\vv}^\pm / W\ZZ = \bigcup_{a\in v_2\ZZ/(Mv_2)\ZZ} [a-(1-\delta_a^+),a)\cup(a,a+(1-\delta_a^-)]\]
-where 
-\[\delta_a^+ = \min\{|x-a| : x\in \frac1E\ZZ, x>a \} \quad\text{and}\quad \delta_a^- = \min\{|x-a| : x\in \frac1E\ZZ, x<a\}.\]
-
-If $a \in \frac1E\ZZ$, i.e. $Ea \in \ZZ$, then $\delta_a^\pm = \delta = 1/E$ as defined above. However, we may also have $a\not\in \frac1E\ZZ$ for some $a\in v_2\ZZ$, since $v_2 = \frac 1M W = \frac1M \cdot\frac DE$.
-
-Thus for the desired disjointness condition, it is necessary and sufficient that $w_2 > 1-\delta = 1-1/E $ where $E$ {\em depends on} the values of $w_2$, $u_2$, $v_2$. [CLASSIFICATION NOT CONow we can complete the proof of Theorem \ref{thm:main} in the first quadrant case,
-which is reduced to showing Proposition \ref{prop:31}.
-%%%%
- %%%%%%%%%%%%%%%%%%%
-  %
-% Sub-sub-section 8.4.3/5.6.3 sporadic rational solutions
-%
-%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Subcase 2 (b)( iii). $\uu$ rational, $\frac{\uu}{\vv} >1$ sporadic rational solutions}\label{sec:553}
-
-We  assume $\frac{\uu}{\vv} \ge 1$.
-This case  considers points with rational $\uu$ do not belong to any
-parametric continuous families, those
- given in Lemmas \ref{lem:54} and \ref{lem:59}.
-% We do not know whether any such sporadic rational solutions exist. 
-% We defer further analysis of this case to  Section \ref{sec:57}, where we give a  criterion for it.
-
-We have classified the sporadic rational solutions $(\alpha, \beta)$
-in the third quadrant case corresponding to $(\uu, \vv)$-values having  $0 < \frac{\uu}{\vv} <1$,
-where $(\uu, \vv) = (-\frac{1}{\alpha}, \frac{\beta}{\alpha})$.
-It remains to deal with possible sporadic rational solutions 
-having  $\frac{\uu}{\vv} \ge 1$. These are all rational points $(\uu, \vv)$ with associated $(\alpha, \beta)$
-satisfying \eqref{ineq} excluding any of the following types: 
-\begin{enumerate}
-\item[{\it (iii-a)}] For integer $m_1 \ge 1$, any  $\vv= \frac{1}{m_1}$  with  $\uu \ge \frac{1}{m_1}$.
-\item[{\it (iii-b)}] For integer $m_1, m_2 \ge 1$ any  $\uu= \frac{m_2}{m_1}$  with $0 < \vv \le \frac{1}{m_1}.$
-\item[{\it (iii-c)}] For integer $m_1, m_2 \ge 1$ any  rational point with $\uu, \vv >0$ on the hyperbola 
-$$
-\frac{m_1}{\frac{\uu}{\vv}} + \frac{m_2}{\frac{1}{\vv}} =1.
-$$
-\end{enumerate}
-These are the three parametric continuous families (a)-(c) excluded
-in Proposition \ref{prop:32} (2).
-
-We now introduce  $(X^{'}, Y^{'})$-coordinates defined by 
-$$X^{'} := \frac{\vv}{\uu} = -\beta, \quad  Y^{' }:= \vv = \frac{\beta}{\alpha}.$$
-These coordinates are a birational
-change of variable from $(\alpha, \beta)$ in the open third
-quadrant, which  range over the open first quadrant $X^{'} >0, \, Y^{'} >0$.
-We coordinatize a rational point in these coordinates as 
-$$(X', Y') = (\frac{c}{t}, \frac{d}{t}),$$
- with least common denominator $t$, requiring
-$\gcd(c, d, t)=1$. 
-%In terms of this coordinatization 
-%the corresponding $(\alpha, \beta) = (-\frac{c}{d}, - \frac{c}{t}).$ 
-
-%At present we do not know if any sporadic rational solutions exist in
-%the case $\frac{u}{v} \ge 1$. 
-The following result  gives a criterion such sporadic rational
-solutions must satisfy.
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Proposition  8.9 /5.12
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{prop} \label{prop:514aa}
-{ \rm (Sporadic Rational Solution Criterion-Third Quadrant)} 
-Let  $(\uu, \vv) = (-\frac{1}{\alpha}, -\frac{\beta}{\alpha})$ and suppose that $\frac{\uu}{\vv} \ge  1$ is rational.
-Set $(X^{'}, Y^{'}) = (\frac{\vv}{\uu}, \vv) := (\frac{c}{t}, \frac{d}{t})$, with integers $c,d, t >0$ with $\gcd(c, d, t)=1$.
-In this case $(\alpha, \beta)=(- \frac{c}{d}, - \frac{c}{t})$ is a sporadic rational solution to \eqref{ineq}  if and only if 
-$t > \max\{ c, d\}$ and:
-\begin{enumerate}
-%\item[(i)]
-%$\gcd(a, b)=1$, 
-\item[(i)]
-All integers  $0 \le n < [c,d] t$ such that
-$$
-0 \le  \{ \frac{nc}{t}\} <  \{ \frac{c}{t}\} \quad \mbox{and} \quad  0 < \{ \frac{nd}{t}\} <  \{ \frac{d}{t}\}.
-$$
-satisfy 
-$$n \in \{ \lceil w\rceil: \, w \in \frac{[c,d]}{t} \ZZ\}, $$
-  where $[c,d]$ denotes  the least common
-multiple of $c$ and $d$.
-\item[(ii)]
-The denominator $t$ has the property  that $t \le cd$ and the  linear
-Diophantine equation 
-\begin{equation}\label{Frob:eqn}
-c X_1 + dX_2= t
-\end{equation}
-is unsolvable in non-negative integers $(X_1,X_2)$ having $X_2 \ge 1$. 
-%\begin{enumerate}
-%\item[(a)]
-% The linear
-%Diophantine equation 
-%\begin{equation}\label{Frob:eqn}
-%c X_1 + dX_2= t
-%\end{equation}
-%is unsolvable in strictly positive integers $(X_1,X_2)$. 
-%\item[(b)]
-%The linear
-%Diophantine equation 
-%\begin{equation}\label{Frob:eqn}
-%d= X_3 t
-%\end{equation}
-%is unsolvable in a single strictly positive integer $X_3$.
-%\item[(c)] $t < cd$. 
-%\end{enumerate}
-%positive integers??
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-In parallel to Proposition \ref{prop:414aa},   the role of condition (i) is   to make \eqref{ineq} hold, and
-the role of  condition (ii) is to exclude membership in the three one-parameter families of solutions. 
-
-We show criterion (i) is equivalent to \eqref{ineq} holding for the associated $(\alpha, \beta)$. 
-%We have $X = \frac{1}{u}, Y= \frac{v}{u}$ with $u = -\frac{1}{\alpha}= \frac{t}{a}$ and $v= \frac{\beta}{\alpha}= \frac{b}{a}$.
-%By hypothesis $\frac{u}{v} \ge 1$ and we have $0 < v <1$, since $v=1$ is excluded by exclusion (a) for $m_1=1$.
-By hypothesis  $\frac{\uu}{\vv}>1$, and by  Proposition \ref{prop:32}(3) the condition $\frac{1}{\vv}>1$ is a  necessary condition for \eqref{ineq} to hold
-in the sporadic rational case. Now $\frac{\uu}{\vv} =\frac{1}{X'}= \frac{t}{c}$
-gives $t >c$ and and $\frac{1}{\vv} =\frac{1}{Y'}= \frac{t}{d}$ gives
-$t>d$ so $t > \max \{ c, d\}.$ (Thus $0 < \frac{c}{t}, \frac{d}{t}<1$.)
-Now by Lemma \ref{lem:53}(1)
-the condition   \eqref{ineq} holds  if and only if
-$$\sB(\frac{\uu}{\vv}) \bigcap \sB_0(\frac{1}{\vv}) \subseteq X_{\frac{\uu}{v},\frac{1}{\vv}}.$$
-%Lemma 4.3 and Lemma 4.7(2)
-The criterion of Lemma \ref{lem:48} (2) shows that
-\[
-\sB(\frac{\uu}{\vv}) \bigcap \sB_0(\frac{1}{\vv}) = \{ -n \in \ZZ: \, 0 \le \{ \frac{n \vv}{\uu} \}< \{ \frac{\vv}{\uu}\} \quad \mbox{and} \quad
-0 < \{ n \vv \}< \{ \vv\}\,\, \}.
-\]
-In terms of $(c,d,t)$  this criterion can be rewritten:
-\begin{equation}\label{negative-cond}
-\sB(\frac{\uu}{\vv}) \bigcap \sB_0(\frac{1}{\vv}) = \{-n \in \ZZ: \,0 \le \{ \frac{nc}{t} \} < \frac{c}{t} \quad \mbox{and} \quad 0 < \{ \frac{nd}{t} \}< \frac{d}{t} \, \, \}.
-\end{equation}
-On the other hand
-\[
-X_{\frac{\uu}{\vv}, \frac{1}{\vv}} := \{ \lfloor w \rfloor : \, w \in \frac{\uu}{\vv} \ZZ \bigcap \frac{1}{\vv} \ZZ\} =  \{ \lfloor w \rfloor : \, w \in \frac{c}{t} \ZZ \bigcap \frac{d}{t} \ZZ\, \}
-\]
-Since $(c, d, t)=1$ we have $\frac{c}{t}\ZZ \bigcap \frac{d}{t}\ZZ = \frac{[c,d]}{t} \ZZ,$ where $[c,d]$ denotes the least common
-multiple of $c$ and $d$. Thus
-\begin{equation}\label{positive-cond}
-X_{\frac{\uu}{\vv}, \frac{1}{\vv}} := \{ \lfloor w \rfloor : \, w \in \frac{[c,d]}{t} \ZZ \}.
-\end{equation}
-The inclusion of the set \eqref{negative-cond} in the set \eqref{positive-cond} gives
-a  necessary and sufficient condition for \eqref{ineq} to hold for the associated $(\alpha, \beta)$.
-This condition is in turn equivalent to the assertion that 
-for all $n \in \ZZ$ with $n$ satisfying \eqref{negative-cond} 
-%must belong to $ \{ \lfloor w \rfloor : \, w \in \frac{[c,d]}{t} \ZZ \}$; equivalently 
-the integer $-n$ belongs to
-$ \{ \lceil -w \rceil : \, w \in \frac{[c,d]}{t} \ZZ \}$, since the lattice $\frac{[c,d]}{t} \ZZ$ is invariant under $x \to -x$.
-The condition \eqref{negative-cond} is periodic in
-$n$ with period $t$, while the set of allowed $\lfloor w \rfloor$ is periodic with (possibly non-minimal) period $[c,d] t$.
-It follows that  we need only check the inclusion condition holds over a single period $0 \le n < [c,d]t $,
-which is a finite computation.
-%However both sets are periodic $(\bmod \, t)$
-
-
-We show that criterion (ii) is equivalent to $(\frac{\vv}{\uu}, \vv)$ not falling on any one-parameter solution to \eqref{ineq}.
-These are classified as types {\it (iii-a)} through {\it (iii-c)} above. 
-By Proposition \ref{prop:32} and the discussion after its statement,
-the  one-parameter solutions of exclusion type {\it (iii-c)}  are  given by $\frac{m_1}{\frac{\uu}{\vv}} + \frac{m_2}{\frac{1}{\vv}} =1$
-for any integer $m_1, m_2 \ge 1$. 
-  The  condition for $(\frac{\vv}{\uu}, \vv) = (\frac{t}{c}, \frac{t}{d})$ 
- to fall on such a curve 
-is  $m_1 \frac{c}{t}  + m_2 \frac{d}{t}= 1$, which on clearing denominators becomes 
- $m_1 c + m_2 d= t$. This condition is easily seen to be equivalent to the equation 
-$$
-cX_1 + dX_2 = t,
-$$
-having no solution in positive integers $X_1, X_2 \ge 1$. 
-
-Exclusion type {\it (iii-a)} removes $v= m_1$ for all integers $m_1 \ge 1$, which corresponds to 
-the equation $d X_2= t$
-having no positive integer solution; this excludes solutions above having $X_1=0$. 
-
-Exclusion {\it (iii-b)}  removes all solutions
-with $\uu = \frac{m_2}{m_1}$ having also   $0< \vv \le \frac{1}{m_1}.$ 
-Here the exclusion affects all rational $\uu$, for small enough $\vv$.  
-Since  $\uu = \frac{Y^{'}}{X^{'}}=\frac{d}{c}$
-and $\vv=Y'= \frac{c}{t}$, so (assuming $(c, d)=1$) we may choose $m_1=c, m_2=d$ and
-$ v \le \frac{1}{m_1}$ becomes $\frac{d}{t} \le \frac{1}{c}$ whence $cd \le t$. 
-The condition to be a sporadic solution is  the complementary condition  $t < cd$.
-[TBA-GO OVER THIS LAST CASE]
-\end{proof}
-
